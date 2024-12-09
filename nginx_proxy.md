@@ -41,7 +41,7 @@ Flask가 요청이 안전한 HTTPS 연결을 통해 이루어졌는지 확인하
 
 ## /etc/nginx/conf.d 경로에 hizib.conf 에 location 추가 Virtual derectory
 
-```
+```nginx
 location /googlehome {
         proxy_pass http://127.0.0.1:5000/googlehome;  # Flask의 /googlehome으로 직접 전달
         proxy_set_header Host $host;
@@ -49,4 +49,4 @@ location /googlehome {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
     }
-    ```
+```
