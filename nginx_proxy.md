@@ -12,8 +12,8 @@ location /googlehome {
 }
 ```
 
-## 이 설정은 요청을 Nginx에서 처리하지 않고 Flask의 /googlehome 엔드포인트로 직접 프록시합니다.
-## 중요: Nginx의 /googlehome과 Flask의 /googlehome이 중첩되지 않도록 조심해야 합니다.
+### 이 설정은 요청을 Nginx에서 처리하지 않고 Flask의 /googlehome 엔드포인트로 직접 프록시합니다.
+### 중요: Nginx의 /googlehome과 Flask의 /googlehome이 중첩되지 않도록 조심해야 합니다.
 
 ```
 proxy_set_header
@@ -43,8 +43,8 @@ Flask가 요청이 안전한 HTTPS 연결을 통해 이루어졌는지 확인하
 location /googlehome {
         proxy_pass http://127.0.0.1:5000/googlehome;  # Flask의 /googlehome으로 직접 전달
         proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
+     #   proxy_set_header X-Real-IP $remote_addr;
+     #   proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+     #   proxy_set_header X-Forwarded-Proto $scheme;
     }
 ```
