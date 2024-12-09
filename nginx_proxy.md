@@ -12,8 +12,8 @@ location /googlehome {
 }
 ```
 
-이 설정은 요청을 Nginx에서 처리하지 않고 Flask의 /googlehome 엔드포인트로 직접 프록시합니다.
-중요: Nginx의 /googlehome과 Flask의 /googlehome이 중첩되지 않도록 조심해야 합니다.
+## 이 설정은 요청을 Nginx에서 처리하지 않고 Flask의 /googlehome 엔드포인트로 직접 프록시합니다.
+## 중요: Nginx의 /googlehome과 Flask의 /googlehome이 중첩되지 않도록 조심해야 합니다.
 
 ```
 proxy_set_header
@@ -37,9 +37,6 @@ Flask가 요청이 안전한 HTTPS 연결을 통해 이루어졌는지 확인하
 ```
 
 
-
-
-```
 ## /etc/nginx/conf.d 경로에 hizib.conf 에 location 추가 Virtual derectory
 
 ```nginx
