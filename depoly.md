@@ -155,6 +155,7 @@ Nginx 설정 수정 후 재시작
 
 ```bash
 vi /etc/nginx/nginx.conf
+```
 
 Nginx 설정 파일 문법 검사 및 재시작
 ```bash
