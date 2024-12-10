@@ -52,7 +52,7 @@ source myenv/bin/activate
 서버 셸 스크립트 실행
 ```bash
 ./deploy.sh
-
+```
 
 로그 실시간 보기
 
@@ -60,10 +60,8 @@ source myenv/bin/activate
 tail -f app.log
 ```
 
-압축 명령어
-googlehome.zip 
+압축 파일 생성
 
-압축 생성
 ```bash
 zip -r googlehome.zip requirements.txt wiki-smartdoor-6066-58f1a4951f27.json deploy.sh templates app.py config.json
 ```
