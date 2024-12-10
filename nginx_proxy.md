@@ -1,4 +1,4 @@
-# Nginx Proxy 설정
+## Nginx Proxy 설정
 
 ## `/googlehome` 경로 설정
 `location /googlehome {}`  
@@ -48,3 +48,21 @@ location /googlehome {
      #   proxy_set_header X-Forwarded-Proto $scheme;
     }
 ```
+
+## 도메인 주소 사서 등록 하는법
+
+1. googlehome.wikibox.kr 로 접속
+
+2. 2차 도메인 등록
+
+3. ssl 등록
+
+4. Nginx.conf 의 기본설정에 include 된 googlehome.conf 연결
+
+5. depoly.sh 로 flask 백그라운드 실행(시작경로 이슈 때문)
+
+6. Googlehome.wikibox.kr/login 으로 get 요청
+
+7. Flask 서버로 @/login 요청 들어옴
+
+8. login.html 출력 
