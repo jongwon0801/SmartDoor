@@ -1,7 +1,7 @@
 ## 단축키 모음
 
 **자동 import** `command + .`
--**터미널 열기 단축키**: `ctrl + shift + ~`
+- **터미널 열기 단축키**: `ctrl + shift + ~`
 - **서버 종료**: `ctrl + c`
 - **서버 실행 (파이썬)**: `python app.py`
 - **Ngrok 강제 종료**: `kill -9 pin번호`
