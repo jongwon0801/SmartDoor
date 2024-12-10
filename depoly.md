@@ -1,14 +1,12 @@
-# 위키박스 SSH 및 배포 명령어
+## 위키박스 SSH 및 배포 명령어
 
-### 압축해서 서버로 보내기 (배포)
-
+<br><br>
 
 서버 접속
 ```bash
 ssh ubuntu@api.hizib.wikibox.kr   # 비밀번호: elcsoft
 ```
 
-서버 내 작업
 ubuntu 디렉토리로 이동
 
 ```bash
@@ -30,6 +28,8 @@ sudo rm -rf googlehome
 mkdir googlehome
 ```
 
+<br><br>
+---
 ### 가상환경 설치
 
 가상환경 생성
@@ -42,17 +42,9 @@ python3 -m venv myenv
 ```bash
 source myenv/bin/activate
 ```
-
-서버 셸 스크립트 실행
-```bash
-./deploy.sh
-```
-
-로그 실시간 보기
-
-```bash
-tail -f app.log
-```
+<br><br>
+---
+## 압축 과정
 
 압축 파일 생성
 
@@ -83,7 +75,6 @@ cd /home/ubuntu/googlehome
 unzip googlehome.zip
 ```
 
-
 실행 권한 확인 및 추가
 
 ```bash
@@ -93,6 +84,18 @@ ls -l deploy.sh
 실행 권한 추가
 ```bash
 chmod +x deploy.sh
+```
+
+
+서버 셸 스크립트 실행
+```bash
+./deploy.sh
+```
+
+로그 실시간 보기
+
+```bash
+tail -f app.log
 ```
 
 Nginx 기본 설정 파일 수정
