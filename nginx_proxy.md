@@ -12,8 +12,8 @@ location /googlehome {
 }
 ```
 
-### 이 설정은 요청을 Nginx에서 처리하지 않고 Flask의 /googlehome 엔드포인트로 직접 프록시합니다.
-### 중요: Nginx의 /googlehome과 Flask의 /googlehome이 중첩되지 않도록 조심해야 합니다.
+- 이 설정은 요청을 Nginx에서 처리하지 않고 Flask의 /googlehome 엔드포인트로 직접 프록시합니다.
+- 중요: Nginx의 `/googlehome`과 Flask의 `/googlehome`이 중첩되지 않도록 조심해야 합니다.
 
 ```
 proxy_set_header
@@ -50,7 +50,7 @@ location /googlehome {
 ```
 
 ### 도메인 주소 사서 등록 하는법
-
+```
 1. googlehome.wikibox.kr 로 접속
 
 2. 2차 도메인 등록
@@ -65,4 +65,5 @@ location /googlehome {
 
 7. Flask 서버로 @/login 요청 들어옴
 
-8. login.html 출력 
+8. login.html 출력
+```
