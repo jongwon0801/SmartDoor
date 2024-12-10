@@ -15,11 +15,6 @@ ubuntu 디렉토리로 이동
 cd ubuntu
 ```
 
-Nginx 설정 파일 문법 검사 및 재시작
-```bash
-sudo nginx -t   # 설정 파일 문법 검사
-sudo systemctl restart nginx  # Nginx 재시작
-```
 
 실행 권한 확인
 ```bash
@@ -148,14 +143,8 @@ Nginx 설정 수정 후 재시작
 ```bash
 vi /etc/nginx/nginx.conf
 
-Nginx 구성 테스트:
-
+Nginx 설정 파일 문법 검사 및 재시작
 ```bash
-sudo nginx -t
-```
-
-Nginx 재시작:
-
-```bash
-sudo systemctl restart nginx
+sudo nginx -t   # 설정 파일 문법 검사
+sudo systemctl restart nginx  # Nginx 재시작
 ```
