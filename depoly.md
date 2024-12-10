@@ -160,7 +160,6 @@ Nginx 설정 수정 후 재시작
 vi /etc/nginx/nginx.conf
 ```
 
-Nginx 설정 파일 문법 검사 및 재시작
 ```bash
 sudo nginx -t   # 설정 파일 문법 검사
 sudo systemctl restart nginx  # Nginx 재시작
