@@ -1,6 +1,4 @@
-## 위키박스 SSH 및 배포 명령어
-
-<br>
+## 위키박스 SSH 접속
 
 서버 접속
 ```bash
@@ -74,7 +72,9 @@ cd /home/ubuntu/googlehome
 ```bash
 unzip googlehome.zip
 ```
-
+<br><br>
+---
+## 서버 실행
 실행 권한 확인 및 추가
 
 ```bash
@@ -98,15 +98,23 @@ chmod +x deploy.sh
 tail -f app.log
 ```
 
+백그라운드 실행 중인 앱 조회
+```bash
+ps aux | grep 'python3 app.py'
+```
+
+<br><br>
+---
+## Ngnix 설정 변경(여기선 안쓰지만 도메인 사서 할때 설정 필요)
 Nginx 기본 설정 파일 수정
 
 ```bash
 sudo nano /etc/nginx/sites-available/default
 ```
+Conf 파일 생성
 
-백그라운드 실행 중인 앱 조회
 ```bash
-ps aux | grep 'python3 app.py'
+sudo nano /etc/nginx/conf.d/googlehome.conf
 ```
 
 Nginx 기본 설정 파일 수정
@@ -120,17 +128,27 @@ Conf 파일 강제 삭제
 ```bash
 sudo rm -f googlehome.conf
 ```
-
-Conf 파일 생성
-
-```bash
-sudo nano /etc/nginx/conf.d/googlehome.conf
-```
+<br><br>
+---
+## Ngnix virtual directory 설정변경, 재시작
 
 Conf 파일 경로 (여러 호스트들을 정의 conf)
 
 ```bash
 cd /etc/nginx/conf.d/
+```
+
+hizib.conf 파일에 /googlehome location 추가
+
+```bash
+vi hizib.conf
+```
+
+```bash
+location /googlehome {
+        proxy_pass http://127.0.0.1:5000;  # Flask의 /googlehome으로 직접 전달
+        proxy_set_header Host $host;
+    }
 ```
 
 Nginx 설정 수정 후 재시작
