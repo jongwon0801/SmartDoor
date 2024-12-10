@@ -1,6 +1,6 @@
 ## Nginx Proxy 설정
 
-## `/googlehome` 경로 설정
+### `/googlehome` 경로 설정
 `location /googlehome {}`  
 - `/googlehome` 경로로 들어오는 요청을 처리하는 블록입니다.  
 - 사용자가 `http://your-domain.com/googlehome`으로 요청을 보내면, 이 블록의 내용에 따라 처리됩니다.
@@ -37,7 +37,7 @@ Flask가 요청이 안전한 HTTPS 연결을 통해 이루어졌는지 확인하
 ```
 
 
-## /etc/nginx/conf.d 경로에 hizib.conf 에 location 추가 Virtual derectory
+### /etc/nginx/conf.d 경로에 hizib.conf 에 location 추가 Virtual derectory
 
 ```nginx
 location /googlehome {
@@ -49,7 +49,7 @@ location /googlehome {
     }
 ```
 
-## 도메인 주소 사서 등록 하는법
+### 도메인 주소 사서 등록 하는법
 
 1. googlehome.wikibox.kr 로 접속
 
