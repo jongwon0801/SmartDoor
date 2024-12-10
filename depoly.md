@@ -130,7 +130,7 @@ sudo rm -f googlehome.conf
 ```
 <br><br>
 ---
-## Ngnix virtual directory 설정변경, 재시작
+## Ngnix virtual directory 설정
 
 Conf 파일 경로 (여러 호스트들을 정의 conf)
 
@@ -151,8 +151,11 @@ location /googlehome {
     }
 ```
 
-Nginx 설정 수정 후 재시작
+<br><br>
+---
+## Ngnix 재시작
 
+Nginx 설정 수정 후 재시작
 ```bash
 vi /etc/nginx/nginx.conf
 ```
