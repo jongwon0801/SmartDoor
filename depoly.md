@@ -15,12 +15,6 @@ ubuntu 디렉토리로 이동
 cd ubuntu
 ```
 
-
-실행 권한 확인
-```bash
-ls -l deploy.sh
-```
-
 파일 삭제
 ```bash
 sudo rm -f googlehome
