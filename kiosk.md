@@ -49,9 +49,26 @@ http {
 - Enter를 눌러 저장합니다.
 - Ctrl+X를 눌러 에디터를 종료합니다.
 
+
+## localhost.conf 파일 생성
 ```bash
 sudo nano /etc/nginx/conf.d/localhost.conf
 ```
+
+NGINX가 어떤 설정을 사용할지는 설정 파일의 우선순위에 따라 결정됩니다.
+특히 server_name과 listen 지시어가 중요한 역할을 합니다.
+
+시나리오:
+80 포트로 접속할 때:
+
+/etc/nginx/conf.d/localhost.conf 파일에 설정된 server 블록이 작동합니다.
+이유:
+server_name이 127.0.0.1 및 localhost로 지정되어 있고, listen 80;이 명시되어 있기 때문입니다.
+/etc/nginx/sites-available/default로 가지 않음:
+
+server_name이 localhost.conf와 충돌하지 않는 한, localhost.conf 설정이 우선 적용됩니다.
+만약 default 파일에도 동일한 server_name이 설정되어 있다면, 가장 먼저 로드된 설정이 적용됩니다(주로 /etc/nginx/conf.d/*.conf가 우선).
+
 
 ```bash
 server {
@@ -87,7 +104,7 @@ server {
 
 ```
 
-
+## /home/admin/www 경로에 index.html 작성
 
 ```bash
 sudo bash -c 'echo "hello world" > /home/admin/www/index.html'
