@@ -14,16 +14,13 @@ https://www.raspberrypi.com/software/
 ### 1. 캐시 정리
 ```bash
 sudo apt clean
-`
+
 2. 사용하지 않는 패키지 제거
-bash
-코드 복사
 sudo apt autoremove -y
+
 3. 패키지 목록 업데이트
-bash
-코드 복사
 sudo apt update
+
 4. 시스템 패키지 업그레이드
-bash
-코드 복사
 sudo apt upgrade
+```
