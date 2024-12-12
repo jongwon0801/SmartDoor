@@ -13,3 +13,5 @@ https://www.raspberrypi.com/software/
 SD 카드에 우분투나 라즈비안 OS 이미지를 구운 상태에서, macOS에서 파일 시스템을 확인합니다:
 
 diskutil list
+
+https://www.raspberrypi.com/software/operating-systems/
