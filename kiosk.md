@@ -11,8 +11,8 @@ https://www.raspberrypi.com/software/
 
 ## 전체 프로그램 업데이트 명령어
 
-### 1. 캐시 정리
 ```bash
+1. 캐시 정리
 sudo apt clean
 
 2. 사용하지 않는 패키지 제거
