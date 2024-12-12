@@ -7,7 +7,7 @@ https://www.raspberrypi.com/software/
 <img width="652" alt="image" src="https://github.com/user-attachments/assets/b8738cc2-e4a0-41f9-897f-7599ca578b7e">
 
 
-# Raspberry Pi 4 설치 및 업데이트 가이드
+## Raspberry Pi 4 설치 및 업데이트 가이드
 
 ## 전체 프로그램 업데이트 명령어
 
