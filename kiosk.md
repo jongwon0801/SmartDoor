@@ -7,11 +7,23 @@ https://www.raspberrypi.com/software/
 <img width="652" alt="image" src="https://github.com/user-attachments/assets/b8738cc2-e4a0-41f9-897f-7599ca578b7e">
 
 
-### macOS에서는 직접적으로 리눅스용 패키지 설치가 어렵기 때문에, SD 카드에 있는 리눅스 루트 파일 시스템을 마운트하고, 그 위에서 설정을 진행해야 합니다.
+# Raspberry Pi 4 설치 및 업데이트 가이드
 
-1. SD 카드 파일 시스템 확인
-SD 카드에 우분투나 라즈비안 OS 이미지를 구운 상태에서, macOS에서 파일 시스템을 확인합니다:
+## 전체 프로그램 업데이트 명령어
 
-diskutil list
-
-https://www.raspberrypi.com/software/operating-systems/
+### 1. 캐시 정리
+```bash
+sudo apt clean
+`
+2. 사용하지 않는 패키지 제거
+bash
+코드 복사
+sudo apt autoremove -y
+3. 패키지 목록 업데이트
+bash
+코드 복사
+sudo apt update
+4. 시스템 패키지 업그레이드
+bash
+코드 복사
+sudo apt upgrade
