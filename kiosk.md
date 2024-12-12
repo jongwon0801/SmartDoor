@@ -7,7 +7,7 @@ https://www.raspberrypi.com/software/
 <img width="652" alt="image" src="https://github.com/user-attachments/assets/b8738cc2-e4a0-41f9-897f-7599ca578b7e">
 
 
-## 전체 프로그램 업데이트 명령어
+### 전체 프로그램 업데이트 명령어
 
 ```bash
 1. 캐시 정리
