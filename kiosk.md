@@ -39,8 +39,11 @@ http {
 	client_max_body_size 0;
 }
 ```
+### client_max_body_size 0; 설정은 NGINX 서버에서 클라이언트 요청의 본문(body) 크기에 대한 최대 허용 크기를 0으로 설정
+### 요청 본문 크기 제한을 완전히 제거하는 설정. 요청 본문 크기에 제한이 없어져, 큰 파일 업로드와 같은 경우에 크기 제한 없이 데이터를 받기 가능
 
-## 저장 단계:
+
+### nano 편집기 저장
 - 파일 편집이 끝난 후 Ctrl+O를 누릅니다.
 - 화면 하단에 File Name to Write: /etc/nginx/nginx.conf가 표시됩니다.
 - Enter를 눌러 저장합니다.
@@ -59,8 +62,8 @@ server {
         #access_log /var/log/nginx/host.access.log  main;
 
         location / {
-                root /home/pi/www;
-                index index.html index.htm;
+                root /home/admin/www;
+                index index.html;
         }
 
         location ^~ /ws/ {
