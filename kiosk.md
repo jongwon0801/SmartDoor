@@ -52,10 +52,9 @@ sudo nano /etc/nginx/conf.d/localhost.conf
 - NGINX가 어떤 설정을 사용할지는 설정 파일의 우선순위에 따라 결정됩니다.
 - 특히 server_name과 listen 지시어가 중요한 역할을 합니다.
 
-- 시나리오:
-80 포트로 접속할 때:
 
-- /etc/nginx/conf.d/localhost.conf 파일에 설정된 server 블록이 작동합니다.
+- 80 포트로 접속할 때:
+/etc/nginx/conf.d/localhost.conf 파일에 설정된 server 블록이 작동합니다.
 이유:
 server_name이 127.0.0.1 및 localhost로 지정되어 있고, listen 80;이 명시되어 있기 때문입니다.
 /etc/nginx/sites-available/default로 가지 않음:
