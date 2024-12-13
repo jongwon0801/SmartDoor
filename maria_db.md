@@ -61,9 +61,15 @@ cd /home/pi/www/python/
 tar -czvf pi_zip.tar.gz /home/pi/
 ```
 
-### scp 명령어로 전송
+### sftp 명령어로 압축파일 전송
 ```bash
-scp pi@192.168.0.161:/home/pi/pi_zip.tar.gz pi@192.168.0.50:/home/pi/
+mkdir work
+
+cd work
+
+sftp pi@192.168.0.161
+
+get pi_zip.tar.gz
 ```
 
 
