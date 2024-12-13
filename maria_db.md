@@ -56,8 +56,15 @@ source /home/pi/www/python/elcsoft/bin/activate
 # 다른 디렉토리로 이동해도 가상 환경은 활성화된 상태로 유지됩니다.
 cd /home/pi/www/python/
 ```
+### 서버 파일 압축
+```bash
+tar -czvf pi_zip.tar.gz /home/pi/
+```
 
-
+### scp 명령어로 전송
+```bash
+scp pi@remote_host:/home/pi/pi_zip.tar.gz pi@192.168.0.50:/home/pi/
+```
 
 
 
