@@ -50,7 +50,11 @@ cd /home/pi/www/python/
 python3 -m venv elcsoft
 
 # 가상 환경 활성화
-source elcsoft/bin/activate
+# /home/pi/www/python/elcsoft에서 가상 환경을 활성화한 후,
+source /home/pi/www/python/elcsoft/bin/activate
+
+# 다른 디렉토리로 이동해도 가상 환경은 활성화된 상태로 유지됩니다.
+cd /home/pi/www/python/
 ```
 
 
