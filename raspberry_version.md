@@ -4,7 +4,7 @@ wikibox/tmshdnxmfl
 ```
 ### 라즈베리 기기로 원격 접속
 ```bash
-ssh pi@192.168.0.161
+ssh pi@192.168.0.161 / elcsoft
 ```
 ### 운영체제 버젼 확인
 ```bash
