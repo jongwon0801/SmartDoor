@@ -42,7 +42,16 @@ git clone https://devtools.ncloud.com/2639830/wiki_smartdoor_kiosk.git
 
 ```
 
+```bash
+# 디렉토리 이동
+cd /home/pi/www/python/
 
+# elcsoft 가상 환경 생성
+python3 -m venv elcsoft
+
+# 가상 환경 활성화
+source elcsoft/bin/activate
+```
 
 
 
