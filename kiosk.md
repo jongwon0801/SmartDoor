@@ -135,8 +135,8 @@ www-data는 Nginx가 사용하는 기본 사용자/그룹입니다.
 기본적으로 리눅스의 보안 설계는 www-data 사용자가 시스템의 다른 파일이나 디렉토리에 접근하지 못하도록 제한합니다.
 예: /etc나 /home 같은 중요한 디렉토리에는 www-data가 접근할 수 없습니다.
 
-- Nginx는 /etc/nginx/nginx.conf를 먼저 읽습니다.
-- include /etc/nginx/conf.d/*.conf; 디렉티브에 따라 /etc/nginx/conf.d/ 디렉토리에 있는 파일들을 읽어 추가 설정을 병합합니다.
-- /etc/nginx/conf.d/localhost.conf와 같은 파일이 포함되면, 그 내용은 nginx.conf의 일부처럼 동작합니다.
+- 1. Nginx는 /etc/nginx/nginx.conf를 먼저 읽습니다.
+2. include /etc/nginx/conf.d/*.conf; 디렉티브에 따라 /etc/nginx/conf.d/ 디렉토리에 있는 파일들을 읽어 추가 설정을 병합합니다.
+3. /etc/nginx/conf.d/localhost.conf와 같은 파일이 포함되면, 그 내용은 nginx.conf의 일부처럼 동작합니다.
 
 
