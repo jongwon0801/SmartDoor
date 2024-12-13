@@ -24,7 +24,7 @@ sudo apt upgrade
 sudo apt-get install nginx
 ```
 
-### nginx 설정
+### /etc/nginx/nginx.conf 설정
 
 ```bash
 sudo nano /etc/nginx/nginx.conf
@@ -49,13 +49,13 @@ http {
 sudo nano /etc/nginx/conf.d/localhost.conf
 ```
 
-NGINX가 어떤 설정을 사용할지는 설정 파일의 우선순위에 따라 결정됩니다.
-특히 server_name과 listen 지시어가 중요한 역할을 합니다.
+- NGINX가 어떤 설정을 사용할지는 설정 파일의 우선순위에 따라 결정됩니다.
+- 특히 server_name과 listen 지시어가 중요한 역할을 합니다.
 
-시나리오:
+- 시나리오:
 80 포트로 접속할 때:
 
-/etc/nginx/conf.d/localhost.conf 파일에 설정된 server 블록이 작동합니다.
+- /etc/nginx/conf.d/localhost.conf 파일에 설정된 server 블록이 작동합니다.
 이유:
 server_name이 127.0.0.1 및 localhost로 지정되어 있고, listen 80;이 명시되어 있기 때문입니다.
 /etc/nginx/sites-available/default로 가지 않음:
@@ -105,8 +105,8 @@ server {
 sudo mkdir -p /home/pi/www
 ```
 
-### -p 옵션은 중간 디렉토리가 없는 경우 함께 생성합니다.
-### 디렉토리가 생기면 현재 설정한 Nginx의 root 디렉토리가 됩니다.
+- -p 옵션은 중간 디렉토리가 없는 경우 함께 생성합니다.
+- 디렉토리가 생기면 현재 설정한 Nginx의 root 디렉토리가 됩니다.
 
 
 ### /home/admin/www 경로에 index.html 작성
@@ -134,5 +134,9 @@ www-data는 Nginx가 사용하는 기본 사용자/그룹입니다.
 - 제한된 사용자
 기본적으로 리눅스의 보안 설계는 www-data 사용자가 시스템의 다른 파일이나 디렉토리에 접근하지 못하도록 제한합니다.
 예: /etc나 /home 같은 중요한 디렉토리에는 www-data가 접근할 수 없습니다.
+
+### Nginx는 /etc/nginx/nginx.conf를 먼저 읽습니다.
+- include /etc/nginx/conf.d/*.conf; 디렉티브에 따라 /etc/nginx/conf.d/ 디렉토리에 있는 파일들을 읽어 추가 설정을 병합합니다.
+/etc/nginx/conf.d/localhost.conf와 같은 파일이 포함되면, 그 내용은 nginx.conf의 일부처럼 동작합니다.
 
 
