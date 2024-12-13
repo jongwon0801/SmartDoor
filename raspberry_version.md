@@ -1,5 +1,3 @@
-## 라즈베리 os 버젼확인
-
 ### 라즈베리 기기랑 같은 와이파이에 접속
 ```bash
 wikibox/tmshdnxmfl
