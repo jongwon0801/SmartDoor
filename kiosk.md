@@ -98,9 +98,34 @@ server {
 
 ```
 
-## /home/admin/www 경로에 index.html 작성
+### 디렉토리 생성
+지정한 경로(/home/pi/www)가 없다면 먼저 디렉토리를 생성해야 합니다.
 
 ```bash
-sudo bash -c 'echo "hello world" > /home/admin/www/index.html'
+sudo mkdir -p /home/pi/www
 ```
+
+### -p 옵션은 중간 디렉토리가 없는 경우 함께 생성합니다.
+### 디렉토리가 생기면 현재 설정한 Nginx의 root 디렉토리가 됩니다.
+
+
+### /home/admin/www 경로에 index.html 작성
+```bash
+sudo nano /home/pi/www/index.html
+```
+
+```bash
+sudo bash -c 'echo "hello world" > /home/pi/www/index.html'
+```
+
+### 권한 설정
+Nginx가 파일에 접근할 수 있도록 디렉토리 및 파일 권한을 설정합니다.
+
+```bash
+sudo chmod -R 755 /home/pi/www
+sudo chown -R www-data:www-data /home/pi/www
+```
+
+www-data는 Nginx가 사용하는 기본 사용자/그룹입니다.
+
 
