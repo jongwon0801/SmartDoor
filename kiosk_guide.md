@@ -152,6 +152,25 @@ sudo systemctl start tornado.service
 sudo systemctl status tornado.service
 ```
 
+### tornado.sh 셸
+```bash
+/home/pi/shell/tornado.sh
+```
+
+```bash
+# 가상환경 활성화
+source /home/pi/www/python/elcsoft/bin/activate
+
+# webserver.py 실행
+python /home/pi/python/webserver.py
+
+# tornado.service 파일 검색
+sudo find / -name "webserver.py"
+" 
+```
+
+
+
 
 
 
