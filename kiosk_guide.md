@@ -93,8 +93,23 @@ tar --strip-components=2 -xvzf /home/pi/work/pi_zip.tar.gz -C /home/pi
 - 압축 파일 내부 디렉토리 구조에서 상위 디렉토리 두 개를 무시합니다.
 - 이를 통해 /home/pi/home/pi/... 구조 대신 /home/pi/...에 파일이 풀립니다.
 
+### sftp로 requirement.txt 파일 복사 하기위해 권한 디렉토리, 파일 권한 부여
+```bash
+sudo chmod 777 /home/pi/www/python/
+sudo chmod 777 /home/pi/www/python/requirement.txt
+```
 
+### sftp 로 키오스크 서버에서 requirement.txt 파일가져오기
+```bash
+sftp pi@192.168.0.161
 
+cd /home/pi/www/python
+
+# 192.168.0.161의 requirements.txt 파일을 192.168.0.50의 /home/pi/www/python 경로로 다운로드
+get requirements.txt /home/pi/www/python/ 
+
+exit or ctrl + d
+```
 
 
 
