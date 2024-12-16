@@ -129,7 +129,28 @@ sudo chmod 777 /home/pi/www/python/elcsoft/
 sudo chown -R pi:pi /home/pi/www/python/elcsoft/
 ```
 
+### service 파일 생성
+```bash
+sudo nano /lib/systemd/system/tornado.service
 
+[Unit]
+Description=TornadoWebserver
+
+[Service]
+ExecStart=/home/pi/www/shell/tornado.sh
+Restart=on-abort
+User=pi
+Group=pi
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
+sudo systemctl daemon-reload
+sudo systemctl enable tornado.service
+sudo systemctl start tornado.service
+sudo systemctl status tornado.service
+```
 
 
 
