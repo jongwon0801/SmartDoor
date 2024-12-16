@@ -1,3 +1,8 @@
+### 키오스크 서버 ssh 접속
+```bash
+ssh pi@192.168.0.161
+```
+
 ### mariadb 설치
 
 ```bash
@@ -73,6 +78,10 @@ get pi_zip.tar.gz
 ```
 
 
+### 라즈베리에 기기 압축해제
+```bash
+tar -xvzf /home/pi/work/pi_zip.tar.gz -C /home/pi
+```
 
 
 
