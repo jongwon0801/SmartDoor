@@ -184,6 +184,8 @@ sudo systemctl status tornado.service
 ```
 
 ### tornado.sh 셸
+
+### 파이썬 내부 가상환경
 ```bash
 /home/pi/shell/tornado.sh
 ```
@@ -199,7 +201,22 @@ python /home/pi/python/webserver.py
 sudo find / -name "webserver.py"
 ```
 
+### 가상환경 hizib에 있는거
+```bash
+/home/pi/.virtualenvs/elcsoft/bin/python /home/pi/www/python/webserver.py
+```
 
+### /home/pi/.virtualenvs/elcsoft/bin/python:
+
+- 이 경로는 Python 가상 환경의 실행 파일을 나타냅니다.
+**virtualenv**는 프로젝트마다 독립된 Python 환경을 제공하는 도구로, 시스템의 기본 Python 환경에 영향을 주지 않고, 프로젝트에 필요한 패키지들을 관리할 수 있게 합니다.
+- 이 경로는 **elcsoft**라는 이름의 가상 환경 내에 있는 Python 인터프리터를 실행하는 경로입니다. 따라서, 이 명령어는 elcsoft 가상 환경에서 Python 스크립트를 실행하도록 지정합니다.
+  
+### /home/pi/www/python/webserver.py:
+
+- 이 경로는 실행할 Python 스크립트인 webserver.py의 위치를 나타냅니다.
+- 이 스크립트는 웹 서버와 관련된 코드가 포함된 Python 파일일 가능성이 높습니다.
+- webserver.py 파일 내에서 웹 서버를 실행하는 코드가 있을 것으로 추측됩니다. 예를 들어, Tornado, Flask, Django 등의 웹 서버 라이브러리를 사용하여 HTTP 요청을 처리하는 서버 코드가 포함되어 있을 수 있습니다.
 
 
 
