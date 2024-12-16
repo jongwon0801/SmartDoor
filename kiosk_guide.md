@@ -83,6 +83,16 @@ get pi_zip.tar.gz
 tar -xvzf /home/pi/work/pi_zip.tar.gz -C /home/pi
 ```
 
+### 다시 압축을 풀 때 디렉토리 구조를 무시하고 현재 경로에만 파일을 풀고 싶다면 다음 명령어를 사용하세요:
+
+```bash
+tar --strip-components=2 -xvzf /home/pi/work/pi_zip.tar.gz -C /home/pi
+```
+
+### --strip-components=2 옵션:
+- 압축 파일 내부 디렉토리 구조에서 상위 디렉토리 두 개를 무시합니다.
+- 이를 통해 /home/pi/home/pi/... 구조 대신 /home/pi/...에 파일이 풀립니다.
+
 
 
 
