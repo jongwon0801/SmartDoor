@@ -65,7 +65,10 @@ cd /home/pi/www/python/
 ```bash
 tar -czvf pi_zip.tar.gz /home/pi/
 ```
-
+- c: 아카이브 생성.
+- z: gzip으로 압축.
+- v: 진행 상황 표시.
+- f: 파일 이름 지정.
 ### sftp 명령어로 압축파일 전송
 ```bash
 mkdir work
