@@ -78,7 +78,12 @@ cd work
 sftp pi@192.168.0.161
 
 get pi_zip.tar.gz
+
+get /home/pi/pi_zip.tar.gz /home/pi
 ```
+- /home/pi/pi_zip.tar.gz: FTP 서버나 원격 시스템에서 다운로드할 파일 경로입니다. 즉, FTP 서버에서 pi_zip.tar.gz 파일을 찾을 위치입니다.
+- /home/pi: 로컬 시스템에서 저장할 경로입니다. 즉, 이 명령은 FTP 서버의 /home/pi/pi_zip.tar.gz 파일을 로컬 시스템의 /home/pi 디렉토리에 다운로드하겠다는 의미입니다.
+
 
 
 ### 라즈베리에 기기 압축해제
