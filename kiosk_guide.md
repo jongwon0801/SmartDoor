@@ -111,6 +111,23 @@ get requirements.txt /home/pi/www/python/
 exit or ctrl + d
 ```
 
+### 가상환경 생성, 활성화, 패키지 설치
+```bash
+python3 -m venv elcsoft
+
+source elcsoft/bin/activate
+
+cd /home/pi/www/python/
+
+pip install -r requirements.txt
+```
+
+### 가상환경 경로 권한부여, 가상환경 디렉토리의 모든 파일 및 디렉토리의 소유자를 pi 사용자로 변경
+```bash
+sudo chmod 777 /home/pi/www/python/elcsoft/
+
+sudo chown -R pi:pi /home/pi/www/python/elcsoft/
+```
 
 
 
