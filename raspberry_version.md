@@ -1,8 +1,18 @@
-### 라즈베리 기기랑 같은 와이파이에 접속
+### iptime 계졍 정보 관리자 페이지
 ```bash
-wikibox/tmshdnxmfl
+2층 wifi
+wikibox  /  wiki0800**
+
+연구실 wikibox_lab
+wikibox  /  tmshdnxmfl
 ```
-### 라즈베리 기기로 원격 접속
+
+### wifi 접속 비밀번호
+```bash
+wikibox  /  10123333
+```
+
+### 키오스크 서버 ssh 접속
 ```bash
 ssh pi@192.168.0.161 / elcsoft
 ```
