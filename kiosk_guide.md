@@ -166,7 +166,6 @@ python /home/pi/python/webserver.py
 
 # tornado.service 파일 검색
 sudo find / -name "webserver.py"
-" 
 ```
 
 
