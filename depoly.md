@@ -1,8 +1,18 @@
-## 위키박스 SSH 접속
+## 위키박스 서버 SSH 접속
 
 서버 접속
 ```bash
 ssh ubuntu@api.hizib.wikibox.kr   # 비밀번호: elcsoft
+```
+
+## 키오스크 서버 SSH 점속
+```bash
+ssh pi@192.168.0.161   # 비밀번호: elcsoft
+```
+
+## 라즈베리4 기기 SSH 점속
+```bash
+ssh pi@192.168.0.50   # 비밀번호: pi
 ```
 
 ubuntu 디렉토리로 이동
