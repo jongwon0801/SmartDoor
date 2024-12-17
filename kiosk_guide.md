@@ -219,6 +219,43 @@ sudo find / -name "webserver.py"
 - webserver.py 파일 내에서 웹 서버를 실행하는 코드가 있을 것으로 추측됩니다. 예를 들어, Tornado, Flask, Django 등의 웹 서버 라이브러리를 사용하여 HTTP 요청을 처리하는 서버 코드가 포함되어 있을 수 있습니다.
 
 
+### 가상환경 설치
+```bash
+pip install virtualenv
+# ls 명령어로 숨겨진 파일 보기
+ls -a
+# find로 특정 경로 숨겨진 파일 찾기
+find /home/pi/ -name ".*"
+
+mkdir -p /home/pi/.virtualenvs/
+```
+
+```bash
+cd /home/pi/.virtualenvs/
+
+pip show virtualenv
+
+which virtualenv
+
+# 위치 : /home/pi/.local/lib/python3.9/site-packages
+
+```
+
+### ~/.bashrc 파일에 PATH 추가
+```bash
+nano ~/.bashrc
+
+# 맨아래줄에 밑에 내용 추가
+export PATH=$PATH:/home/pi/.local/bin
+
+# 변경사항 적용
+source ~/.bashrc
+
+# elcsoft 가상환경 생성
+virtualenv /home/pi/.virtualenvs/elcsoft
+
+# 가상환경 활성화
+source /home/pi/.virtualenvs/elcsoft/bin/activate
 
 
-
+```
