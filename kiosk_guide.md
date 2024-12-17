@@ -257,5 +257,15 @@ virtualenv /home/pi/.virtualenvs/elcsoft
 # 가상환경 활성화
 source /home/pi/.virtualenvs/elcsoft/bin/activate
 
+```
+### virtualenvwrapper 설치
+```bash
+pip install virtualenvwrapper
 
+# virtualenvwrapper 설정
+export WORKON_HOME=~/ .virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=$(which python3)
+source /home/pi/.local/bin/virtualenvwrapper.sh
+
+source ~/.bashrc
 ```
