@@ -11,7 +11,7 @@
 
 
 #### 1. 홈 디렉토리로 이동
-cd ~pi  # pi 사용자의 홈 디렉토리로 이동 (/home/pi)
+- cd ~pi  # pi 사용자의 홈 디렉토리로 이동 (/home/pi)
 
 #### 2. 홈 디렉토리 경로 단축 사용
 - `~/.bashrc`는 실제로 `/home/username/.bashrc`를 가리킵니다.
