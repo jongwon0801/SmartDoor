@@ -54,10 +54,12 @@
 
 ### AC와 DC의 변환
 
-**변압기(Transformer)** 는 AC의 전압을 변경하는 장치로, 교류의 전압을 올리거나 내릴 수 있습니다.
+<div style="background-color: #f0f0f0; padding: 10px; border-radius: 5px;">
+  **변압기(Transformer)**는 AC의 전압을 변경하는 장치로, 교류의 전압을 올리거나 내릴 수 있습니다.
 
-- **DC로 변환:** 교류(AC)를 직류(DC)로 바꾸는 장치는 **정류기(Rectifier)**입니다. 
-- 예를 들어, 전자기기에서 사용하는 USB 어댑터나 충전기는 AC를 DC로 변환하여 제공합니다.
+  **DC로 변환:** 교류(AC)를 직류(DC)로 바꾸는 장치는 **정류기(Rectifier)**입니다.  
+  예를 들어, 전자기기에서 사용하는 USB 어댑터나 충전기는 AC를 DC로 변환하여 제공합니다.
+</div>
   
 #### 결론
 
