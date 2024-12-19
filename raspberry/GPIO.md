@@ -1,3 +1,10 @@
+## GPIO pin guide
+https://fishpoint.tistory.com/7687
+
+<img width="609" alt="image" src="https://github.com/user-attachments/assets/22c0fe48-37e3-481e-a236-2c762ff18770" />
+
+
+
 ## GPIO(General Purpose Input/Output)
 - GPIO(General Purpose Input/Output)는 라즈베리 파이에서 외부 장치와 연결하고 제어하는 데 사용되는 핀들입니다.
 - GPIO 핀은 다양한 입출력 작업을 처리할 수 있어, 라즈베리 파이를 다양한 전자기기와 연결하여 제어할 수 있습니다.
