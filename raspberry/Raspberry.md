@@ -5,7 +5,7 @@ https://www.raspberrypi.com/products/raspberry-pi-4-model-b/
 
 <img width="814" alt="image" src="https://github.com/user-attachments/assets/7c909cbf-0299-4edd-966a-273ae184011e" />
 
-#### GPIO pin guide
+#### GPIO(General Purpose Input/Output) pin guide
 https://fishpoint.tistory.com/7687
 
 #### 15W USB-C 전원 공급 장치 권장
