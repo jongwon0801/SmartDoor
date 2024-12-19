@@ -28,13 +28,13 @@ sudo systemctl status vncserver-x11-serviced.service
 
 **3. VNC Viewer 에서 라즈베리 접속
 
-raspberry 4 : 192.168.0.50
-username : pi
-passwd   : pi
+raspberry 4 : 192.168.0.50<br>
+username : pi<br>
+passwd   : pi<br>
 
-kiosk 서버 : 192.168.0.161
-username : pi
-passwd   : elcsoft
+kiosk 서버 : 192.168.0.161<br>
+username : pi<br>
+passwd   : elcsoft<br>
 
 
 
