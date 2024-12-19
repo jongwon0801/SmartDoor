@@ -5,9 +5,9 @@ https://www.raspberrypi.com/products/raspberry-pi-4-model-b/
 
 ### 전력 공급
 - 15W USB-C power supply
-- 
+
 ---
-# 전압(Voltage), 전류(Current), 전력(Power)의 관계
+
 
 ## 전압 (Voltage, V)
 
