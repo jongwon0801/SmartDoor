@@ -1,7 +1,7 @@
 ## Raspberry PI 3 model B + 
 
 기술 사양
-[[https://www.raspberrypi.com/products/raspberry-pi-4-model-b/](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/)](https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/)
+https://www.raspberrypi.com/products/raspberry-pi-3-model-b-plus/
 
 <img width="436" alt="image" src="https://github.com/user-attachments/assets/0a9aaeb8-7650-4608-899f-df2ad9bc3870" />
 
