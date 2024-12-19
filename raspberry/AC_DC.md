@@ -1,6 +1,6 @@
 ## 교류(AC) 직류(DC) 차이
 
-### **AC (Alternating Current)**와 **DC (Direct Current)**는 전기의 흐름 방식에 따른 두 가지 주요 전류 유형입니다.
+### 'AC (Alternating Current)'와 **DC (Direct Current)**는 전기의 흐름 방식에 따른 두 가지 주요 전류 유형입니다.
 그들의 차이점은 전류가 흐르는 방식에 있습니다.
 ---
 <br>
