@@ -17,6 +17,7 @@ pip install pillow
 cd ~/www/python/
 pip install -r requirements.txt
 
+
 # 캐시삭제
 pip cache purge
 # 삭제
