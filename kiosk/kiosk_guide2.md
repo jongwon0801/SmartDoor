@@ -34,3 +34,27 @@ dbus-fast==2.21.1
 ```bash
 pip install numpy==1.19.5
 ```
+
+### kiosk 서버에서 버젼 txt 파일생성
+```bash
+pip freeze > requirements1.txt
+
+arandr를 수동으로 설치
+
+sudo apt-get install arandr
+
+```
+
+#### 이거 대로 라즈베리에 설치
+```bash
+삭제한 패키지
+arandr==0.1.10
+```
+
+
+
+
+
+
+
+
