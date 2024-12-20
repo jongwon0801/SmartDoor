@@ -1,11 +1,12 @@
-가상환경 활성화
-
+### 가상환경 활성화
+```bash
 source /home/pi/.virtualenvs/elcsoft/bin/activate
 
 # (elcsoft) pi@raspberrypi:~ $
+```
 
-package 설치
-
+### package 설치
+```bash
 pip install requests
 
 pip install pillow
@@ -18,3 +19,5 @@ pip cache purge
 # 삭제
 face-recognition-models==0.3.0
 google-api-python-client==2.114.0
+
+```
