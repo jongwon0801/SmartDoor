@@ -57,6 +57,12 @@ virtualenvwrapper==4.8.4
 pgzero==1.2
 
 picamera2==0.3.12
+
+jedi==0.18.0 -> jedi
+
+mypy==0.812
+(mypy-extensions==0.4.3)생략
+
 ```
 
 
