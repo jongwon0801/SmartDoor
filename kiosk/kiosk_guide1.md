@@ -260,7 +260,10 @@ source /home/pi/.virtualenvs/elcsoft/bin/activate
 ```
 ### virtualenvwrapper 설치
 ```bash
-pip install virtualenvwrapper
+
+# kiosk 버젼
+pip install virtualenvwrapper==4.8.4
+
 
 # virtualenvwrapper 설정
 export WORKON_HOME=~/ .virtualenvs
