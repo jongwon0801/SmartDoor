@@ -37,6 +37,106 @@ pip install sip pyqt5-sip
 sudo apt-get install libsmbclient-dev
 python3 -m pip install pysmbc==1.0.23
 
+4. ERROR: Ignored the following yanked versions: 0.0.0, 0.7.8
+ERROR: Ignored the following versions that require a different python version: 1.9.5 Requires-Python >=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, <3.7; 2.1.0 Requires-Python >=3.10; 2.1.0rc1 Requires-Python >=3.10; 2.1.1 Requires-Python >=3.10; 2.1.2 Requires-Python >=3.10; 2.1.3 Requires-Python >=3.10; 2.2.0 Requires-Python >=3.10; 2.2.0rc1 Requires-Python >=3.10; 2.2.1 Requires-Python >=3.10
+ERROR: Could not find a version that satisfies the requirement python-apt==2.2.1 (from versions: none)
+ERROR: No matching distribution found for python-apt==2.2.1
+
+
+sudo apt-get install python3-apt
+
+
+5. 이 오류는 python-prctl 패키지를 설치하려고 할 때, libcap 개발 헤더가 부족하다는 문제
+Preparing metadata (setup.py) ... error
+  error: subprocess-exited-with-error
+  
+  × python setup.py egg_info did not run successfully.
+  │ exit code: 1
+  ╰─> [1 lines of output]
+      You need to install libcap development headers to build this module
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: metadata-generation-failed
+
+
+sudo apt-get install libcap-dev
+
+6. Collecting pygame<2.0,>=1.9.2 (from pgzero==1.2->-r requirements1.txt (line 56))
+  Using cached pygame-1.9.6.tar.gz (3.2 MB)
+  Preparing metadata (setup.py) ... error
+  error: subprocess-exited-with-error
+  
+  × python setup.py egg_info did not run successfully.
+  │ exit code: 1
+  ╰─> [18 lines of output]
+      
+      
+      WARNING, No "Setup" File Exists, Running "buildconfig/config.py"
+      Using UNIX configuration...
+      
+      Missing dependencies
+      
+      Hunting dependencies...
+      SDL     : found 1.2.15
+      FONT    : not found
+      IMAGE   : not found
+      MIXER   : not found
+      PNG     : found
+      JPEG    : found
+      SCRAP   : found
+      PORTMIDI: not found
+      PORTTIME: not found
+      FREETYPE: found 23.4.17
+
+sudo apt-get install libsdl1.2-dev
+sudo apt-get install libsdl-mixer1.2-dev
+sudo apt-get install libsdl-image1.2-dev
+sudo apt-get install libsdl-ttf2.0-dev
+sudo apt-get install libportmidi-dev
+sudo apt-get install libfreetype6-dev
+
+6. INFO: pip is looking at multiple versions of thonny to determine which version is compatible with other requirements. This could take a while.
+ERROR: Cannot install -r requirements1.txt (line 106) and jedi==0.18.0 because these package versions have conflicting dependencies.
+
+The conflict is caused by:
+    The user requested jedi==0.18.0
+    thonny 4.0.1 depends on jedi>=0.18.1
+
+To fix this you could try to:
+1. loosen the range of package versions you've specified
+2. remove package versions to allow pip to attempt to solve the dependency conflict
+
+ERROR: ResolutionImpossible: for help visit https://pip.pypa.io/en/latest/topics/dependency-resolution/#dealing-with-dependency-conflicts
+
+
+pip install jedi==0.18.0
+pip install thonny==4.0.1
+
+
+7.
+
+pip install pygame==1.9.6
+
+sudo apt install -y build-essential python3-dev libffi-dev libjpeg-dev libfreetype6-dev libsdl1.2-dev libportmidi-dev libasound2-dev
+
+sudo apt install python3-rpi.gpio
+pip install pycups
+pip install RTIMULib
+
+sudo apt install libcups2-dev
+
+pip install pycups
+
+sudo apt install libboost-all-dev
+
+sudo apt install cmake
+
+pip install RPi.GPIO
+
+sudo apt install python3-rpi.gpio
+
+python3 -m pip install --upgrade pip setuptools wheel
 
 
 
