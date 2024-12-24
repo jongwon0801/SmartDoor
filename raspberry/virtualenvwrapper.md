@@ -1,10 +1,11 @@
-# `source /usr/share/virtualenvwrapper/virtualenvwrapper.sh`를 
-`~/.profile` 파일의 마지막에 추가하는 이유
+### `source /usr/share/virtualenvwrapper/virtualenvwrapper.sh`를 
+### `~/.profile` 파일의 마지막에 추가하는 이유
 
+```bash
 `virtualenvwrapper`는 Python의 가상 환경을 관리하는 도구입니다. 
 `source /usr/share/virtualenvwrapper/virtualenvwrapper.sh` 명령어를 `~/.profile` 파일의 마지막에 추가하는 이유는, 
 이 명령어를 통해 가상 환경 관련 명령어들을 사용할 수 있도록 설정해주기 때문입니다.
-
+```
 ## 이유
 
 ### 1. 전역 설정 적용
