@@ -1,3 +1,7 @@
+<img width="506" alt="image" src="https://github.com/user-attachments/assets/018b28a1-6433-44dd-a9a8-388974db7613" />
+<img width="407" alt="image" src="https://github.com/user-attachments/assets/12465df3-a494-427a-a6c4-1257678fbadd" />
+
+
 ### `source /usr/share/virtualenvwrapper/virtualenvwrapper.sh`를 
 ### `~/.profile` 파일의 마지막에 추가하는 이유
 
