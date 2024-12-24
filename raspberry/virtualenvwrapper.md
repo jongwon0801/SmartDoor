@@ -1,5 +1,6 @@
 <img width="506" alt="image" src="https://github.com/user-attachments/assets/018b28a1-6433-44dd-a9a8-388974db7613" /><br>
-<img width="407" alt="image" src="https://github.com/user-attachments/assets/12465df3-a494-427a-a6c4-1257678fbadd" />
+<img width="413" alt="image" src="https://github.com/user-attachments/assets/a649e837-2528-4a83-90c3-d3090b1f7a79" />
+
 
 
 ### `source /usr/share/virtualenvwrapper/virtualenvwrapper.sh`를 
