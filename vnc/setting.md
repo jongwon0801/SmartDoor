@@ -26,7 +26,7 @@ sudo systemctl status vncserver-x11-serviced.service
 ```
 <img width="253" alt="image" src="https://github.com/user-attachments/assets/d767de0b-f65a-49f8-b6d5-0f49c188c1eb" />
 
-3. VNC Viewer 에서 라즈베리 접속
+**3. VNC Viewer 에서 라즈베리 접속**
 
 raspberry 4 : 192.168.0.50<br>
 username : pi<br>
