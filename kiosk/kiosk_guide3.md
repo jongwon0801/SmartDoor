@@ -138,6 +138,49 @@ sudo apt install python3-rpi.gpio
 
 python3 -m pip install --upgrade pip setuptools wheel
 
+8. 위 오류 메시지는 pip가 설치된 패키지의 종속성을 해결하는 과정에서 충돌이 발생했음을 나타냅니다. 이 경우, virtualenv 패키지가 특정 버전의 distlib과 filelock을 필요로 하지만, 현재 설치된 버전이 요구사항과 맞지 않다는 문제를 지적하고 있습니다.
+
+
+
+pip install --upgrade virtualenv
+
+pip install --upgrade distlib filelock
+
+9.
+1. 필수 라이브러리 설치
+sudo apt-get update
+sudo apt-get install -y python3-dev libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev libsmpeg-dev libportmidi-dev libavformat-dev libswscale-dev libfreetype6-dev
+
+2. pip 업그레이드
+pip install --upgrade pip setuptools wheel
+
+3. pygame 바이너리 설치 (권장)
+
+pip install pygame --pre
+
+4.pygame의 소스를 직접 클론하여 빌드하세요.
+
+git clone https://github.com/pygame/pygame.git
+cd pygame
+
+-m 옵션 설명
+python -m은 Python 명령어에서 특정 모듈을 스크립트처럼 실행할 때 사용하는 옵션입니다.
+즉, Python 표준 라이브러리나 설치된 패키지의 모듈을 실행할 때 유용합니다.
+python -m pip install cython
+
+환경 간 구분: 특정 Python 인터프리터에서 모듈을 실행하고자 할 때.
+예: 시스템에 Python 2와 Python 3가 공존하는 경우
+
+python3 -m pip install package_name
+PATH 설정 불필요: pip가 시스템 PATH에 등록되지 않았더라도 Python 경로에서 실행 가능.
+
+예:
+python -m venv myenv
+
+python3 setup.py build
+python3 setup.py install
+
+
 
 
 
