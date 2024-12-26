@@ -43,7 +43,7 @@ find / -name "cv2*.so"
 
 #### numpy, opencv 설치 명령어
 ```bash
-
+pip 캐시를 사용하지 않도록 하고, 패키지를 새로 다운로드하여 설치
 pip install numpy --no-cache-dir
 
 pip install opencv-python==4.9.0.80
@@ -57,6 +57,11 @@ pip cache purge
 
 #### pi@192.168.0.161 / elcsoft (kiosk) 버젼 확인 후 설치
 ```bash
+
+pip 캐시를 사용하지 않도록 하고, 패키지를 새로 다운로드하여 설치
+pip install opencv-python==4.9.0.80 --no-cache-dir
+
+특정 버젼 설치
 pip install opencv-python==4.9.0.80
 
 Raspberry Pi 환경에서는 최신 버전 대신 안정적인 이전 버전을 사용하는 것이 좋습니다.
