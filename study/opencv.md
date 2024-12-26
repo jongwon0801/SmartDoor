@@ -51,6 +51,8 @@ print(np.__version__)
 ```bash
 pip 캐시를 사용하지 않도록 하고, 패키지를 새로 다운로드하여 설치
 pip install numpy --no-cache-dir
+pip install numpy==1.19.3 -i https://pypi.org/simple
+
 
 pip install opencv-python==4.9.0.80
 
