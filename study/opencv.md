@@ -42,7 +42,7 @@ find / -name "cv2*.so"
 ```
 #### Python 인터프리터에서 numpy version 확인
 
-```bash
+```python
 import numpy as np
 print(np.__version__)
 ```
