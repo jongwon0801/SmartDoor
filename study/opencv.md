@@ -17,3 +17,38 @@ print(cv2.__version__)
 ModuleNotFoundError: No module named 'cv2'
 
 ```
+
+#### pip list로 확인
+```bash
+pip list | grep opencv
+
+opencv-contrib-python 4.10.0.84
+opencv-python         4.10.0.84
+```
+
+#### pip show로 특정 패키지 확인
+```bash
+pip show opencv-python
+
+Name: opencv-python
+Version: 4.10.0.84
+```
+#### 파일 시스템에서 확인 (설치된 경로에서 직접 확인)
+
+```bash
+find / -name "cv2*.so"
+```
+#### opencv 설치 명령어
+```bash
+pip install opencv-python==4.9.0
+
+```
+
+#### cash 삭제
+```bash
+pip cache purge
+```
+
+
+
+
