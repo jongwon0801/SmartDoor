@@ -40,6 +40,12 @@ Version: 4.9.0
 ```bash
 find / -name "cv2*.so"
 ```
+#### Python 인터프리터에서 numpy version 확인
+
+```bash
+import numpy as np
+print(np.__version__)
+```
 
 #### numpy, opencv 설치 명령어
 ```bash
