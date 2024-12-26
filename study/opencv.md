@@ -22,6 +22,7 @@ ModuleNotFoundError: No module named 'cv2'
 ```bash
 pip list | grep opencv
 
+ex)
 opencv-contrib-python 4.10.0.84
 opencv-python         4.10.0.84
 ```
@@ -30,8 +31,9 @@ opencv-python         4.10.0.84
 ```bash
 pip show opencv-python
 
+ex)
 Name: opencv-python
-Version: 4.10.0.84
+Version: 4.9.0
 ```
 #### 파일 시스템에서 확인 (설치된 경로에서 직접 확인)
 
@@ -49,6 +51,10 @@ pip install opencv-python==4.9.0
 pip cache purge
 ```
 
+#### pi@192.168.0.161 / elcsoft (kiosk) 버젼 확인 후 설치
+```bash
+pip install opencv-python==4.9.0.80
 
-
+Raspberry Pi 환경에서는 최신 버전 대신 안정적인 이전 버전을 사용하는 것이 좋습니다.
+```
 
