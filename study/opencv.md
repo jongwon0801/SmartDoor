@@ -40,10 +40,12 @@ Version: 4.9.0
 ```bash
 find / -name "cv2*.so"
 ```
-#### opencv 설치 명령어
+
+#### numpy, opencv 설치 명령어
 ```bash
 
-pip install numpy==1.19.5
+pip install numpy --no-cache-dir
+
 pip install opencv-python==4.9.0.80
 
 ```
