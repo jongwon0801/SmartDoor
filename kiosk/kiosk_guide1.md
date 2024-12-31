@@ -39,7 +39,7 @@ sudo bash -c 'pip freeze > /home/pi/www/python/requirements.txt'
 ls -l /home/pi/www/python/requirements.txt
 ```
 
-### pyhon 폴더로 이동, git clone
+### python 폴더로 이동, git clone
 ```bash
 cd /home/pi/www/python/
 
