@@ -31,6 +31,11 @@ source ~/.profile  # 또는 source ~/.bashrc / source ~/.zshrc
 변경 사항을 영구적으로 적용하려면:
 
 sudo reboot
+
+가상 환경들이 저장될 디렉터리를 정의, 환경 변수가 설정된 경로를 출력하는 명령
+
+echo $WORKON_HOME  WORKON_HOME 
+
 ```
 ## 4. 가상 환경 생성 및 활성화
 ```bash
