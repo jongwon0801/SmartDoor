@@ -34,6 +34,8 @@ pip install gpiozero
 
 pip install python-vlc
 
+pip install lgpio
+
 ## 이후 기기 없어서 에러
 
 nano ~/www/python/pir_outside.py -> pir_outside_fix.py
