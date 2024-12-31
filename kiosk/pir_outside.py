@@ -1,4 +1,6 @@
 # # pir 센서에 기기가 등록 안되어있어서 에러
+# nano ~/www/python/pir_outside.py
+
 
 # # 경로 검색
 # find /home/pi/www/python -name "pir_outside.py"
