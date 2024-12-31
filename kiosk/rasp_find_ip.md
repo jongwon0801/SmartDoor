@@ -10,9 +10,7 @@ wikibox  /  tmshdnxmfl
 ```
 <img width="637" alt="image" src="https://github.com/user-attachments/assets/927521bb-edb2-4234-841b-d2c09a621737" />
 
-
-### 2. 
-# 라즈베리 파이가 네트워크에 연결된 경우, 다른 장치에서 라즈베리 파이를 raspberrypi.local로 핑 테스트를 하면 IP를 알 수 있습니다.
+### 2. 라즈베리 파이가 네트워크에 연결된 경우, 다른 장치에서 라즈베리 파이를 raspberrypi.local로 핑 테스트를 하면 IP를 알 수 있습니다.
 ```bash
 ping raspberrypi.local
 
