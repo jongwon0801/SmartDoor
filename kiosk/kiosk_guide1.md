@@ -202,6 +202,7 @@ sudo find / -name "webserver.py"
 ```
 
 ### /home/pi/shell/tornado.sh 
+- /lib/systemd/system/tornado.service 서비스 파일로 webserver.py 를 실행하기 위해 sh 만듬
 ```bash
 /home/pi/.virtualenvs/elcsoft/bin/python /home/pi/www/python/webserver.py
 ```
