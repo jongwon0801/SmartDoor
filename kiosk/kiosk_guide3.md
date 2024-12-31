@@ -35,7 +35,7 @@ chromium은 Chromium 브라우저의 실행 파일 이름입니다. 이 명령�
 
 #### cd ~/.config/chromium/:
 
-cd 명령은 "change directory"의 약어로, 현재 작업 디렉터리를 변경하는 명령입니다.
+- cd 명령은 "change directory"의 약어로, 현재 작업 디렉터리를 변경하는 명령입니다.
 ~/.config/chromium/은 Chromium 브라우저의 사용자 설정 및 상태 파일들이 저장된 디렉터리입니다. 이 디렉터리로 이동하여 Chromium과 관련된 설정 파일들을 조작할 수 있습니다.
 
 #### rm -f SingletonLock:
