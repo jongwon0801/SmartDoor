@@ -201,7 +201,7 @@ python /home/pi/python/webserver.py
 sudo find / -name "webserver.py"
 ```
 
-### 가상환경 hizib에 있는거
+### /home/pi/shell/tornado.sh 
 ```bash
 /home/pi/.virtualenvs/elcsoft/bin/python /home/pi/www/python/webserver.py
 ```
