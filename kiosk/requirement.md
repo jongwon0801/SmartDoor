@@ -1,3 +1,19 @@
+### 가상환경 활성화
+```bash
+source /home/pi/.virtualenvs/elcsoft/bin/activate
+
+# 가상환경 비활성화
+deactivate
+
+# (elcsoft) pi@raspberrypi:~ $
+```
+
+### kiosk 서버에서 버젼 txt 파일생성(의존성 패키지는 따로 설치안함)
+```bash
+pip freeze > requirements1.txt
+```
+
+
 #### 의존성 패키지 제거
 
 ```bash
