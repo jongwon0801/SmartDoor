@@ -68,6 +68,19 @@ pyOpenSSL==20.0.1
 pylint==2.7.2
 pyqt5==5.15.2
 
+```
+
+### tornado 실행
+```bash
+
+# 필요 패키지 설치
+
+pip install Pillow
+
+sudo systemctl daemon-reload
+sudo systemctl restart tornado.service
+sudo systemctl status tornado.service
+
 
 ```
 
