@@ -5,7 +5,7 @@ pip3 install firebase-admin
 
 ```
 
-### qrcode 모듈 설치
+### 필요 모듈 설치
 
 ```bash
 pip install qrcode
