@@ -1,3 +1,5 @@
+# nano /home/pi/www/python/elcsoft/controller/smartdoor.py 수정
+
 # 기기 관련 코드 제거
 # setBle() 함수, joinProcess(), syncProcess() 등의 기기와 연동되는 부분을 제거 또는 주석 처리
 
