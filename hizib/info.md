@@ -7,16 +7,15 @@ JongWon CHOI
 이메일 cjw@wikibox.kr
 Chlwlgh123!
 
-하이집ssh
+하이집 서버 ssh
 ssh ubuntu@api.hizib.wikibox.kr   # 비밀번호: elcsoft
-키오스크 ssh
+
+키오스크 서버 ssh
 ssh pi@192.168.0.161   # 비밀번호: elcsoft
+
 라즈베리4 기기 ssh
-ssh pi@192.168.0.50   # 비밀번호: pi
-
-스마트 도어 서버
-192.168.0.161 pi/elcsoft
-
+ssh pi@192.168.0.50   # 비밀번호: pi  192.168.0.1 network
+ssh pi@192.168.1.14   # 비밀번호: pi  192.168.1.1 network
 
 
 Iptime 관리자 계정
@@ -31,19 +30,12 @@ wikibox/tmshdnxmfl
 Wikibox 와이파이 비번
 10123333
 
-새로 연결한 라즈베리파이 주소
-pi@192.168.1.14
-
-비밀번호 pi
-
 안드로이드 태블릿 비밀번호
 093100
 
 샤오미 비밀번호
 00000
 
-iptime 비밀번호
-wikibox/wiki0800**
 
 투야 smart life
 choijong0801@naver.com
