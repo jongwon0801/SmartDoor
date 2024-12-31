@@ -1,10 +1,9 @@
-(* ### pir 센서에 기기가 등록 안되어있어서 에러
+### pir 센서에 기기가 등록 안되어있어서 에러
 
 #### 경로 검색
-```bash
 find /home/pi/www/python -name "pir_outside.py"
 
-``` *)
+--> /home/pi/www/python/pir_outside.py
 
 # -*- coding: utf-8 -*-
 import lib
