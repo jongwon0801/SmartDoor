@@ -11,8 +11,6 @@ deactivate
 ### kiosk 서버에서 버젼 txt 파일생성
 ```bash
 pip freeze > requirements1.txt
-
-
 ```
 
 ### package 설치 requirement.txt kiosk에 설치된거
