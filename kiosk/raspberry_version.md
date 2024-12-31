@@ -1,9 +1,9 @@
-### iptime 계졍 정보 관리자 페이지
+### iptime 관리자 페이지
 ```bash
-2층 wifi
+wikibox 192.168.0.1
 wikibox  /  wiki0800**
 
-연구실 wikibox_lab
+wikibox_lab 192.168.1.1
 wikibox  /  tmshdnxmfl
 ```
 
