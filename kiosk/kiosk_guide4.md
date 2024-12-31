@@ -40,19 +40,12 @@ nano ~/www/python/pir_outside.py -> pir_outside_fix.py
 
 nano /home/pi/www/python/elcsoft/controller/smartdoor.py -> smartdoor_fix.py
 
-
-
-
-
-
-
-
-
-
-
 ```
 
+### wikismartdoor.py 파일에서 syncDataAll() 메소드 내의 syncProcess 호출을 제거
+<img width="485" alt="image" src="https://github.com/user-attachments/assets/63327ff3-38b3-4e53-bb03-09072a7fdc07" />
 
+<img width="566" alt="image" src="https://github.com/user-attachments/assets/d2054597-2d6c-497d-9502-840a6b6e2ba6" />
 
 
 
