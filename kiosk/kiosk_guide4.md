@@ -42,6 +42,9 @@ nano ~/www/python/pir_outside.py -> pir_outside_fix.py
 
 nano /home/pi/www/python/elcsoft/controller/smartdoor.py -> smartdoor_fix.py
 
+sudo lsof -i :8080 포트 충돌시 확인 후 강제종료
+sudo kill 1107 / nano webserver.py -> app.listen(8080) 포트 변경
+
 ```
 
 ### wikismartdoor.py 파일에서 syncDataAll() 메소드 내의 syncProcess 호출을 제거
