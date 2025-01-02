@@ -20,7 +20,7 @@ sudo Xorg -configure
 
 cat /var/log/Xorg.1.log
 
-
+/etc/X11/xorg.conf
 
 
 
