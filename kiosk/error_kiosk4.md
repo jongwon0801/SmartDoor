@@ -10,6 +10,8 @@ sudo nano /lib/systemd/system/tornado.service
 
 sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
 
+chromium-browser --kiosk --autoplay-policy=no-user-gesture-required --check-for-update-interval=31536000 http://127.0.0.1
+
 
 크롬 실행
 chromium-browser --kiosk --no-sandbox --disable-gpu http://127.0.0.1
