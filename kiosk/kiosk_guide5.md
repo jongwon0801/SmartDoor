@@ -9,7 +9,7 @@ sudo systemctl start tornado.service
 sudo systemctl status tornado.service 
 
 
-# tornado.service 
+# tornado.service / restart 부분은 guide1 이랑 변경함
 [Unit]
 Description=TornadoWebserver
 
