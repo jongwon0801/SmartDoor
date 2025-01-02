@@ -2,11 +2,17 @@
 
 ```bash
 
+python /home/pi/python/webserver.py
+
+/home/pi/shell/tornado.sh
+
+sudo nano /lib/systemd/system/tornado.service
+
+sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+
 
 크롬 실행
 chromium-browser --kiosk --no-sandbox --disable-gpu http://127.0.0.1
-
-sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
 
 sudo nano ~/.xsession-errors
 
