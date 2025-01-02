@@ -22,7 +22,7 @@ sudo nano /etc/hosts
 ff02::1         ip6-allnodes
 ff02::2         ip6-allrouters
 
-127.0.1.1               raspberrypi
+127.0.1.1       raspberrypi
 125.209.200.159 server
 
 ```
