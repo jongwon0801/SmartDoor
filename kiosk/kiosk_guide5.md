@@ -14,7 +14,7 @@ sudo systemctl status tornado.service
 Description=TornadoWebserver
 
 [Service]
-ExecStart=/home/pi/shell/tornado.sh
+ExecStart=/home/pi/www/shell/tornado.sh
 Restart=on-failure
 User=pi
 Group=pi
