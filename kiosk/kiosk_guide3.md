@@ -3,12 +3,11 @@
 ```bash
 sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
 
-
 @lxpanel --profile LXDE-pi
 @pcmanfm --desktop --profile LXDE-pi
 @xscreensaver -no-splash
 
-@chromium-browser --kiosk --autoplay-policy=no-user-gesture-required --check-fo>
+@chromium-browser --kiosk --autoplay-policy=no-user-gesture-required --check-for-update-interval=31536000 http://127.0.0.1
 #@chromium-browser http://127.0.0.1
 
 ```
