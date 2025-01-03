@@ -35,9 +35,6 @@ sudo nano /boot/config.txt
 
 
 
-# 필요 패키지 설치
-
-pip install Pillow
 
 sudo systemctl daemon-reload
 
