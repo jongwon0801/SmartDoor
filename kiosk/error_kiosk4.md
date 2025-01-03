@@ -31,29 +31,7 @@ cat /var/log/Xorg.1.log
 /etc/X11/xorg.conf
 
 
-
-
-
 sudo nano /boot/config.txt
-
-[all]
-# 기존 설정들...
-
-# HDMI 출력 강제 설정
-hdmi_force_hotplug=1
-hdmi_drive=2
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ```
