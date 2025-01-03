@@ -1,92 +1,39 @@
-# For more options and information see
-# http://rpf.io/configtxt
-# Some settings may impact device functionality. See link above for details
-
-# uncomment if you get no picture on HDMI for a default "safe" mode
-#hdmi_safe=1
-
-# uncomment the following to adjust overscan. Use positive numbers if console
-# goes off screen, and negative if there is too much border
-#overscan_left=16
-#overscan_right=16
-#overscan_top=16
-#overscan_bottom=16
-
-# uncomment to force a console size. By default it will be display's size minus
-# overscan.
-#framebuffer_width=1280
-#framebuffer_height=720
-
-# uncomment if hdmi display is not detected and composite is being output
-hdmi_force_hotplug:0=1
-
-# uncomment to force a specific HDMI mode (this will force VGA)
-#hdmi_group=1
-#hdmi_mode=1
-
-# uncomment to force a HDMI mode rather than DVI. This can make audio work in
-# DMT (computer monitor) modes
-hdmi_drive=2
-
-# uncomment to increase signal to HDMI, if you have interference, blanking, or
-# no display
-#config_hdmi_boost=4
-
-# uncomment for composite PAL
-#sdtv_mode=2
-
-#uncomment to overclock the arm. 700 MHz is the default.
-#arm_freq=800
-
-# Uncomment some or all of these to enable the optional hardware interfaces
-#dtparam=i2c_arm=on
-#dtparam=i2s=on
-#dtparam=spi=on
-
-# Uncomment this to enable infrared communication.
-#dtoverlay=gpio-ir,gpio_pin=17
-#dtoverlay=gpio-ir-tx,gpio_pin=18
-
-# Additional overlays and parameters are documented /boot/overlays/README
-
-# Enable audio (loads snd_bcm2835)
-dtparam=audio=on
-
-# Automatically load overlays for detected cameras
-camera_auto_detect=1
-
-# Automatically load overlays for detected DSI displays
-display_auto_detect=1
-
-# Enable DRM VC4 V3D driver
-dtoverlay=vc4-kms-v3d
-max_framebuffers=2
-
-# Run in 64-bit mode
-arm_64bit=1
-
-# Disable compensation for displays with overscan
-disable_overscan=1
-
-[cm4]
-# Enable host mode on the 2711 built-in XHCI USB controller.
-# This line should be removed if the legacy DWC2 controller is required
-# (e.g. for USB device mode) or if USB support is not required.
-otg_mode=1
-
-[all]
-
-[pi4]
-# Run as fast as firmware / board allows
-arm_boost=1
-
-[all]
-gpu_mem=128
-
-#enable_uart=1
-#dtoverlay=uart0
-#dtoverlay=uart1
-#dtoverlay=uart2
-#dtoverlay=uart3
-#dtoverlay=uart4
-dtoverlay=uart5
+{
+  "db": {"type": "pymysql", "host": "127.0.0.1", "port": 3306, "name": "hizib", "user": "root", "passwd": "dnlzlqkrtm", "charset": "utf8", "autocommit": true}, 
+  "mqtt": {"host": "13.124.155.19", "port": 1883, "username": "hizib", "passwd": "dnlzlqkrtm"}, 
+  "pir_inside": {"pin": 25, "times": 30, "isDoorcloserSafeMode": false}, 
+  "pir_outside": {"device":"/dev/ttyUSB_PIR", "times":20, "isDoorcloserSafeMode": false}, 
+  "doorcloser": {"pin": 23, "safe_pin": 24, "checktimes": 0, "delaytime": 0.2, "isUse": false, "file":"/home/pi/www/sound/open_g10.wav"}, 
+  "doorlock": "/dev/hione",
+  "doorbell": {"player": "vlcPlayer","count": 3, "file": "/home/pi/www/sound/bell.wav"},
+  "dooropend": {"player": "vlcPlayer", "file": "/home/pi/www/sound/open_g10.wav"},
+  "accessKey": "WIKI Smartdoor", 
+  "face": {"path": "/home/pi/www/image/user/", "dataset": "/home/pi/www/python/face.json", "times": 5, "picture": "/home/pi/www/image/user"}, 
+  "faceLogin": {"times": 15, "gap": 2, "isUse": false, "isDoorOpen":false},
+  "faceDoorOpen": {"times": 5, "gap": 2, "isUse": true},
+  "record": {"path": "/home/pi/www/vod", "isUse": false},
+  "isUseQrDoorOpen": true, 
+  "isUseFaceLogin": true, 
+  "isUseFaceDoorOpen": true, 
+  "isUseRecord": false, 
+  "outsideCamDeviceName": "USB 4K Live Camera", 
+  "outsideMicDeviceName": "USB 4K Live Camera", 
+  "outsideSpeakerDeivceName": "USB Audio Device", 
+  "insideCamDeviceName": "HD Camera", 
+  "insideSpeakerDeviceName": "",
+  "insideSpeakerDevice": {"player":"vlcPlayer", "device":"hdmi:CARD=vc4hdmi0,DEV=0", "aout":"pulse"},
+  "outsideSpeakerDevice": {"player":"vlcPlayer", "device":"iec958:CARD=Device,DEV=0", "aout":""},
+  "screen":30, 
+  "isShowInsideCam": false, 
+  "isShowOutsideCam": false,
+  "isShowInsidePicture": false, 
+  "isShowOutsidePicture": false, 
+  "isUseCursor": false, 
+  "isUseLamp": true, 
+  "isUseGas": true, 
+  "isUseEv": true, 
+  "isUseGas": true, 
+  "isUserMirror": true, 
+  "isUseBus":true, "busRefresh":60,  "busStopes":["93583","93582"], 
+  "isUseTts":true, "tts":{ "lang":"ko-KR", "volume":1, "rate":1, "path":"/home/pi/www/tts/","player":"vlcPlayer"}
+}
