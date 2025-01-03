@@ -3,6 +3,11 @@
 ssh pi@192.168.0.161
 ```
 
+### 접속 가능한 라즈베리 기기 아이피 찾기
+```bash
+ping raspberrypi.local
+```
+
 ### mariadb 설치
 
 ```bash
