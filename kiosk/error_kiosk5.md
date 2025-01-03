@@ -53,12 +53,14 @@ sudo reboot
 
 ```
 
-#### 주석 해제 greeter-session=pi-greeter
+#### sudo nano /etc/lightdm/lightdm.conf
+
+- 주석 해제 greeter-session=pi-greeter
 
 <img width="186" alt="image" src="https://github.com/user-attachments/assets/fa3a7a4d-7b89-40db-8e2e-c0c425c4b42f" />
 
 
-
+/usr/share/dispsetup.sh
 
 
 
