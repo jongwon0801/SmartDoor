@@ -32,8 +32,21 @@ server {
 }
 
 
+```
 
+### nginx 재시작
+
+```bash
+
+sudo systemctl reload nginx
 
 
 
 ```
+
+
+
+
+
+
+
