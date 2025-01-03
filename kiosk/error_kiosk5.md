@@ -59,9 +59,26 @@ sudo reboot
 
 <img width="186" alt="image" src="https://github.com/user-attachments/assets/fa3a7a4d-7b89-40db-8e2e-c0c425c4b42f" />
 
+```bash
 
-/usr/share/dispsetup.sh
+# 설정 추가
+/usr/share/dispsetup.sh 
 
+#!/bin/sh
+if ! raspi-config nonint is_pi || raspi-config nonint is_kms ; then
+if xrandr --output HDMI-1 --primary --mode 1920x1080 --rate 60.000 --pos 0x0 --rotate left --output HDMI-2 --off --dryrun ; then 
+xrandr --output HDMI-1 --primary --mode 1920x1080 --rate 60.000 --pos 0x0 --rotate left --output HDMI-2 --off
+fi
+fi
+if [ -e /usr/share/tssetup.sh ] ; then
+. /usr/share/tssetup.sh
+fi
+if [ -e /usr/share/ovscsetup.sh ] ; then
+. /usr/share/ovscsetup.sh
+fi
+exit 0
+
+```
 
 
 
