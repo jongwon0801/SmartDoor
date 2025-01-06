@@ -96,6 +96,39 @@ server {
 }
 
 ```
+```bash
+
+1. listen 80;
+Nginx가 HTTP 프로토콜을 사용하여 80번 포트에서 요청을 수신하도록 설정합니다. 이는 웹 서버가 기본적으로 사용하는 포트입니다.
+
+2. server_name 127.0.0.1 localhost;
+서버의 이름을 지정합니다. 여기서는 127.0.0.1 (로컬호스트 IP 주소)와 localhost로 설정되어 있습니다. 이를 통해 서버가 이 이름들로 접근되는 요청을 처리합니다.
+
+3. charset utf-8;
+서버가 처리하는 모든 응답에 대해 UTF-8 문자 인코딩을 사용하도록 지정합니다. 이는 웹 페이지에서 다양한 언어의 문자를 올바르게 표시할 수 있게 합니다.
+
+4. location / { ... }
+/ 경로에 대한 요청을 처리하는 설정입니다. 기본적으로 요청된 파일을 /home/pi/www 디렉터리에서 찾고, index.html 또는 index.htm 파일을 기본 페이지로 제공합니다.
+즉, 웹 브라우저에서 http://127.0.0.1/로 접근하면 해당 디렉터리에 있는 기본 파일을 반환합니다.
+
+5. location ^~ /ws/ { ... }
+/ws/로 시작하는 경로에 대한 요청을 처리하는 설정입니다. 여기서는 WebSocket 프로토콜을 처리하려는 것으로 보입니다.
+rewrite ^/ws/(.*)$ /ws/$1 break;: /ws/ 이후의 경로를 그대로 유지하면서 리다이렉트합니다.
+proxy_pass http://127.0.0.1:8080/ws/$1;: /ws/로 시작하는 요청을 로컬 서버의 8080번 포트로 전달합니다.
+이를 통해 Nginx가 WebSocket 서버와의 프록시 역할을 하게 됩니다.
+proxy_http_version 1.1;, proxy_set_header upgrade $http_upgrade;, proxy_set_header Connection "upgrade";: WebSocket 연결이 성공적으로 이루어지도록 필요한 HTTP 헤더를 설정합니다. WebSocket은 HTTP/1.1을 사용하며, upgrade 헤더가 필요합니다.
+proxy_set_header Host $host;: 요청 헤더의 Host 값을 원래의 요청과 동일하게 설정합니다. 이는 백엔드 서버가 요청을 올바르게 처리할 수 있도록 돕습니다.
+
+6. error_page 500 502 503 504 /50x.html;
+서버에서 500번대 에러가 발생했을 때 사용자에게 보여줄 페이지를 설정합니다. 이 경우, 서버 오류 페이지가 /50x.html로 설정됩니다.
+location = /50x.html { root /usr/share/nginx/html; }: 이 페이지를 /usr/share/nginx/html 디렉터리에서 찾습니다.
+
+요약
+이 Nginx 설정은 HTTP 요청과 WebSocket 요청을 처리하는 웹 서버를 설정한 것입니다. 기본적으로 로컬에서 서비스되는 웹 페이지를 제공하며, /ws/로 시작하는 요청은 로컬의 8080번 포트로 전달하여 WebSocket 연결을 처리합니다. 추가적으로 500번대 오류가 발생했을 때 사용자에게 오류 페이지를 보여주는 설정도 포함되어 있습니다.
+
+
+```
+
 
 ### 디렉토리 생성
 지정한 경로(/home/pi/www)가 없다면 먼저 디렉토리를 생성해야 합니다.
