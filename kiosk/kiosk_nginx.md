@@ -116,7 +116,10 @@ Nginx가 HTTP 프로토콜을 사용하여 80번 포트에서 요청을 수신�
 rewrite ^/ws/(.*)$ /ws/$1 break;: /ws/ 이후의 경로를 그대로 유지하면서 리다이렉트합니다.
 proxy_pass http://127.0.0.1:8080/ws/$1;: /ws/로 시작하는 요청을 로컬 서버의 8080번 포트로 전달합니다.
 이를 통해 Nginx가 WebSocket 서버와의 프록시 역할을 하게 됩니다.
-proxy_http_version 1.1;, proxy_set_header upgrade $http_upgrade;, proxy_set_header Connection "upgrade";: WebSocket 연결이 성공적으로 이루어지도록 필요한 HTTP 헤더를 설정합니다. WebSocket은 HTTP/1.1을 사용하며, upgrade 헤더가 필요합니다.
+
+proxy_http_version 1.1;, proxy_set_header upgrade $http_upgrade;,
+proxy_set_header Connection "upgrade";: WebSocket 연결이 성공적으로 이루어지도록 필요한 HTTP 헤더를 설정합니다.
+WebSocket은 HTTP/1.1을 사용하며, upgrade 헤더가 필요합니다.
 proxy_set_header Host $host;: 요청 헤더의 Host 값을 원래의 요청과 동일하게 설정합니다. 이는 백엔드 서버가 요청을 올바르게 처리할 수 있도록 돕습니다.
 
 6. error_page 500 502 503 504 /50x.html;
@@ -124,7 +127,9 @@ proxy_set_header Host $host;: 요청 헤더의 Host 값을 원래의 요청과 �
 location = /50x.html { root /usr/share/nginx/html; }: 이 페이지를 /usr/share/nginx/html 디렉터리에서 찾습니다.
 
 요약
-이 Nginx 설정은 HTTP 요청과 WebSocket 요청을 처리하는 웹 서버를 설정한 것입니다. 기본적으로 로컬에서 서비스되는 웹 페이지를 제공하며, /ws/로 시작하는 요청은 로컬의 8080번 포트로 전달하여 WebSocket 연결을 처리합니다. 추가적으로 500번대 오류가 발생했을 때 사용자에게 오류 페이지를 보여주는 설정도 포함되어 있습니다.
+이 Nginx 설정은 HTTP 요청과 WebSocket 요청을 처리하는 웹 서버를 설정한 것입니다.
+기본적으로 로컬에서 서비스되는 웹 페이지를 제공하며, /ws/로 시작하는 요청은 로컬의 8080번 포트로 전달하여 WebSocket 연결을 처리합니다.
+추가적으로 500번대 오류가 발생했을 때 사용자에게 오류 페이지를 보여주는 설정도 포함되어 있습니다.
 
 
 ```
