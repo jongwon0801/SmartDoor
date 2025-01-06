@@ -92,7 +92,8 @@ get kiosk.tar.gz
 
 get /home/pi/kiosk.tar.gz /home/pi
 ```
-# 디렉토리 구조 무시하고 현재 경로에 압축해제
+
+### 디렉토리 구조 무시하고 현재 경로에 압축해제
 - tar --strip-components=2 -xvzf /home/pi/work/kiosk.tar.gz -C /home/pi
 
 ### 7. 라즈베리 파이의 디스플레이 설정은 config.txt 파일에서 조정할 수 있습니다. 이 파일은 라즈베리 파이의 부팅 시 시스템 설정을 적용
@@ -108,9 +109,7 @@ ps aux | grep ibus
 
 ```
 
-### 9. 화면 보호기 끄기
-
-
+### 9. 화면 보호기 끄기, 터치 민감도 설정
 
 
 
@@ -122,14 +121,70 @@ ps aux | grep ibus
 
 
 
-
-
-
-### 11. tty alias 설정
+### 11. tty usb 연결 설정
 
 
 
 
+
+### 12. tornado 설치, 실행
+
+
+
+
+
+### 13. service 파일 설정
+```bash
+
+sudo nano /lib/systemd/system/tornado.service
+
+/home/pi/www/shell/tornado.sh
+
+tornado.sh 정의
+
+/home/pi/.virtualenvs/elcsoft/bin/python /home/pi/www/python/webserver.py
+```
+
+### 14. 자동실행 설정
+```bash
+
+/etc/xdg/lxsession/LXDE-pi/autostart
+
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+@chromium-browser --kiosk --autoplay-policy=no-user-gesture-required --check-for-update-interval=31536000 http://127.0.0.1
+
+sudo reboot
+```
+
+
+### 15. 의존성 패키지 제외하고 패키지 설치
+```bash
+
+Flask==1.1.2
+oauthlib==3.1.0
+requests==2.25.1
+requests-oauthlib==1.0.0
+PyJWT==1.7.1
+paho-mqtt==2.1.0
+numpy==1.19.5
+pycryptodome==3.20.0
+pyserial==3.5b0
+pyOpenSSL==20.0.1
+pylint==2.7.2
+#pyqt5==5.15.2
+#pyqt5 제거하고 진행
+
+# pip install opencv-python 오래걸림
+# pip install face-recognition	설치 어려움
+# 가상환경에 공간을 따로주는 방법 찾아봐야함
+
+```
+
+### 16. webserver 실행 해서 잘 돌아가는지 확인
+
+
+### 17. 화상통화, 날씨, 달력, 문열기 흐름, mqtt 공부
 
 
 
