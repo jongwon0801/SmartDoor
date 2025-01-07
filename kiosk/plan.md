@@ -22,7 +22,8 @@ UART(범용 비동기화 송수신기: Universal asynchronous receiver/transmitt
 
 ### gpio
 
-<img width="688" alt="image" src="https://github.com/user-attachments/assets/f2c9dcce-049a-4b97-87d5-ce77f3682119" />
+<img width="370" alt="image" src="https://github.com/user-attachments/assets/ba172d5f-5059-4ff3-912d-af633202f2ea" />
+
 
 ### 스마트도어 스크린
 
@@ -45,9 +46,7 @@ sd card 라즈베리파이에 직접 연결 안해도 된다
 <img width="177" alt="image" src="https://github.com/user-attachments/assets/9683141e-a7e2-4ae8-b6d4-8095d63a5589" />
 
 
-
-
-### 1. os 설치
+### os 버젼
 
 라즈베리4 모델 b / 64bit bullseye desktop 버젼
 
@@ -55,7 +54,7 @@ sd card 라즈베리파이에 직접 연결 안해도 된다
 
 
 
-### 2. 라즈베리파이 os설치 후 네트워크 관리방법 변경
+### 네트워크 관리방법 변경
 
 dhcpcd -> networkManager 로 변경
 
@@ -64,11 +63,16 @@ NetworkManager는 여러 종류의 네트워크 인터페이스(Wi-Fi, 유선, V
 
 
 
-### 4. nginx 설치, 설정
-```bash
-sudo apt-get install nginx
+### nginx 설치
 
-sudo nano /etc/nginx/nginx.conf
+nginx 설치 이유
+
+- 백엔드 서버의 부하 분산: 정적 파일 제공과 WebSocket 관리를 분리.
+- 보안 강화: Reverse Proxy로 HTTPS 및 IP 제한 관리.
+- 확장성과 유연성: 프로젝트가 커지더라도 쉽게 확장 가능.
+- 성능 최적화: 저사양 환경에서도 효율적으로 운영.
+- 에러 처리 및 사용자 경험: 안정적인 서비스 제공.
+```bash
 
 http {
 	client_max_body_size 0;
@@ -76,7 +80,6 @@ http {
 
 이유 : 클라이언트가 전송하는 데이터 크기를 제한하지 않아서 대용량 파일 업로드나 특정 상황에서 데이터를 제한 없이 전송할 수 있도록 하기 위해서
 
-/etc/nginx/nginx.conf 파일에서 include /etc/nginx/modules-enabled/*.conf; 설정
 
 
 sudo nano /etc/nginx/conf.d/localhost.conf
@@ -84,124 +87,129 @@ sudo nano /etc/nginx/conf.d/localhost.conf
 이유 : HTTP 요청과 WebSocket 요청을 처리하는 웹 서버를 설정
 
 
-sudo service nginx restart
 ```
 
-### 4. mariadb 설치
+### 데이터베이스 mariadb
 
-```bash
-sudo apt-get install mariadb-server
-
-mariadb 계정 등록 변경
-
-sudo mysql -u root
-set password for root@'localhost'=PASSWORD('dnlzlqkrtm');
-flush privileges;
-create database hizib;
-exit
-
-```
+- 무료 오픈 소스로 비용을 절감할 수 있음.
+- MySQL과의 호환성을 유지하면서도 추가 기능 활용 가능.
+- 성능과 확장성이 뛰어나 IoT 프로젝트에 적합.
+- 저사양 환경에서도 안정적으로 작동.
+- JSON 데이터 처리와 보안 기능이 유용.
 
 - MariaDB와 Nginx는 전통적으로 시스템의 서비스로 설치되며, 가상환경에 설치되지 않습니다.
 
-### 5. virtualenv, virtualenvwraaper 설치
+### virtualenv, virtualenvwraaper 설치
+
+이유 : Python 환경을 격리하여 프로젝트별로 독립된 환경을 제공하기 위해서
 
 - ./profile ./bashrc 설정, virtualenvwrapper.sh 위치 주의 /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
 
-### 6. www, python, sound, shell, font, json, css, js, Workspace, index.html, click, html 압축
-```bash
-tar -czvf kiosk.tar.gz www python sound shell font json css js Workspace index.html
+### 라즈베리 파이의 디스플레이 설정은 config.txt 파일에서 조정할 수 있습니다. 이 파일은 라즈베리 파이의 부팅 시 시스템 설정을 적용
 
-# sftp 소스 다운
-sftp pi@192.168.0.161
-
-get kiosk.tar.gz
-
-get /home/pi/kiosk.tar.gz /home/pi
-```
-
-### 디렉토리 구조 무시하고 현재 경로에 압축해제
-- tar --strip-components=2 -xvzf /home/pi/work/kiosk.tar.gz -C /home/pi
-
-### 7. 라즈베리 파이의 디스플레이 설정은 config.txt 파일에서 조정할 수 있습니다. 이 파일은 라즈베리 파이의 부팅 시 시스템 설정을 적용
 
 sudo nano /boot/config.txt
 
-### 8. ibus는 여러 언어의 입력을 지원하는 입력기 시스템 ibus
-```bash
-ibus 설치확인
-dpkg -l | grep ibus-hangul
 
-ps aux | grep ibus
+### 디스플레이 설정
 
-```
+디스플레이 설정을 조정하는 이유
 
-### 9. 화면 보호기 끄기, 터치 민감도 설정
+#### 해상도 설정
 
+디스플레이 장치가 자동으로 올바른 해상도를 인식하지 못하거나, 특정 해상도를 강제로 사용해야 하는 경우.
+예: 프로젝트에서 특정 UI(스마트 도어락 상태 표시, 제어 화면 등)를 구현할 때, 정확한 해상도가 필요.
 
+#### 오버스캔 조정
 
+일부 디스플레이에서는 화면의 가장자리가 잘리거나 여백이 생길 수 있습니다. 이를 수정하기 위해 오버스캔을 조정합니다.
+예: 전체 화면을 정확히 표시하기 위한 조정.
 
+#### 디스플레이 출력 장치 맞춤
 
-### 10. 네트워크 와이파이 자동연결
+HDMI, DSI, 또는 Composite 출력 장치와 같은 디스플레이 모드를 선택해야 하는 경우.
+예: 특정 디스플레이 장치(예: 소형 터치스크린, 모니터)에 맞게 설정.
 
+#### 전력 소비 최적화
 
+디스플레이 출력이 필요하지 않은 프로젝트(예: 헤드리스 서버 모드)에서 불필요한 전력을 절약하기 위해 디스플레이 출력을 비활성화.
 
+#### 터치 디스플레이 지원
 
+터치스크린 디스플레이를 사용할 경우, 정확한 입력을 위해 좌표 설정을 조정.
 
-### 11. tty usb 연결 설정
+#### FPS 및 주사율 설정
 
-
-
-
-
-### 12. tornado 설치, 실행
-
-
-
-
-
-### 13. service 파일 설정
-```bash
-
-sudo nano /lib/systemd/system/tornado.service
-
-/home/pi/www/shell/tornado.sh
-
-tornado.sh 정의
-
-/home/pi/.virtualenvs/elcsoft/bin/python /home/pi/www/python/webserver.py
-```
-
-### 14. 자동실행 설정
-```bash
-
-/etc/xdg/lxsession/LXDE-pi/autostart
-
-@lxpanel --profile LXDE-pi
-@pcmanfm --desktop --profile LXDE-pi
-@chromium-browser --kiosk --autoplay-policy=no-user-gesture-required --check-for-update-interval=31536000 http://127.0.0.1
-
-sudo reboot
-```
+비디오나 애니메이션과 같은 고속 그래픽을 처리하는 프로젝트에서는 주사율(FPS)을 조정하여 더 나은 성능을 보장.
 
 
-### 15. 의존성 패키지 제외하고 패키지 설치
+### 네트워크 와이파이 자동연결
+
+재부팅 시 자동으로 와이파이를 연결 못하는 현상이 발생 -> 자동으로 와이파이를 잡도록 수정
+
+
+### tty usb 연결 설정
+
+/dev/ 경로에 tty usb alias, 연결 설정을 해주지 않으면 webserver가 정상적으로 켜지지 않음
+
+
+
+### tornado 설치, 실행
+
+백엔드 웹 어플리케이션 tornado 설치 실행 재부팅시 자동으로 켜지게 하기 위해서 service 파일 따로 설정 필요
+
+
+
+### 의존성 패키지 제외하고 패키지 설치
 ```bash
 
-Flask==1.1.2
 oauthlib==3.1.0
+
+설명: OAuth 1.0 및 2.0 프로토콜을 구현한 라이브러리로, 인증 및 권한 부여 처리.
+용도: OAuth 인증 흐름을 구현하여 외부 API와의 안전한 인증을 관리.
 requests==2.25.1
+
+설명: HTTP 요청을 간편하게 처리할 수 있는 라이브러리로, GET, POST 등 다양한 HTTP 메서드를 지원.
+용도: 외부 API 호출 및 서버 간 데이터 전송에 사용.
 requests-oauthlib==1.0.0
+
+설명: requests와 oauthlib를 통합하여 OAuth 인증을 처리하는 라이브러리.
+용도: OAuth 인증 방식의 API 요청을 간단하게 처리.
 PyJWT==1.7.1
+
+설명: JWT(JSON Web Token)을 인코딩 및 디코딩하는 라이브러리.
+용도: 사용자 인증 및 권한 부여를 위한 JWT 토큰 생성 및 검증.
+
 paho-mqtt==2.1.0
+
+설명: MQTT 프로토콜을 구현한 라이브러리로, IoT 장치 간 메시지 전송을 처리.
+용도: 스마트 도어락과 같은 IoT 장치에서 MQTT 기반의 메시지 송수신.
+
 numpy==1.19.5
+
+설명: 고성능 수치 연산을 위한 라이브러리로, 배열 및 행렬 연산을 효율적으로 처리.
+용도: 수학적 계산이나 데이터 처리 작업에 사용.
+
 pycryptodome==3.20.0
+
+설명: 다양한 암호화 알고리즘(AES, RSA 등)을 제공하는 라이브러리.
+용도: 데이터 암호화 및 보안을 강화하기 위한 암호화 작업에 사용.
+
 pyserial==3.5b0
+
+설명: Python에서 시리얼 통신을 처리하는 라이브러리.
+용도: 스마트 도어락에서 시리얼 포트를 통한 하드웨어 통신.
+
 pyOpenSSL==20.0.1
+
+설명: Python용 OpenSSL 라이브러리로, SSL/TLS 통신을 지원.
+용도: 보안 연결(HTTPS) 및 암호화된 통신 처리.
 pylint==2.7.2
-#pyqt5==5.15.2
-#pyqt5 제거하고 진행
+
+설명: Python 코드 품질 검사를 위한 도구로, 코드 스타일을 검사하고 오류를 찾는 데 사용.
+용도: 코드 품질 유지 및 자동화된 코드 리뷰.
+
 
 # pip install opencv-python 오래걸림
 # pip install face-recognition	설치 어려움
@@ -209,10 +217,25 @@ pylint==2.7.2
 
 ```
 
-### 16. webserver 실행 해서 잘 돌아가는지 확인
+### 어플리케이션을 실행하면 처음에 기기 등록
+
+- 제품기기번호 입력해 8자리 숫자로 입력 필요
+
+https://petstore.swagger.io/
+
+https://api.hizib.wikibox.kr/smartdoor.yaml 
+
+<img width="517" alt="image" src="https://github.com/user-attachments/assets/7eba043b-d908-4797-b772-fa6c85790557" />
+
+- mysql db 정보를 서버에서 받아오는지 로컬로 저장하는지 확인 필요
+
+- 서버에 저장된 번호랑 겹치지 않게 기기번호 등록
 
 
-### 17. 화상통화, 날씨, 달력, 문열기 흐름, mqtt 공부
+### 날씨 가져오는 기능 제대로 작동 안되는 현상 수정
+
+
+### 화상통화, 달력, 문열기, 문닫기, mqtt 동작 원리 파악 
 
 
 
