@@ -106,16 +106,17 @@ sudo nano /etc/nginx/conf.d/localhost.conf
 - ./profile ./bashrc 설정, virtualenvwrapper.sh 위치 주의 /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 
 
-### 라즈베리 파이의 디스플레이 설정은 config.txt 파일에서 조정할 수 있습니다. 이 파일은 라즈베리 파이의 부팅 시 시스템 설정을 적용
-
+### 라즈베리 파이의 디스플레이 설정은 config.txt 파일에서 조정할 수 있습니다.
+- 이 파일은 라즈베리 파이의 부팅 시 시스템 설정을 적용
+```bash
 
 sudo nano /boot/config.txt
+```
 
 
-### 디스플레이 설정
 
-디스플레이 설정을 조정하는 이유
-
+### 디스플레이 설정을 조정하는 이유
+```bash
 #### 해상도 설정
 
 디스플레이 장치가 자동으로 올바른 해상도를 인식하지 못하거나, 특정 해상도를 강제로 사용해야 하는 경우.
@@ -142,7 +143,7 @@ HDMI, DSI, 또는 Composite 출력 장치와 같은 디스플레이 모드를 �
 #### FPS 및 주사율 설정
 
 비디오나 애니메이션과 같은 고속 그래픽을 처리하는 프로젝트에서는 주사율(FPS)을 조정하여 더 나은 성능을 보장.
-
+```
 
 ### 네트워크 와이파이 자동연결
 
