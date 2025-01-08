@@ -104,6 +104,20 @@ sudo systemctl status tornado.service
 
 ```
 
+#### chromium 설치
+
+
+```bash
+sudo apt update
+
+sudo apt install chromium-browser -y
+
+chromium-browser
+
+
+```
+
+
 
 #### autostart 설정
 
