@@ -39,7 +39,7 @@ sudo apt update
 sudo apt upgrade
 ```
 
-#### ibus 한글 입력기 설치
+#### 1 ibus 한글 입력기 설치
 
 - 출력: 한글 출력은 폰트와 로케일 설정에 의해 결정됩니다. (따라서 IBus 없이도 가능)
 - 입력: 한글 입력은 키보드 입력기(예: IBus, Fcitx 등)가 있어야 가능합니다.
@@ -71,7 +71,7 @@ sudo apt install fonts-nanum fonts-unfonts-core
 
 
 
-#### 터치 스크린 설정
+#### 2 터치 스크린 설정
 ```bash
 
 sudo apt update
@@ -85,9 +85,11 @@ sudo systemctl restart lightdm
 ```
 
 
-#### 해상도 설정
+#### 3 해상도 설정
 
 ```bash
+
+sudo nano /boot/config.txt
 
 # 모니터가 자동으로 감지되지 않을 때 HDMI 출력이 항상 활성화되므로, 모니터나 TV가 HDMI 신호를 제대로 인식
 # 모니터 없이 원격으로 Raspberry Pi를 설정할 때 외부 모니터 화면을 확인 가능
