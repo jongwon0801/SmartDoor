@@ -79,9 +79,18 @@ hdmi_force_hotplug=1
 hdmi_drive=2
 
 ```
+#### 네트워크 관리방법 변경
+
+```bash
+
+sudo raspi-config
+
+Advanced Options -> Network Config -> NetworkManager
+
+
+관리 범위: dhcpcd는 기본적으로 IP 주소 할당과 네트워크 인터페이스의 설정을 관리하는 반면,
+NetworkManager는 여러 종류의 네트워크 인터페이스(Wi-Fi, 유선, VPN 등)를 포괄적으로 관리하는 데 사용됩니다
 
 
 
-
-
-
+```
