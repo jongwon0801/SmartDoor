@@ -1,4 +1,4 @@
-# sudo nano /etc/nginx/conf.d/localhost.conf
+#### sudo nano /etc/nginx/conf.d/localhost.conf
 
 server {
         listen 80;
