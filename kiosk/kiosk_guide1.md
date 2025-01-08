@@ -14,6 +14,9 @@ sudo apt autoremove -y
 sudo apt update
 sudo apt upgrade
 ```
+### nginx 설치
+
+sudo apt-get install nginx
 
 ### mariadb 설치
 
