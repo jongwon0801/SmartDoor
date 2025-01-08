@@ -79,7 +79,7 @@ hdmi_force_hotplug=1
 hdmi_drive=2
 
 ```
-#### 네트워크 관리방법 변경
+#### 네트워크 관리방법 변경 (이거 하면 ssh 끊김)
 
 ```bash
 
