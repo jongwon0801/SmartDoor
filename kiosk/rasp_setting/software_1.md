@@ -8,7 +8,7 @@ sudo systemctl status ssh
 ```
 
 
-#### ssh 접속 이전 기록 삭제
+#### ssh 접속 이전 기록 삭제(mac)
 
 ```bash
 nano /Users/jongwon/.ssh/known_hosts
@@ -27,6 +27,18 @@ uname -m
 cat /etc/os-release
 
 ```
+
+
+#### 전체 프로그램 업데이트
+
+```bash
+sudo apt clean
+sudo apt autoremove -y
+
+sudo apt update
+sudo apt upgrade
+```
+
 #### ibus 한글 입력기 설치
 
 - 출력: 한글 출력은 폰트와 로케일 설정에 의해 결정됩니다. (따라서 IBus 없이도 가능)
