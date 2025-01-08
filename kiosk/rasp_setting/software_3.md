@@ -67,8 +67,11 @@ pylint==2.7.2
 #pyqt5 제거하고 진행
 ```
 
-#### webserver 실행하면서 설치
+#### webserver.py 실행하면서 설치
+
 ```bash
+pip3 install firebase-admin
+
 pip install qrcode
 
 pip install opencv-python
