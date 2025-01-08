@@ -1,3 +1,4 @@
+```bash
 # Match on all types of devices but joysticks
 #
 # If you want to configure your devices, do not copy this file.
@@ -52,3 +53,5 @@ Section "InputClass"
         MatchDevicePath "/dev/input/event*"
         Driver "libinput"
 EndSection
+
+```
