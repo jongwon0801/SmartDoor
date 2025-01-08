@@ -25,7 +25,17 @@ ff02::2         ip6-allrouters
 127.0.1.1       raspberrypi
 125.209.200.159 server
 
+
+
+
+pkill chromium
+cd ~/.config/chromium/
+rm -f SingletonLock
+rm -f SingletonSocket
+sudo reboot
+
 ```
+
 
 #### pkill chromium:
 
