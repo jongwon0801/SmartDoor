@@ -63,10 +63,7 @@ pycryptodome==3.20.0
 pyserial==3.5b0
 pyOpenSSL==20.0.1
 pylint==2.7.2
-#pyqt5==5.15.2
-#pyqt5 제거하고 진행
 qrcode
-opencv-python
 pyzbar
 PyMySQL
 DBUtils
@@ -79,7 +76,10 @@ RPi.GPIO
 gpiozero
 python-vlc
 lgpio
-
+#pyqt5==5.15.2
+#pyqt5 제거하고 진행
+#opencv-python
+#face-recognition
 ```
 
 
