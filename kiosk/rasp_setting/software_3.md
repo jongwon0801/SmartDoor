@@ -74,8 +74,6 @@ pip3 install firebase-admin
 
 pip install qrcode
 
-pip install opencv-python
-
 pip install pyzbar
 
 pip install PyMySQL
@@ -83,8 +81,6 @@ pip install PyMySQL
 pip install DBUtils
 
 pip install websockets
-
-pip install face-recognition
 
 pip install gTTS
 
@@ -99,6 +95,11 @@ pip install gpiozero
 pip install python-vlc
 
 pip install lgpio
+
+pip install opencv-python   # 오래걸림
+
+pip install face-recognition   # 가상공간 따로 할당해서 설치하는법 검색
+
 ```
 
 
