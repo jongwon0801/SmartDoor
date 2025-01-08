@@ -59,11 +59,17 @@ dpkg -l | grep ibus
 #실행 중인지 확인
 ps aux | grep ibus
 
+# 한글 글꼴 깨짐 위해 폰트 설치(install 해야함 글꼴 복사로 안됨)
+sudo apt install fonts-nanum fonts-unfonts-core
+
 
 ```
 - ibus: IBus 입력기 기본 패키지
 - ibus-hangul: 한글 입력을 위한 IBus 엔진
 - ibus-gtk3: GTK3 기반의 IBus 지원
+
+
+
 
 #### 터치 스크린 설정
 ```bash
