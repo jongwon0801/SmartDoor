@@ -1,5 +1,7 @@
 #### sudo nano /etc/nginx/conf.d/localhost.conf
 
+```bash
+
 server {
         listen 80;
         server_name 127.0.0.1 localhost;
@@ -31,3 +33,5 @@ server {
         }
 
 }
+
+```
