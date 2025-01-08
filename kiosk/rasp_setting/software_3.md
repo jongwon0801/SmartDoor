@@ -58,14 +58,23 @@ pip install tornado
 
 ```
 
+#### /home/pi/shell/tornado.sh
+
+```bash
+
+# elcsoft 가상 환경의 Python 인터프리터로 webserver.py 모듈 실행
+/home/pi/.virtualenvs/elcsoft/bin/python /home/pi/www/python/webserver.py
+
+```
+
 #### tornado.service 
 
 - tornado.sh 를 tornado.service 파일에 넣어서 autostart 할 때 사용
   
+
+#### sudo nano /lib/systemd/system/tornado.service
+
 ```bash
-
-sudo nano /lib/systemd/system/tornado.service
-
 [Unit]
 Description=TornadoWebserver
 
@@ -78,22 +87,58 @@ Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
+```
 
+- sudo systemctl daemon-reload
+- sudo systemctl enable tornado.service
+- sudo systemctl start tornado.service
+- sudo systemctl status tornado.service
+
+
+
+#### tornado 재실행
+
+```bash
 sudo systemctl daemon-reload
+
 sudo systemctl enable tornado.service
+
 sudo systemctl start tornado.service
+
 sudo systemctl status tornado.service
 
 ```
 
-#### /home/pi/shell/tornado.sh
+
+#### autostart 설정
+
+sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
 
 ```bash
 
-# elcsoft 가상 환경의 Python 인터프리터로 webserver.py 모듈 실행
-/home/pi/.virtualenvs/elcsoft/bin/python /home/pi/www/python/webserver.py
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+@xscreensaver -no-splash
+
+@chromium-browser --kiosk --autoplay-policy=no-user-gesture-required --check-for-update-interval=31536000 http://127.0.0.1
+#@chromium-browser http://127.0.0.1
 
 ```
+
+```bash
+
+pkill chromium
+
+cd ~/.config/chromium/
+
+rm -f SingletonLock
+
+rm -f SingletonSocket
+
+sudo reboot
+
+```
+
 
 
 
