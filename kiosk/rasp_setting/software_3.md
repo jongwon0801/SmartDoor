@@ -65,38 +65,21 @@ pyOpenSSL==20.0.1
 pylint==2.7.2
 #pyqt5==5.15.2
 #pyqt5 제거하고 진행
-```
+qrcode
+opencv-python
+pyzbar
+PyMySQL
+DBUtils
+websockets
+face-recognition
+gTTS
+pydub
+nmcli
+RPi.GPIO
+gpiozero
+python-vlc
+lgpio
 
-#### webserver.py 실행하면서 필요한 패키지 설치
-
-```bash
-pip install qrcode
-
-pip install opencv-python
-
-pip install pyzbar
-
-pip install PyMySQL
-
-pip install DBUtils
-
-pip install websockets
-
-pip install face-recognition
-
-pip install gTTS
-
-pip install pydub
-
-pip install nmcli
-
-pip install RPi.GPIO
-
-pip install gpiozero
-
-pip install python-vlc
-
-pip install lgpio
 ```
 
 
