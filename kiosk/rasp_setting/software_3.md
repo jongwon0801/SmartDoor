@@ -70,7 +70,7 @@ pylint==2.7.2
 #### webserver.py 실행하면서 설치
 
 ```bash
-pip3 install firebase-admin
+pip install firebase-admin
 
 pip install qrcode
 
