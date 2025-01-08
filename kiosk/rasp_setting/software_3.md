@@ -89,11 +89,6 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 
-- sudo systemctl daemon-reload
-- sudo systemctl enable tornado.service
-- sudo systemctl start tornado.service
-- sudo systemctl status tornado.service
-
 
 
 #### tornado 재실행
