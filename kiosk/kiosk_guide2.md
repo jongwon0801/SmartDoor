@@ -71,7 +71,6 @@ pip-compile --output-file=optimized-requirements.txt requirements.txt
 
 ```bash
 
-Flask==1.1.2
 oauthlib==3.1.0
 requests==2.25.1
 requests-oauthlib==1.0.0
