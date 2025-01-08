@@ -53,7 +53,6 @@ mkvirtualenv elcsoft
 #### 의존성 패키지 제외하고 설치
 
 ```bash
-Flask==1.1.2
 oauthlib==3.1.0
 requests==2.25.1
 requests-oauthlib==1.0.0
