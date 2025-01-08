@@ -17,4 +17,39 @@ tar -xzvf kiosk.tar.gz -C /home/pi
 
 ```
 
-#### 
+#### 가상환경 설치
+
+```bash
+
+pip show virtualenv
+
+-> Location: /home/pi/.local/lib/python3.9/site-packages
+
+
+pip install virtualenvwrapper
+
+-> Location: /home/pi/.local/lib/python3.9/site-packages
+
+
+sudo nano ~/.profile 하단에 입력
+
+source /home/pi/.local/bin/virtualenvwrapper.sh
+
+sudo reboot
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
