@@ -63,23 +63,39 @@ pycryptodome==3.20.0
 pyserial==3.5b0
 pyOpenSSL==20.0.1
 pylint==2.7.2
-qrcode
-pyzbar
-PyMySQL
-DBUtils
-websockets
-face-recognition
-gTTS
-pydub
-nmcli
-RPi.GPIO
-gpiozero
-python-vlc
-lgpio
 #pyqt5==5.15.2
 #pyqt5 제거하고 진행
-#opencv-python
-#face-recognition
+```
+
+#### webserver 실행하면서 설치
+```bash
+pip install qrcode
+
+pip install opencv-python
+
+pip install pyzbar
+
+pip install PyMySQL
+
+pip install DBUtils
+
+pip install websockets
+
+pip install face-recognition
+
+pip install gTTS
+
+pip install pydub
+
+pip install nmcli
+
+pip install RPi.GPIO
+
+pip install gpiozero
+
+pip install python-vlc
+
+pip install lgpio
 ```
 
 
