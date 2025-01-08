@@ -6,6 +6,13 @@ ssh pi@192.168.0.161
 ### 접속 가능한 라즈베리 기기 아이피 찾기
 ```bash
 ping raspberrypi.local
+
+
+sudo apt clean
+sudo apt autoremove -y
+
+sudo apt update
+sudo apt upgrade
 ```
 
 ### mariadb 설치
