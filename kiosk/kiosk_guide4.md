@@ -1,9 +1,10 @@
 ### firebase_admin 모듈 설치
 
 ```bash
-pip3 install firebase-admin
+pip install firebase-admin
 
 ```
+- pip3 install 하면 안깔림
 
 ### python webserver.py 실행하면서 필요 모듈 설치
 
