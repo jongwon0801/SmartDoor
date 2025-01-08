@@ -7,6 +7,9 @@ pip3 install firebase-admin
 
 ### python webserver.py 실행하면서 필요 모듈 설치
 
+- cd /home/pi/www/python
+- python webserver.py
+
 ```bash
 pip install qrcode
 
