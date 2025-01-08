@@ -82,6 +82,16 @@ nano /usr/share/X11/xorg.conf.d/40-libinput.conf
 
 sudo systemctl restart lightdm
 
+Section "InputClass"
+        Identifier "libinput touchscreen catchall"
+        MatchIsTouchscreen "on"
+        #Option "TransformationMatrix" "0 -1 1 1 0 0 0 0 1"
+        Option "TransformationMatrix" "0 1 0 -1 0 1 0 0 1"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+EndSection
+
+
 ```
 
 
