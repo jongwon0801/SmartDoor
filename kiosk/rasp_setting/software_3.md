@@ -33,7 +33,7 @@ pip install virtualenvwrapper
 
 sudo nano ~/.profile 하단에 입력
 
-source /home/pi/.local/bin/virtualenvwrapper.sh (kiosk 서버와 sh 파일 위치가 다름)
+source /home/pi/.local/bin/virtualenvwrapper.sh (161 서버와 sh 파일 위치가 다름)
 
 -> login 하면 workon 명령어 사용 가능
 
