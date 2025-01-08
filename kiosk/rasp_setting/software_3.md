@@ -50,9 +50,62 @@ mkvirtualenv elcsoft
 
 ```
 
+#### 의존성 패키지 제외하고 설치
+
+```bash
+Flask==1.1.2
+oauthlib==3.1.0
+requests==2.25.1
+requests-oauthlib==1.0.0
+PyJWT==1.7.1
+paho-mqtt==2.1.0
+numpy==1.19.5
+pycryptodome==3.20.0
+pyserial==3.5b0
+pyOpenSSL==20.0.1
+pylint==2.7.2
+#pyqt5==5.15.2
+#pyqt5 제거하고 진행
+```
+
+#### webserver.py 실행하면서 필요한 패키지 설치
+
+```bash
+pip install qrcode
+
+pip install opencv-python
+
+pip install pyzbar
+
+pip install PyMySQL
+
+pip install DBUtils
+
+pip install websockets
+
+pip install face-recognition
+
+pip install gTTS
+
+pip install pydub
+
+pip install nmcli
+
+pip install RPi.GPIO
+
+pip install gpiozero
+
+pip install python-vlc
+
+pip install lgpio
+```
+
+
 #### tornado 설치
 
 ```bash
+
+pip install Pillow
 
 pip install tornado
 
