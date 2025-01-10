@@ -91,8 +91,51 @@ Section "InputClass"
         Driver "libinput"
 EndSection
 
-
 ```
+### 변환 예제
+
+이 변환 행렬이 좌표 \((x, y)\)에 어떻게 적용되는지 계산해 보겠습니다.
+
+#### 변환 식
+
+\[
+\begin{bmatrix}
+x' \\
+y' \\
+1
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & 1 & 0 \\
+-1 & 0 & 1 \\
+0 & 0 & 1
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+x \\
+y \\
+1
+\end{bmatrix}
+\]
+
+#### 1. 좌표 변환
+입력 좌표 \((x, y)\)를 변환하면:
+
+\[
+x' = 0 \cdot x + 1 \cdot y + 0 = y
+\]
+
+\[
+y' = -1 \cdot x + 0 \cdot y + 1 = -x + 1
+\]
+
+따라서 변환 결과:
+
+\[
+(x', y') = (y, -x + 1)
+\]
+
+
 
 
 #### 3 해상도 설정
