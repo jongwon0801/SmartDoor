@@ -40,14 +40,6 @@ pip install python-vlc
 
 pip install lgpio
 
-## 이후 기기 없어서 에러
-
-nano ~/www/python/pir_outside.py -> pir_outside_fix.py
-
-nano /home/pi/www/python/elcsoft/controller/smartdoor.py -> smartdoor_fix.py
-
-sudo lsof -i :8080 포트 충돌시 확인 후 강제종료
-sudo kill 1107 / nano webserver.py -> app.listen(8080) 포트 변경
 
 ```
 
