@@ -72,6 +72,8 @@ pylint==2.7.2
 ```bash
 pip install firebase-admin
 
+pip install Pillow
+
 pip install qrcode
 
 pip install pyzbar
@@ -132,8 +134,6 @@ sudo dphys-swapfile swapon
 #### tornado 설치
 
 ```bash
-
-pip install Pillow
 
 pip install tornado
 
