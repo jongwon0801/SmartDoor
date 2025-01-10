@@ -92,10 +92,25 @@ Section "InputClass"
 EndSection
 
 ```
-### 변환 예제
 
-<img width="568" alt="image" src="https://github.com/user-attachments/assets/f109ac89-1f04-4470-a678-b86e3e09e5fd" />
+#### 기본 형식
+- 2D 변환 행렬은 다음과 같은 일반적인 구조를 가집니다
 
+<img width="100" alt="image" src="https://github.com/user-attachments/assets/9cf61950-9ecb-480c-9f63-f5f616c16f14" />
+
+- [a, b]: X 축과 관련된 변환 (회전, 스케일, 기울임 등).
+- [d, e]: Y 축과 관련된 변환 (회전, 스케일, 기울임 등).
+- [c, f]: X, Y 축의 이동(translation)을 나타냅니다.
+- [g, h, i]: 일반적으로 2D 공간에서는 고정된 값(0, 0, 1).
+
+
+<img width="507" alt="image" src="https://github.com/user-attachments/assets/cdd82400-964f-4d7c-9204-300a9ce8a54f" />
+
+<img width="698" alt="image" src="https://github.com/user-attachments/assets/b183f69c-17b7-4ab9-b45f-686f002b45be" />
+
+### 반시계 회전 공식
+
+<img width="713" alt="image" src="https://github.com/user-attachments/assets/77147e41-ab84-448a-9bdb-cf7e71839406" />
 
 
 
