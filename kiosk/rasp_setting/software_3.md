@@ -102,6 +102,32 @@ pip install face-recognition   # 가상공간 따로 할당해서 설치하는�
 
 ```
 
+#### face_recognition 설치
+
+- face_recognition은 dlib 라이브러리를 기반으로 작동하므로, dlib의 빌드에 필요한 패키지들을 먼저 설치해야 합니다
+
+```bash
+
+# 필수 의존성 설치
+sudo apt update
+
+sudo apt install -y build-essential cmake libopenblas-dev liblapack-dev libx11-dev libgtk-3-dev libboost-all-dev
+
+sudo apt install -y python3-dev python3-pip
+
+pip install face_recognition
+
+# SWAP 파일 크기 변경
+sudo nano /etc/dphys-swapfile
+
+# CONF_SWAPSIZE 값을 2048 (2GB) 또는 4096 (4GB)로 수정
+CONF_SWAPSIZE=4096
+
+# SWAP 서비스 재시작
+sudo dphys-swapfile setup
+sudo dphys-swapfile swapon
+
+```
 
 #### tornado 설치
 
