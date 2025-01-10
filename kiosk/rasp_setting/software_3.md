@@ -117,11 +117,6 @@ sudo apt install -y build-essential cmake libopenblas-dev liblapack-dev libx11-d
 
 sudo apt install -y python3-dev python3-pip
 
-pip cache purge
-
-pip install --upgrade pip
-
-pip install face_recognition
 
 # SWAP 파일 크기 변경
 sudo nano /etc/dphys-swapfile
@@ -132,6 +127,13 @@ CONF_SWAPSIZE=4096
 # SWAP 서비스 재시작
 sudo dphys-swapfile setup
 sudo dphys-swapfile swapon
+
+
+pip cache purge
+
+pip install --upgrade pip
+
+pip install face_recognition
 
 ```
 
