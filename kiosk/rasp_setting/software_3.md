@@ -117,6 +117,8 @@ sudo apt install -y build-essential cmake libopenblas-dev liblapack-dev libx11-d
 
 sudo apt install -y python3-dev python3-pip
 
+pip install --upgrade pip
+
 pip install face_recognition
 
 # SWAP 파일 크기 변경
