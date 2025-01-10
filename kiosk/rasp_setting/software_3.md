@@ -135,6 +135,27 @@ sudo dphys-swapfile swapon
 
 ```
 
+#### ttyUSB 심볼릭 링크 설정
+
+sudo nano /etc/udev/rules.d/99-com.rules
+
+
+```bash
+
+# PWM export results in a "change" action on the pwmchip device (not "add" of a new device), so match actions other than "remove".
+SUBSYSTEM=="pwm", ACTION!="remove", PROGRAM="/bin/sh -c 'chgrp -R gpio /sys%p && chmod -R g=u /sys%p'"
+# 두줄 추가
+SUBSYSTEM=="tty", ATTRS{idVendor}=="1d6b", ATTRS{idProduct}=="0002", SYMLINK+="hione"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="000a", SYMLINK+="ttyUSB_PIR"
+
+Udev 서비스를 재시작 하거나 리부팅
+sudo udevadm control --reload-rules
+
+sudo reboot
+
+
+```
+
 #### tornado 설치
 
 ```bash
