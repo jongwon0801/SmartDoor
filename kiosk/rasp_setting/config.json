@@ -19,8 +19,8 @@
         "isUseTts":true, "tts":{ "lang":"ko-KR", "volume":1, "rate":1, "path":"/home/pi/www/tts/","device":"Headphones"}
 }
 
-- sudo nano www/python/config.json
-- cd www/python/config.json
+sudo nano www/python/config.json
+d www/python/config.json
   
 - db
 DB 연결 설정
