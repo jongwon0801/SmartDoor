@@ -1,0 +1,81 @@
+{
+        "db": {"type": "pymysql", "host": "localhost", "port": 3306, "name": "hizib", "user": "root", "passwd": "dnlzlqkrtm", "charset": "utf8", "aut>
+        "mqtt": {"host": "13.124.155.19", "port": 1883, "username": "hizib", "passwd": "dnlzlqkrtm"}, 
+        "pir_inside": {"pin": 14, "times": 30, "isDoorcloserSafeMode": true}, 
+        "pir_outside": {"times":20, "isDoorcloserSafeMode": false}, 
+        "doorcloser": {"pin": 21, "safe_pin": 15, "checktimes": 0, "delaytime": 0.2, "isUse": true}, 
+        "bell": {"soundPlayCount": 3, "mp3": "/home/pi/www/sound/bell_g10.wav"}, 
+        "pir": "/dev/ttyUSB_PIR", 
+        "doorlock": "/dev/ttyUSB0", 
+        "face": {"path": "/home/pi/www/image/user/", "dataset": "/home/pi/www/python/face.json", "times": 5, "picture": "/home/pi/www/image/user"}, 
+        "isUseQrDoorOpen":false, "isUseFaceLogin": true, "isUseFaceDoorOpen": false, "isUseRecord": false, 
+        "outsideCamDeviceName": "USB 4K Live Camera", "outsideMicDeviceName": "USB 4K Live Camera", 
+        "outsideSpeakerDeivceName": "USB Audio Device", "insideCamDeviceName": "HD Camera", "insideSpeakerDeviceName": "",
+        "screen":30, 
+        "isShowInsideCam": false, "isShowOutsideCam": false,
+        "isShowInsidePicture":true, "isShowOutsidePicture":true, 
+        "isUseCursor": true, "isUseLamp": false, "isUseGas": false, "isUseEv": false, "isUseGas": false, "isUserMirror": false, 
+        "isUseBus":true, "busRefresh":60,  "busStopes":["55042237","55042236","117543","117544"], 
+        "isUseTts":true, "tts":{ "lang":"ko-KR", "volume":1, "rate":1, "path":"/home/pi/www/tts/","device":"Headphones"}
+}
+
+- sudo nano www/python/config.json
+- cd www/python/config.json
+  
+- db
+DB 연결 설정
+- mqtt
+MQTT서버 연결 설정
+- pir_inside
+내측 PIR 설정
+pin : GPIO 핀번호
+times : 반응 없으면 스크린 꺼지는 시간(초)
+isDoorcloserSafeMode : 도어크로저 안전장치 사용여부
+- pir_outside
+isDoorcloseSafeMode : 도어크로저 안전장치 사용여부
+- token
+키오스크 기기 정보
+- bell
+벨소리 관련 정보
+soudPlayCount : 반복횟수
+mp3 : 음원파일 위치
+- pir
+외측 카메라 및 센서 기기 usb 정보
+- doorlcok
+하이온 도어락 기기 usb정보
+- face
+안면인식 정보 설정
+path : 이미지 파일 위치
+dataset : 안면 인식한 가족 구성원 정보 파일 위치
+times : 최대 시도 횟수
+picture : 업로드할 사진 파일 위치
+- isUseFaceLogin
+안면인식 로그인
+- isUseQrDoorOpen
+QR 문열기
+- isUseFaceDoorOpen
+안면인식 문열기
+- isUseRecord
+녹화기능 사용여부
+- screen
+내측 PIR이나 화면 반응 없는 경우, 몇 초 뒤에 꺼지는지
+- isShowInsideCam
+내측 카메라 화면 보기
+- isShowOutsideCam
+외측 카메라 화면 보기
+- isUseCursor
+마우스 커서 보이게 할지 말지
+- isUseLamp
+조명버튼 사용 여부
+- isUseEv
+엘레베이터 사용 여부
+- isUserMirror
+거울 사용 여부
+- isUseBus
+버스정보 사용 여부
+- isUseTts
+tts사용여부
+- tts
+lang : 언어
+volume : 볼륨
+rate : 재생속도
