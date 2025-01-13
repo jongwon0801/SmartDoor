@@ -25,57 +25,84 @@ cd www/python/config.json
   
 - db
 DB 연결 설정
+        
 - mqtt
 MQTT서버 연결 설정
+        
 - pir_inside
 내측 PIR 설정
+        
 pin : GPIO 핀번호
+        
 times : 반응 없으면 스크린 꺼지는 시간(초)
+        
 isDoorcloserSafeMode : 도어크로저 안전장치 사용여부
+        
 - pir_outside
 isDoorcloseSafeMode : 도어크로저 안전장치 사용여부
+        
 - token
 키오스크 기기 정보
+        
 - bell
 벨소리 관련 정보
+        
 soudPlayCount : 반복횟수
+        
 mp3 : 음원파일 위치
+        
 - pir
 외측 카메라 및 센서 기기 usb 정보
+        
 - doorlcok
 하이온 도어락 기기 usb정보
+        
 - face
 안면인식 정보 설정
 path : 이미지 파일 위치
 dataset : 안면 인식한 가족 구성원 정보 파일 위치
 times : 최대 시도 횟수
 picture : 업로드할 사진 파일 위치
+        
 - isUseFaceLogin
 안면인식 로그인
+        
 - isUseQrDoorOpen
 QR 문열기
+        
 - isUseFaceDoorOpen
 안면인식 문열기
+        
 - isUseRecord
 녹화기능 사용여부
+        
 - screen
 내측 PIR이나 화면 반응 없는 경우, 몇 초 뒤에 꺼지는지
+        
 - isShowInsideCam
 내측 카메라 화면 보기
+        
 - isShowOutsideCam
 외측 카메라 화면 보기
+        
 - isUseCursor
 마우스 커서 보이게 할지 말지
+        
 - isUseLamp
 조명버튼 사용 여부
+        
 - isUseEv
 엘레베이터 사용 여부
+        
 - isUserMirror
 거울 사용 여부
+        
 - isUseBus
 버스정보 사용 여부
+        
 - isUseTts
 tts사용여부
+        
 - tts
 lang : 언어
 volume : 볼륨
