@@ -1,4 +1,22 @@
-#### ssh 설정
+#### 라즈베리파이 os imager 로 설치
+
+라즈베리4 모델 b / 64bit bullseye desktop 버젼
+
+```bash
+
+# pi@192.168.0.161 / elcsoft 에서 os 버전 확인
+
+if dpkg -l | grep -E 'libreoffice|wolfram' > /dev/null; then
+    echo "Desktop Environment with Recommended Applications (Full version)"
+else
+    echo "Standard Desktop Environment (without Recommended Applications)"
+fi
+```
+
+- Full 버전에는 libreoffice 및 wolfram 패키지가 포함되지만, 해당 패키지가 설치되어 있지 않으므로 Full 버전이 아닙니다.
+- 현재 Raspberry Pi OS는 기본 데스크톱 환경만 포함된 Standard Desktop 버전입니다.
+
+#### ssh 설정(raspberrypi)
 ```bash
 sudo raspi-config
 
