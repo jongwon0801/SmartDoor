@@ -42,11 +42,34 @@ USE hizib;
 
 SHOW TABLES;
 
-DROP DATABASE hizib;
-
 # pymysql 패키지 경로
 ls /home/pi/.virtualenvs/elcsoft/lib/python3.9/site-packages/pymysql
 
+
+```
+
+#### hizib database 삭제 후 초기화면 만들기
+
+```bash
+
+DROP DATABASE hizib;
+
+# hizib 다시 생성
+sudo mysql -u root
+set password for root@'localhost'=PASSWORD('dnlzlqkrtm');
+
+FLUSH privileges;
+create database hizib;
+exit
+
+# webserver 재실행
+sudo systemctl daemon-reload
+
+sudo systemctl enable tornado.service
+
+sudo systemctl start tornado.service
+
+sudo systemctl status tornado.service
 
 
 
