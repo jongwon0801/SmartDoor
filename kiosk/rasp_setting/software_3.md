@@ -166,7 +166,7 @@ pip install tornado
 
 ```
 
-#### /home/pi/shell/tornado.sh
+#### /home/pi/www/shell/tornado.sh
 
 ```bash
 
