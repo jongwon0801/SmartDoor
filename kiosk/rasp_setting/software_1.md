@@ -11,7 +11,7 @@ sudo systemctl status ssh
 #### ssh 접속 이전 기록 삭제(mac)
 
 ```bash
-nano /Users/jongwon/.ssh/known_hosts
+sudo nano /Users/jongwon/.ssh/known_hosts
 
 ```
 
