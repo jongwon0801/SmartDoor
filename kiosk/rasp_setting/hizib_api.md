@@ -18,6 +18,11 @@ select *from user;
 # 전체 스마트도어 조회
 select *from smartdoor;
 
+# 관리자 계정 조회
+select *from admin;
+
+# 스마트도어 그룹 조회
+select *from smartdoor_group;
 ```
 
 #### 1. 회원 가입
