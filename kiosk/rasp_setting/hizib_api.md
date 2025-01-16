@@ -8,8 +8,9 @@ mysql -u root -p  /  위키박스
 
 #### mysql 테이블 조회
 
-#### 스마트도어 유저정보 smartdoor_user_id(초대, 첫기기등록으로 기기가 배정된 계정),
-#### user_id(회원가입한 계정), isOwner(소유자 여부 1), smartdoor_id(스마트도어의 아이디),
+#### smartdoor_user table column
+- smartdoor_user_id (초대, 첫기기등록으로 기기가 배정된 계정)
+- user_id (회원가입한 계정), isOwner (소유자 여부 1), smartdoor_id (스마트도어의 아이디)
 
 ```bash
 # 기기 등록한 계정 조회
