@@ -64,6 +64,7 @@ https://api.hizib.wikibox.kr/user
 #### 3. 스마트 도어 단지 등록
 
 ```bash
+# post
 # /admin/login 에서 새로 등록한 관리자 토큰 으로 그룹 생성 (관리자 권한 필요)
 # https://api.hizib.wikibox.kr/SmartdoorGroup
 
@@ -82,6 +83,7 @@ https://api.hizib.wikibox.kr/user
 #### 4. 스마트 도어 기기 등록
 
 ```bash
+# post
 # 단지가 존재하지 않으면 "message": "존재하지 않는 단지 정보입니다."
 # https://api.hizib.wikibox.kr/Smartdoor
 
