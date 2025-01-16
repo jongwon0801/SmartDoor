@@ -22,7 +22,7 @@ select *from user;
 select *from smartdoor;
 
 # 관리자 계정 조회
-select *from admin;
+select *from admin;
 
 # 스마트도어 그룹 조회
 select *from smartdoor_group;
