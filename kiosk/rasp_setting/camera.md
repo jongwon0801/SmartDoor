@@ -12,5 +12,21 @@ cd /dev/
 
 lsusb
 
+# 외부 카메라
+Bus 001 Device 009: ID 0c45:0415 Microdia USB 4K Live Camera
+
+# 내부 카메라
+Bus 001 Device 012: ID 1e45:8022 Suyin HD Camera
+```
+
+```bash
+sudo nano ~/www/python/config.json
+
+# 외부 카메라
+"outsideCamDeviceName": "USB 4K Live Camera"
+
+# 내부 카메라
+"insideCamDeviceName": "HD Camera", 
+
 
 ```
