@@ -20,7 +20,9 @@ DELETE FROM smartdoor_vod;
 ```
 
 #### delete
-#### https://api.hizib.wikibox.kr/SmartdoorVod/{smartdoor_vod_id}
+```bash
+https://api.hizib.wikibox.kr/SmartdoorVod/{smartdoor_vod_id}
+```
 - 관리자 말고 일반 USER 로 {result : true}
 - 이미 삭제 성공 시 "message": "존재하지 않는 영상 정보입니다."
 - 하지만 hizib table에 바로 반영 되지않았다
@@ -30,5 +32,3 @@ DELETE FROM smartdoor_vod;
 
 
 
-
-```
