@@ -90,3 +90,4 @@ gpu_mem=128
 #dtoverlay=uart3
 #dtoverlay=uart4
 dtoverlay=uart5
+# dtoverlay=uart5 gpio uart5 5의 기능 활성화
