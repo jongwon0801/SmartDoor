@@ -96,7 +96,7 @@ sudo apt update
 sudo apt full-upgrade
 
 
-nano /usr/share/X11/xorg.conf.d/40-libinput.conf 
+sudo nano /usr/share/X11/xorg.conf.d/40-libinput.conf 
 
 sudo systemctl restart lightdm
 
@@ -135,7 +135,7 @@ EndSection
 #### 3 해상도 설정
 
 ```bash
-
+# 들어가서 아래 두개 주석해제
 sudo nano /boot/config.txt
 
 # 모니터가 자동으로 감지되지 않을 때 HDMI 출력이 항상 활성화되므로, 모니터나 TV가 HDMI 신호를 제대로 인식
@@ -144,6 +144,17 @@ hdmi_force_hotplug=1
 
 #HDMI 장치(모니터, TV 등)에서 비디오와 오디오를 모두 출력하고자 할 때 사용
 hdmi_drive=2
+
+[all]
+gpu_mem=128
+
+#enable_uart=1
+#dtoverlay=uart0
+#dtoverlay=uart1
+#dtoverlay=uart2
+#dtoverlay=uart3
+#dtoverlay=uart4
+#dtoverlay=uart5
 
 ```
 #### 네트워크 관리방법 변경 (이거 하면 ssh 끊김)
