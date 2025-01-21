@@ -4,6 +4,8 @@ tar -czvf kiosk.tar.gz Bookshelf Downloads Public Videos css image json nohup.ou
 www Music README.md Workspace font index.html log python reversesshservice.sh shell test Documents Pictures Templates click html
 js logview.sh reversessh.log rsync.sh sound test.html
 
+tar -czvf kiosk.tar.gz www
+
 
 #### sftp 명령어로 압축파일 전송
 ```bash
