@@ -23,7 +23,7 @@ tar -xzvf kiosk.tar.gz -C /home/pi
 
 ```bash
 
-pip show virtualenv
+pip install virtualenv
 
 -> Location: /home/pi/.local/lib/python3.9/site-packages
 
