@@ -19,6 +19,7 @@ SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", ATTRS{idVendor}=="1e45", ATTRS{idPr
 SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0c45", ATTRS{idProduct}=="0415", SYMLINK+="cam_outside", PROGRAM="/usr/bin/v4l2-ctl -c brightness=20 -d /dev/%k"
 
 KERNELS=="fe201a00.serial", SYMLINK+="hione"
+# uart-5 의 attribute
 
 KERNEL=="ttyAMA0", PROGRAM="/bin/sh -c '\
 	ALIASES=/proc/device-tree/aliases; \
