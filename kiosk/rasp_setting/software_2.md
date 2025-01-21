@@ -25,6 +25,8 @@ sudo service nginx restart
 
 ```
 
+#### localhost.conf 생성, 내용 추가
+
 #### mariadb 설치
 
 ```bash
