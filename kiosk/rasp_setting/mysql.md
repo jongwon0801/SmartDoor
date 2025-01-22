@@ -6,8 +6,12 @@ sudo apt-get install mariadb-server
 
 sudo mysql -u root
 set password for root@'localhost'=PASSWORD('dnlzlqkrtm');
+
 # 권한 적용
+# FLUSH PRIVILEGES -> 디스크에 저장된 사용자 권한 테이블(mysql.user, mysql.db, 등)의 내용을 다시 읽어서 메모리 캐시에 로드
+# 사용자 권한 정보의 캐시를 초기화하고 업데이트하는 역할
 FLUSH privileges;
+
 create database hizib;
 exit
 
@@ -56,9 +60,11 @@ DROP DATABASE hizib;
 
 # hizib 다시 생성
 sudo mysql -u root
+
 set password for root@'localhost'=PASSWORD('dnlzlqkrtm');
 
 FLUSH privileges;
+
 create database hizib;
 exit
 
