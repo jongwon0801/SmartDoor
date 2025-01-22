@@ -27,7 +27,7 @@
 "isUseRecord": true
 
 # 192.168.0.139
-"isUseRecord": false,
+"isUseRecord": false
 
 
 # 192.168.0.161
