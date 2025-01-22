@@ -142,6 +142,10 @@ pip install face_recognition
 # 해시 무시하고 강제 설치
 pip install --no-cache-dir --no-deps face-recognition
 
+# face_recognition 패키지를 사용하기 전에 face_recognition_models 라이브러리를 설치
+pip install git+https://github.com/ageitgey/face_recognition_models
+
+
 
 ```
 
