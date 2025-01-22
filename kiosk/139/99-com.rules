@@ -1,3 +1,5 @@
+# sudo nano /etc/udev/rules.d/99-com.rules
+
 SUBSYSTEM=="input", GROUP="input", MODE="0660"
 SUBSYSTEM=="i2c-dev", GROUP="i2c", MODE="0660"
 SUBSYSTEM=="spidev", GROUP="spi", MODE="0660"
