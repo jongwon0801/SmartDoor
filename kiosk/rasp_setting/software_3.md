@@ -135,6 +135,8 @@ sudo dphys-swapfile swapon
 
 pip cache purge
 
+sudo apt update
+
 pip install --upgrade pip
 
 pip install face_recognition
