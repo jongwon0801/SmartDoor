@@ -25,6 +25,8 @@ Interface Options → SSH (yes 설정)
 sudo systemctl status ssh
 ```
 
+#### configuration -> interface -> 화면 left 이동
+
 
 #### ssh 접속 이전 기록 삭제(mac)
 
