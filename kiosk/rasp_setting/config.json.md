@@ -1,6 +1,7 @@
-# ~/www/python/config.json
-# 차이점
+#### ~/www/python/config.json
+#### 차이점
 
+```bash
 # 192.168.0.161
 "pir_inside": {"pin": 14, "times": 30, "isDoorcloserSafeMode": true},
 
@@ -35,5 +36,5 @@
 # 192.168.0.139
 "outsideSpeakerDevice": {"player":"vlcPlayer", "device":"iec958:CARD=Device,DEV=0", "aout":""}
 
-
+```
 
