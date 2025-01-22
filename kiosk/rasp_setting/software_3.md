@@ -104,6 +104,8 @@ pip install opencv-python
 
 pip install face-recognition   # 가상공간 따로 할당해서 설치하는법 검색
 
+pip install dlib
+
 ```
 
 #### face_recognition 설치
