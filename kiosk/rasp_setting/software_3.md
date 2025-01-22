@@ -137,6 +137,10 @@ pip install --upgrade pip
 
 pip install face_recognition
 
+# 해시 무시하고 강제 설치
+pip install --no-cache-dir --no-deps face-recognition
+
+
 ```
 
 #### ttyUSB 심볼릭 링크 설정
