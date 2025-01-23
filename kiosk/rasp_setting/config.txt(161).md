@@ -1,5 +1,6 @@
 # /boot/config.txt
 
+```bash
 # For more options and information see
 # http://rpf.io/configtxt
 # Some settings may impact device functionality. See link above for details
@@ -92,3 +93,4 @@ gpu_mem=128
 #dtoverlay=uart3
 #dtoverlay=uart4
 #dtoverlay=uart5
+```
