@@ -1,4 +1,4 @@
-# ~/www/python/config.json
+{"_comment" : ~/www/python/config.json}
 
 {
   "db": {"type": "pymysql", "host": "127.0.0.1", "port": 3306, "name": "hizib", "user": "root", "passwd": "dnlzlqkrtm", "charset": "utf8", "autocommit": true}, 
