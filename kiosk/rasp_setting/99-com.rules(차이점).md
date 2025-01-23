@@ -41,6 +41,12 @@ lsusb
 - SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", **ATTRS{idVendor}=="0c45", ATTRS{idProduct}=="0415"**, SYMLINK+="cam_outside">
 
 
+#### KERNELS=="fe201a00.serial", SYMLINK+="hione"
+
+- KERNELS=="fe201a00.serial": 커널 이름이 fe201a00.serial인 UART 장치를 타겟으로 합니다.
+- SYMLINK+="hione": /dev/hione 심볼릭 링크를 생성합니다.
+
+
 
 
 
