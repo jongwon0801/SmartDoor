@@ -28,13 +28,14 @@ lsusb
 ```
 
 #### 내부 카메라
-- Bus 001 Device 009: ID ***1e45:8022*** Suyin HD Camera
+- Bus 001 Device 009: ID <span style="background-color:yellow;">1e45:8022</span> Suyin HD Camera
 
 #### 외부 카메라
-- Bus 001 Device 010: ID 0c45:0415 Microdia USB 4K Live Camera 
+- Bus 001 Device 010: ID <span style="background-color:lightgray;">0c45:0415</span> Microdia USB 4K Live Camera 
 
-SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", ATTRS{idVendor}=="1e45", ATTRS{idProduct}=="8022", SYMLINK+="cam_inside"
-SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0c45", ATTRS{idProduct}=="0415", SYMLINK+="cam_outside">
+SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", <span style="background-color:yellow;">ATTRS{idVendor}=="1e45", ATTRS{idProduct}=="8022",</span> SYMLINK+="cam_inside"
+
+SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", <span style="background-color:lightgray;">ATTRS{idVendor}=="0c45", </span> ATTRS{idProduct}=="0415", SYMLINK+="cam_outside">
 
 
 
