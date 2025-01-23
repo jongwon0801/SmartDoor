@@ -1,3 +1,5 @@
+```bash
+
 {
         "db": {"type": "pymysql", "host": "localhost", "port": 3306, "name": "hizib", "user": "root", "passwd": "dnlzlqkrtm", "charset": "utf8", "aut>
         "mqtt": {"host": "13.124.155.19", "port": 1883, "username": "hizib", "passwd": "dnlzlqkrtm"}, 
@@ -18,11 +20,11 @@
         "isUseBus":true, "busRefresh":60,  "busStopes":["55042237","55042236","117543","117544"], 
         "isUseTts":true, "tts":{ "lang":"ko-KR", "volume":1, "rate":1, "path":"/home/pi/www/tts/","device":"Headphones"}
 }
-
-
+```
+```bash
 sudo nano www/python/config.json
 cd www/python/config.json
-  
+```
 - db
 DB 연결 설정
         
