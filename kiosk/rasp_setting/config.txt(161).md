@@ -1,4 +1,4 @@
-# /boot/config.txt
+#### /boot/config.txt
 
 ```bash
 # For more options and information see
