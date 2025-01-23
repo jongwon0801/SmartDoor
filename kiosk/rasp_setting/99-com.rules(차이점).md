@@ -20,6 +20,23 @@ SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0c45", ATTRS{idPr
 
 # uart-5 의 attribute
 KERNELS=="fe201a00.serial", SYMLINK+="hione"
-
-
 ```
+
+```bash
+cd /dev
+lsusb
+```
+
+#### 내부 카메라
+- Bus 001 Device 009: ID ***1e45:8022*** Suyin HD Camera
+
+#### 외부 카메라
+- Bus 001 Device 010: ID 0c45:0415 Microdia USB 4K Live Camera 
+
+SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", ATTRS{idVendor}=="1e45", ATTRS{idProduct}=="8022", SYMLINK+="cam_inside"
+SUBSYSTEM=="video4linux", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0c45", ATTRS{idProduct}=="0415", SYMLINK+="cam_outside">
+
+
+
+
+
