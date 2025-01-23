@@ -1,3 +1,5 @@
+
+```bash
 SUBSYSTEM=="input", GROUP="input", MODE="0660"
 SUBSYSTEM=="i2c-dev", GROUP="i2c", MODE="0660"
 SUBSYSTEM=="spidev", GROUP="spi", MODE="0660"
@@ -57,3 +59,4 @@ ACTION=="add", SUBSYSTEM=="vtconsole", KERNEL=="vtcon1", RUN+="/bin/sh -c '\
 		echo 0 > /sys$devpath/bind; \
 	fi; \
 '"
+```
