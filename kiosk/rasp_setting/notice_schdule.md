@@ -19,7 +19,7 @@ DELETE FROM smartdoor_notice WHERE smartdoor_notice_id <> 2;
 키오스크 화면에는 로컬 디비의 저장된걸 보여줌
 
 - 공지사항을 앱으로 작성하면 서버의 디비에 레코드 추가 되고 로컬디비에 값이 추가됨
-- 
+
 ```bash
 app 에서 공지사항 목록은 서버 디비에서 조회해서 가져온다
 
