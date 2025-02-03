@@ -4,6 +4,8 @@
 #### 포맷
 <img width="457" alt="image" src="https://github.com/user-attachments/assets/8c1796b7-456c-4b22-a6c1-2f72191d679d" />
 
+
+
 1. ExFAT (Extended File Allocation Table)
    
 - 호환성: ExFAT은 Windows, macOS, 리눅스 모두에서 읽기/쓰기가 가능한 최고의 선택입니다.
@@ -35,6 +37,8 @@
 
 #### 설계
 <img width="458" alt="image" src="https://github.com/user-attachments/assets/0c7cca05-d62e-4422-8c01-9a0b69462550" />
+
+
 
 1. MBR (Master Boot Record)
 
