@@ -50,11 +50,11 @@ Install the Ubuntu image on your SD card before booting.
 
 - "Use dd to write the ISO file to the USB drive." → dd를 사용해 ISO 파일을 USB에 씀
 
-🚫 이미지를 만들 때는 Write를 거의 사용하지 않음
+- 🚫 이미지를 만들 때는 Write를 거의 사용하지 않음
 
-❌ "Write an image file" → 어색함
+- ❌ "Write an image file" → 어색함
 
-대신 ✅ "Create an image file", "Generate an image", "Build an image" 등을 사용
+- 대신 ✅ "Create an image file", "Generate an image", "Build an image" 등을 사용
 
 #### 📌 정리  
 
