@@ -63,6 +63,5 @@ Install the Ubuntu image on your SD card before booting.
 | 이미지를 만들 때 | Create / Generate / Build an image |  
 | 이미지를 SD 카드에 넣을 때 | Write / Flash an image |  
 
-
-- 즉, "Write"는 저장 장치에 데이터를 기록하는 의미이고, 이미지를 만드는 과정에는 사용되지 않습니다. 😊
+#### 즉, "Write"는 저장 장치에 데이터를 기록하는 의미이고, 이미지를 만드는 과정에는 사용되지 않습니다. 😊
 
