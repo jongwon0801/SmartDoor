@@ -3,8 +3,7 @@
 
 #### 포맷
 <img width="457" alt="image" src="https://github.com/user-attachments/assets/8c1796b7-456c-4b22-a6c1-2f72191d679d" />
-
-
+<br><br>
 
 1. ExFAT (Extended File Allocation Table)
    
@@ -37,8 +36,7 @@
 
 #### 설계
 <img width="458" alt="image" src="https://github.com/user-attachments/assets/0c7cca05-d62e-4422-8c01-9a0b69462550" />
-
-
+<br><br>
 
 1. MBR (Master Boot Record)
 
