@@ -1,9 +1,13 @@
 #### 🔥 디스크/USB/SSD 등에 이미지를 굽는다 (Restore, Write, Burn)
 
 - Burn → CD/DVD에 굽는 경우 (예: Burn an ISO to a DVD)
+  
 - Write → USB, SSD, SD 카드 등에 이미지를 쓰는 경우 (예: Write an image to an SSD)
+  
 - Flash → USB, SSD에 OS 이미지를 설치할 때 사용 (예: Flash a disk image to a USB drive)
+  
 - Restore → 기존 백업 이미지를 복원할 때 (예: Restore a disk image to SSD)
+  
 - Clone → 디스크를 그대로 복사할 때 (예: Clone a hard drive to an M.2 SSD)
 
 
