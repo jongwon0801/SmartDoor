@@ -44,3 +44,25 @@ Install the Ubuntu image on your SD card before booting.
 "Use dd to write the image to the SD card."
 (dd 명령어를 사용해 이미지를 SD 카드에 써라.)
 
+#### ✅ 이미지를 SD 카드에 넣을 때 (Write to a device)
+
+- "Write an image to an SD card." → 이미지를 SD 카드에 씀
+
+- "Use dd to write the ISO file to the USB drive." → dd를 사용해 ISO 파일을 USB에 씀
+
+🚫 이미지를 만들 때는 Write를 거의 사용하지 않음
+
+❌ "Write an image file" → 어색함
+
+대신 ✅ "Create an image file", "Generate an image", "Build an image" 등을 사용
+
+#### 📌 정리  
+
+| 동작 | 올바른 표현 |  
+|------|--------------------------|  
+| 이미지를 만들 때 | Create / Generate / Build an image |  
+| 이미지를 SD 카드에 넣을 때 | Write / Flash an image |  
+
+
+- 즉, "Write"는 저장 장치에 데이터를 기록하는 의미이고, 이미지를 만드는 과정에는 사용되지 않습니다. 😊
+
