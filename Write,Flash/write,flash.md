@@ -38,10 +38,10 @@ Install the Ubuntu image on your SD card before booting.
 
 📌 예제 문장
 
-"I created a bootable image and flashed it to an SD card."
+- "I created a bootable image and flashed it to an SD card."
 (나는 부팅 가능한 이미지를 만들고 SD 카드에 플래시했다.)
 
-"Use dd to write the image to the SD card."
+- "Use dd to write the image to the SD card."
 (dd 명령어를 사용해 이미지를 SD 카드에 써라.)
 
 #### ✅ 이미지를 SD 카드에 넣을 때 (Write to a device)
