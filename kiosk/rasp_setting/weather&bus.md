@@ -1,5 +1,7 @@
 #### 버스 정류장 정보
 
+#### 버스 정류장 코드는 네이버 지도에서 url or arrival 로 확인
+
 ```bash
 
 sudo nano ~/www/python/config.json
@@ -9,15 +11,26 @@ sudo nano ~/www/python/config.json
 
 ```
 
-#### 날씨 데이터 api (관리자만 가능)
+#### 날씨 수정 (네이버 날씨의 url 에서 code 확인가능)
+
+- 단지 정보 areacode 수정 put method (관리자만 가능)
 
 ```bash
 
-서울특별시 금천구 가산동
-https://api.hizib.wikibox.kr/Weather/areacode?keyword=
-%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B8%88%EC%B2%9C%EA%B5%AC%20%EA%B0%80%EC%82%B0%EB%8F%99
+https://api.hizib.wikibox.kr/SmartdoorGroup/{smartdoor_group_id}
+
+{
+  "areacode": "01110675",
+  "name": "양양양양",
+  "address": {
+    "zipcode": "08510",
+    "addressMain": "양양군11"
+  }
+}
 
 ```
+#### 수정 후 sudo reboot 하면 적용됨
+
 
 #### 날씨데이터
 
