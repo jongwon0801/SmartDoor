@@ -12,8 +12,8 @@ sudo nano ~/www/python/config.json
 ```
 
 #### 날씨 수정 (네이버 날씨의 url 에서 code 확인가능)
-
-#### 단지 정보 areacode 수정 put method (관리자만 가능)
+
+- 단지 정보 areacode 수정 put method (관리자만 가능)
 
 ```bash
 
