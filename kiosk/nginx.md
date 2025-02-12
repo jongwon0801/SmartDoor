@@ -84,9 +84,11 @@ Nginx는 다양한 모듈을 통해 기능을 확장할 수 있습니다.
 ### 2. 모듈 활성화
 
 ```bash
-modules-enabled 디렉터리는 보통 Nginx가 지원하는 모듈들이 링크나 파일 형태로 배치된 디렉터리입니다. 이 디렉터리에 있는 .conf 파일을 포함하여, Nginx가 시작될 때 이 모듈들이 자동으로 활성화됩니다.
+modules-enabled 디렉터리는 보통 Nginx가 지원하는 모듈들이 링크나 파일 형태로 배치된 디렉터리입니다.
+이 디렉터리에 있는 .conf 파일을 포함하여, Nginx가 시작될 때 이 모듈들이 자동으로 활성화됩니다.
 
-/etc/nginx/modules-enabled/ 디렉터리에 있는 파일들은 modules-available 디렉터리에 있는 모듈들을 활성화할 수 있도록 심볼릭 링크로 연결된 경우가 많습니다.
+/etc/nginx/modules-enabled/ 디렉터리에 있는 파일들은 modules-available 디렉터리에 있는 모듈들을
+활성화할 수 있도록 심볼릭 링크로 연결된 경우가 많습니다.
 ```
 ### 3. 동적 모듈
 
