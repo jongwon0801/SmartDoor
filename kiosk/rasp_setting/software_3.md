@@ -15,8 +15,6 @@ get /home/pi/kiosk.tar.gz /home/pi
 
 # 현재 경로에 압축해제
 tar -xzvf kiosk.tar.gz -C /home/pi
-
-
 ```
 
 #### 가상환경 설치
