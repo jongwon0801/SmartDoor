@@ -103,7 +103,8 @@ include /etc/nginx/modules-enabled/*.conf;는 동적 모듈을 로드하는 방�
 ```bash
 예를 들어, ngx_http_rewrite_module, ngx_http_ssl_module 등의 모듈이 필요하다면,
 이들 모듈을 modules-enabled 디렉터리 내의 .conf 파일로 활성화하고, 해당 모듈의 설정을 포함할 수 있습니다.
-설정 파일에 예를 들면, /etc/nginx/modules-enabled/에 mod_rewrite.conf 파일이 있을 경우, Nginx는 이 파일을 읽고 관련된 모듈을 로드하여 사용합니다.
+설정 파일에 예를 들면, /etc/nginx/modules-enabled/에 mod_rewrite.conf 파일이 있을 경우,
+Nginx는 이 파일을 읽고 관련된 모듈을 로드하여 사용합니다.
 ```
 ### 요약
 
