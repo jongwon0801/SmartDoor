@@ -49,7 +49,9 @@ auto로 설정하면, Nginx는 CPU 코어 수에 맞게 자동으로 워커 프�
 ### 우선순위
 
 - nginx.conf 파일은 기본 설정 파일로 가장 먼저 로드됩니다. 이 파일 내에서 다른 파일을 include하여 로드하게 됩니다.
-- http 블록 안에 있는 include /etc/nginx/conf.d/*.conf;  include /etc/nginx/sites-enabled/*; nginx.conf에서 http 블록이 로드된 후에 읽힙니다.
+- http 블록 안에 있는 include /etc/nginx/conf.d/*.conf;  include /etc/nginx/sites-enabled/*;
+nginx.conf에서 http 블록이 로드된 후에 읽힙니다.
+
 이들은 서버 동작과 관련된 세부적인 설정들을 다루기 위한 것입니다.
 
 - user와 worker_processes, pid 설정은 서버의 기본 실행 환경을 설정하는 데 사용되며, Nginx가 시작할 때 가장 먼저 적용됩니다.
