@@ -50,8 +50,10 @@ mkvirtualenv elcsoft
 
 /home/pi/.virtualenvs/elcsoft 위치에 가상환경 폴더 생성됨
 
-# 이 위치에 파이썬 패키지들이 설치됨
+# 가상환경 켜고 패키지 설치하면 이 경로에 파이썬 패키지들이 설치됨
 /home/pi/.virtualenvs/elcsoft/lib/python3.9/site-packages
+
+일반적으로 --user로 설치한 패키지는 ~/.local/lib/pythonX.X/site-packages에 저장됨
 
 ```
 
