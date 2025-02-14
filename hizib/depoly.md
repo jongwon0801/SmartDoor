@@ -121,8 +121,8 @@ ps aux | grep 'python3 app.py'
 
 <br><br>
 ---
-## Ngnix 설정 변경(여기선 안쓰지만 도메인 사서 할때 설정 필요)
-Nginx 기본 설정 파일 수정
+#### Ngnix 설정 변경(여기선 안쓰지만 도메인 사서 할때 설정 필요)
+#### Nginx 기본 설정 파일 수정
 
 ```bash
 sudo nano /etc/nginx/sites-available/default
