@@ -4,7 +4,7 @@
 sudo nano ~/.ssh/known_hosts
 
 ```
-## 위키박스 서버 SSH 접속
+#### 위키박스 서버 SSH 접속
 
 #### 서버 접속
 ```bash
