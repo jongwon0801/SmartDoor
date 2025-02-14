@@ -56,8 +56,9 @@ python3 -m venv myenv
 ```bash
 source myenv/bin/activate
 ```
-<br><br>
+
 ---
+
 #### 압축 과정
 
 #### 압축 파일 생성
@@ -88,7 +89,7 @@ cd /home/ubuntu/googlehome
 ```bash
 unzip googlehome.zip
 ```
-<br><br>
+
 ---
 ## 서버 실행
 #### 실행 권한 확인 및 추가
@@ -119,7 +120,7 @@ tail -f app.log
 ps aux | grep 'python3 app.py'
 ```
 
-<br><br>
+
 ---
 #### Ngnix 설정 변경(여기선 안쓰지만 도메인 사서 할때 설정 필요)
 #### Nginx 기본 설정 파일 수정
@@ -167,7 +168,7 @@ location /googlehome {
     }
 ```
 
-<br><br>
+
 ---
 #### Ngnix 재시작
 
