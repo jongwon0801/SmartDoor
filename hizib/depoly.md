@@ -41,8 +41,6 @@ sudo rm -rf googlehome
 ```bash
 mkdir googlehome
 ```
-
-<br><br>
 ---
 #### 가상환경 설치
 
