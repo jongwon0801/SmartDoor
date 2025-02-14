@@ -56,7 +56,6 @@ python3 -m venv myenv
 ```bash
 source myenv/bin/activate
 ```
-
 ---
 
 #### 압축 과정
@@ -145,7 +144,7 @@ vi /etc/nginx/nginx.conf
 ```bash
 sudo rm -f googlehome.conf
 ```
-<br><br>
+
 ---
 #### Ngnix virtual directory 설정
 
@@ -167,8 +166,6 @@ location /googlehome {
         proxy_set_header Host $host;
     }
 ```
-
-
 ---
 #### Ngnix 재시작
 
