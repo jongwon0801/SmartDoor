@@ -1,42 +1,4 @@
-### 키오스크 서버 ssh 접속
-```bash
-ssh pi@192.168.0.161
-```
 
-### 접속 가능한 라즈베리 기기 아이피 찾기
-```bash
-ping raspberrypi.local
-
-
-sudo apt clean
-sudo apt autoremove -y
-
-sudo apt update
-sudo apt upgrade
-```
-### nginx 설치
-
-sudo apt-get install nginx
-
-### mariadb 설치
-
-```bash
-sudo apt-get install mariadb-server
-```
-
-### mariadb 계정 등록 변경
-```bash
-SET PASSWORD FOR root@'localhost' = PASSWORD('dnlzlqkrtm');
-```
-```bash
-FLUSH PRIVILEGES;
-```
-```bash
-CREATE DATABASE hizib;
-```
-```bash
-EXIT;
-```
 
 ### 디렉토리 생성 디렉토리가 없다면, 아래 명령어로 디렉토리를 생성합니다:
 
