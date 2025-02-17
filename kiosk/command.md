@@ -7,6 +7,9 @@ tail -f /var/log/nginx/access.log
 # 에러 로그
 tail -f /var/log/nginx/error.log
 
+# tornado log 날짜에 따라 생성
+tail -f /home/pi/log/20250217.log
+
 ```
 
 #### tornado 로그
