@@ -67,6 +67,42 @@ SingletonLock 파일은 Chromium이 실행 중일 때 다른 Chromium 인스턴�
 
 이 일련의 명령은 Chromium 브라우저를 종료한 후, 잠금 파일(SingletonLock, SingletonSocket)을 삭제하여 Chromium이 새로운 인스턴스를 시작할 수 있도록 하고, 마지막으로 시스템을 재부팅하여 변경 사항이 적용되도록 합니다. 이 작업은 주로 Chromium에서 충돌이나 잠금 문제가 발생했을 때 문제를 해결하기 위해 사용됩니다.
 
+---
+
+#### tornado.service 실행
+
+```bash
+
+cd /lib/systemd/system
+
+sudo systemctl start tornado.service
+
+sudo systemctl status tornado.service 
 
 
+# tornado.service / restart 부분은 guide1 이랑 변경함
+[Unit]
+Description=TornadoWebserver
+
+[Service]
+ExecStart=/home/pi/www/shell/tornado.sh
+Restart=on-failure
+User=pi
+Group=pi
+
+[Install]
+WantedBy=multi-user.target
+
+```
+
+#### tornado.sh 실행
+
+```bash
+
+cd shell
+
+# tornado.sh
+/home/pi/.virtualenvs/elcsoft/bin/python /home/pi/www/python/webserver.py
+
+```
 
