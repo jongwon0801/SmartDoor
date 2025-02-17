@@ -7,10 +7,11 @@ js logview.sh reversessh.log rsync.sh sound test.html
 # www 폴더만 압축
 tar -czvf kiosk.tar.gz www
 
-- c: 아카이브 생성
-- z: gzip으로 압축
-- v: 진행 상황 표시
-- f: 파일 이름 지정
+-c (create): 아카이브 생성 - 새로운 tar 파일을 생성
+-z (gzip): gzip으로 압축 - .gz 형식으로 압축
+-v (verbose): 진행 상황 표시 - 처리 중인 파일 목록을 출력
+-f (file): 파일 이름 지정 - 대상 아카이브 파일 이름을 지정
+
 ```
 
 #### sftp 명령어로 압축파일 전송
@@ -21,6 +22,13 @@ get /home/pi/kiosk.tar.gz /home/pi
 
 # 현재 경로에 압축해제
 tar -xzvf kiosk.tar.gz -C /home/pi
+
+-x (extract): 압축을 풀기 위해 사용
+-z (gzip): .gz 형식의 gzip 압축을 해제
+-v (verbose): 압축을 푸는 과정을 화면에 출력 (파일 목록이 보임)
+-f (file): 대상이 되는 파일 이름을 지정
+
+
 ```
 
 #### 가상환경 설치
