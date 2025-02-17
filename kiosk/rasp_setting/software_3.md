@@ -1,11 +1,17 @@
 #### 압축
-
+```bash
 tar -czvf kiosk.tar.gz Bookshelf Downloads Public Videos css image json nohup.out reversessh.log.save screen.sh temp.txt 
 www Music README.md Workspace font index.html log python reversesshservice.sh shell test Documents Pictures Templates click html
 js logview.sh reversessh.log rsync.sh sound test.html
 
+# www 폴더만 압축
 tar -czvf kiosk.tar.gz www
 
+- c: 아카이브 생성
+- z: gzip으로 압축
+- v: 진행 상황 표시
+- f: 파일 이름 지정
+```
 
 #### sftp 명령어로 압축파일 전송
 ```bash
