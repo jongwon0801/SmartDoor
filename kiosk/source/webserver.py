@@ -1,12 +1,11 @@
 
-
-
-
 import tornado.web
 import tornado.ioloop
 import threading
 import elcsoft.controller.websocket
 import wikismartdoor as wikismartdoor
+
+
 
 clients = []
 
