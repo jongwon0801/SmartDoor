@@ -1,6 +1,6 @@
 #### 오토락 X, 문 open, 잠금 X 응답
 
-#### 도어락 조회
+#### 도어 클로저
 ```bash
 workon elcsoft
 
