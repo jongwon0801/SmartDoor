@@ -1,4 +1,4 @@
-#### 도어락 doorOpenProcess, doorCloseProcess
+#### 도어락 doorOpenProcess, doorCloseProcess 결과
 
 ```bash
 닫혔을때 unlock 명령
@@ -10,7 +10,7 @@
 ```
 
 ```bash
-닫혔을때 lock 명령
+닫혔을때 lock 명령 (auto lock x 인 경우)
 {"request": "/Smartdoor/doorCloseAtWebProcess", "data": {"result": true}, "response": "doorClosed"}
 
 이미 lock 일떄 lock 명령
