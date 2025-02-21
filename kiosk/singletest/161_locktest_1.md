@@ -2,6 +2,10 @@
 
 #### 도어락 조회
 ```bash
+workon elcsoft
+
+cd ~/www/python
+
 python hione.py isDoorOpen -p "/dev/ttyUSB0"
 ```
 #### 결과
@@ -15,6 +19,10 @@ python hione.py isDoorOpen -p "/dev/ttyUSB0"
 
 #### 도어락 열기
 ```bash
+workon elcsoft
+
+cd ~/www/python
+
 python hione.py doorOpenProcess -p "/dev/ttyUSB0"
 ```
 #### 결과
@@ -29,6 +37,10 @@ True
 
 #### 도어락 닫기
 ```bash
+workon elcsoft
+
+cd ~/www/python
+
 python hione.py doorCloseProcess -p "/dev/ttyUSB0"
 ```
 #### 결과
