@@ -1,4 +1,4 @@
-/home/pi/www/python/elcsoft/model/smartdoor_cmd.py
+# /home/pi/www/python/elcsoft/model/smartdoor_cmd.py
 
 #!/usr/bin/python
 import lib
