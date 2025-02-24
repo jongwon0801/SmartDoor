@@ -1,4 +1,4 @@
-/home/pi/www/shell/screen.sh
+# /home/pi/www/shell/screen.sh
 
 #!/usr/bin/env bash
 echo "$1"
