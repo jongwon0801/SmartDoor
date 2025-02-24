@@ -1,0 +1,304 @@
+<!-- /home/pi/www/agora.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Smartdoor</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximun-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="/css/global.css?ver=2" />
+	<link rel="stylesheet" type="text/css" href="/css/default.css" />
+	<link rel="stylesheet" type="text/css" href="/css/button.css" />
+	<link rel="stylesheet" type="text/css" href="/css/jquery.toast.css" />
+	<link rel="stylesheet" type="text/css" href="/css/kioskboard-2.3.0.min.css" />
+	<script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="/js/jquery-ui-1.12.1.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.ui.datepicker.ko.js"></script>
+	<script type="text/javascript" src="/js/jquery.form.min.js"></script>
+	<script type="text/javascript" src="/js/jquery.elc.js?ver=20240138"></script>
+	<script type="text/javascript" src="/js/jquery.elc.webpage.last.js?ver=12"></script>
+	<script type="text/javascript" src="/js/jquery.toast.js"></script>
+	<script type="text/javascript" src="/js/jquery.elc.hizib.js?ver=20240138"></script>
+	<script type="text/javascript" src="/js/jquery.elc.hizib.ws.js?ver=20240138"></script>
+	<script type="text/javascript" src="/js/jquery.elc.hizib.ws.send.js?ver=20240138"></script>
+	<script type="text/javascript" src="/js/jquery.elc.hizib.ws.receive.js?ver=20240138"></script>
+	<script type="text/javascript" src="/js/kioskboard-2.3.0.min.js"></script>
+	<script type="text/javascript" src="/js/kioskboard.js"></script>
+	<script type="text/javascript" src="/js/wifi.js"></script>
+	<script>
+
+		//Websocket
+		var wsUrl = 'ws://127.0.0.1:8080/ws';
+		var ws = null;
+		var token = "";
+
+		startWebsocket(wsUrl);
+
+		let settings = {};
+		//const CAM_DEVICE_NAME = "HD Camera";
+		//const MIC_DEVICE_NAME = "내장 오디오  Digital Stereo (HDMI)";
+		//const INSIDE_SPEAKER_DEVICE_NAME = "기본값";
+		//const OUTSIDE_SPEAKER_DEVICE_NAME = "기본값";
+
+		const videoWidth = 848;
+		const videoHeight = 848;
+		const frameRate = { ideal: 1, max: 30 };
+
+		let outsideCamDeviceId;
+		let outsideMicDeviceId;
+		let outsideSpeakerDeviceId;
+		let insideCamDeviceId;
+		let insideSpeakerDeviceId;
+
+		let user_id = 0;
+		let pir_inside_pin = 0;
+		let doorcloser = {};
+		let bell = {};
+		let pir = "";
+		let doorlock = "";
+		let screenTime = null;
+		let screeenTimer = null;
+		let doorTimer = null;
+		let outCameraTimer = null;
+		let inCameraTimer = null;
+
+		var folder = "";
+		var vod_file_url = "";
+		var vod_file_name = "";
+
+		var icConstraints = { audio: false, video: {} };
+		var ocConstraints = { audio: false, video: {} };
+		var rcConstraints = { audio: true, video: {} };
+
+		var isDoorlockPushBell = false;
+
+		var AudioContext;
+		var audioContext;
+
+		//외부카메라 관련 상태
+		let currentStatus = 0;   // 0: 작동안함, 1: 작동중
+		let isRsvRecord = false;
+		let qr_time = 1;
+		let record_time = 15;
+
+		//스크린 상태 관려
+		let screenTimer = null;
+
+		//QR또는 페이스 문열기
+		let isQrFace = false;
+
+		function alert(msg) {
+			$('#alert').show();
+			$('#alert > .body').html(msg);
+		}
+
+		$(document).on('click', 'body', function () {
+			screenOn();
+		});
+
+		$(document).ready(async function () {
+			settings = await setSettings();
+			if (settings.isUseCursor == undefined) settings.isUseCursor = false;
+			if (!settings.isUseCursor) document.body.style.cursor = 'none'; // 마우스 커서 숨기기
+
+			let devices = await navigator.mediaDevices.enumerateDevices();
+
+			if (settings.insideSpeakerDeviceName == undefined || settings.insideSpeakerDeviceName == "") settings.insideSpeakerDeviceName = "기본값";
+			if (settings.outsideMicDeviceName == undefined || settings.outsideMicDeviceName == "") settings.outsideMicDeviceName = "기본값";
+			if (settings.outsideSpeakerDeivceName == undefined || settings.outsideSpeakerDeivceName == "") settings.outsideSpeakerDeivceName = "기본값";
+			if (settings.insideCamDeviceName == undefined || settings.insideCamDeviceName == "") settings.insideCamDeviceName = "기본값";
+			if (settings.insideSpeakerDeviceId == undefined || settings.insideSpeakerDeviceId == "") settings.insideSpeakerDeviceId = "기본값";
+
+			console.log(devices);
+
+			devices.forEach((device) => {
+				wslog(device.kind + " " + device.label + ":" + device.deviceId);
+				if (device.kind == "videoinput" && device.label.indexOf(settings.outsideCamDeviceName) >= 0) outsideCamDeviceId = device.deviceId;
+				if (device.kind == "audioinput" && device.label.indexOf(settings.outsideMicDeviceName) >= 0) outsideMicDeviceId = device.deviceId;
+				if (device.kind == "audiooutput" && device.label.indexOf(settings.outsideSpeakerDeivceName) >= 0) outsideSpeakerDeviceId = device.deviceId;
+				if (device.kind == "videoinput" && device.label.indexOf(settings.insideCamDeviceName) >= 0) insideCamDeviceId = device.deviceId;
+				if (device.kind == "audiooutput" && device.label.indexOf(settings.insideSpeakerDeviceName) >= 0) insideSpeakerDeviceId = device.deviceId;
+			});
+		});
+	</script>
+	<script>
+		//줌인 줌아웃 방지 코드
+		document.addEventListener('keydown', function (e) {
+			if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '=')) {
+				e.preventDefault();
+			}
+			if ((e.ctrlKey || e.metaKey) && e.key === '-') {
+				e.preventDefault();
+			}
+			if ((e.ctrlKey || e.metaKey) && e.key === '0') {
+				e.preventDefault();
+			}
+		});
+
+		// 터치 이벤트를 통해 줌을 비활성화합니다.
+		document.addEventListener('touchmove', function (event) {
+			event.preventDefault();
+		}, { passive: false });
+
+		// 마우스 휠 이벤트를 통해 줌을 비활성화합니다.
+		window.addEventListener('wheel', function (event) {
+			event.preventDefault();
+		}, { passive: false });
+	</script>
+	<style>
+		#picture .body img {
+			width: 100%;
+		}
+
+		#picture .foot span a {
+			width: calc(100%-1px);
+		}
+	</style>
+</head>
+
+<body>
+	<div style="position:absolute;left:-1000px;top:-1000px;">
+		<script>
+			let isWebrtcDebug = false;
+		</script>
+		<script type="text/javascript" src="/js/AgoraRTC_N.js"></script>
+		<script type="text/javascript" src="/js/agora.js?ver=20240138"></script>
+		<div id="webrtc">
+			<style>
+				#webrtc .player {
+					width: 480px;
+					height: 848px;
+				}
+			</style>
+			<div id="remote-playerlist"></div>
+			<div id="local-player" class="player"></div>
+		</div>
+	</div>
+	<div id="wrap">
+		<div id="index">
+			<style>
+				#index {
+					width: 100vw;
+					height: 100vh;
+					background: url(/image/bg.png) no-repeat;
+					background-size: cover;
+				}
+			</style>
+		</div>
+	</div>
+	<script>
+		//RecordRtc
+		const MAXRUNTIME = 30;
+		const recordDivName = "recordRtc";
+
+		// 미디어 설정을 정의합니다. 여기서는 비디오만 요청합니다.
+		let recordConstraints = {
+			video: { width: { exact: videoWidth }, height: { exact: videoHeight } }
+			//video: { width: { exact: videoWidth }, height: { exact: videoHeight }, frameRate: { ideal: 1, max: 2 } }
+			//video: {width: {exact: 848}, height: {exact: 480}}
+		};
+	</script>
+	<script type="text/javascript" src="/js/RecordRTC.js?ver=20240138"></script>
+	<script type="text/javascript" src="/js/record.js?ver=20240138"></script>
+	<script>
+		let scanner;
+	</script>
+	<div id="loading"><img src="/image/icon/loading.gif" alt=""> 잠시만 기다려주세요.</div>
+	<div id="alert" class="dialog">
+		<div class="head"><span><a href="" onclick="$('#loading').hide();$('#alert').hide();return false;">닫기</a></span>
+		</div>
+		<div class="body"></div>
+	</div>
+	<style>
+		#audio {
+			display: none;
+		}
+	</style>
+	<div id="audio">
+		<audio id="loginaudio" preload="auto" src="/sound/login.mp3" controls muted></audio>
+		<audio id="openaudio" preload="auto" src="/sound/open_g10.wav" controls></audio>
+	</div>
+	<div id="camera" class="dialog">
+		<style>
+			#camera .body {
+				width: 820px;
+			}
+
+			#camera .foot>span>a {
+				width: calc(100% - 0px);
+			}
+
+			#camera video {
+				width: 800px;
+				height: 800px;
+				transform: rotate(180deg);
+			}
+
+			#camera canvas {
+				position: absolute;
+				left: -1000px;
+			}
+		</style>
+		<div class="head">
+			<h1>외부영상</h1>
+			<span><a href="" onclick="outCameraClose();return false;">X</a></span>
+		</div>
+		<div id="recordRtc" class="body"></div>
+		<div class="foot"><span><a href="" onclick="outCameraClose();return false;" class="button">닫기</a></span>
+		</div>
+	</div>
+	<script>
+		//로그인 유지시간
+		//const LOGIN_TIMES = 3 * 60;		//3분
+		const LOGIN_TIMES = 30;				//30초
+		//RecordRtc
+		const MAX_LOGIN_TIMES = 5;
+		const loginDivName = "faceLogin";
+
+		// 미디어 설정을 정의합니다. 여기서는 비디오만 요청합니다.
+		let loginConstraints = {
+			//video: {width: {exact: videoWidth}, height: {exact: videoHeight}}
+			//video: { width: { exact: 320 }, height: { exact: 240 } }
+			video: { width: { ideal: videoWidth }, height: { ideal: videoHeight }, frameRate: { ideal: 1, max: 2 } }
+		};
+	</script>
+	<script type="text/javascript" src="/js/face.js?ver=20240138"></script>
+	<div id="insideCamera" class="dialog">
+		<style>
+			#insideCamera {
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+
+			#insideCamera .body {
+				width: 880px;
+			}
+
+			#insideCamera .foot>span>a {
+				width: calc(100% - 2px);
+			}
+
+			#insideCamera video {
+				width: 848px;
+				height: 480px;
+			}
+
+			#camera canvas {
+				position: absolute;
+				left: -1000px;
+			}
+		</style>
+		<div class="head">
+			<h1>안면인식로그인</h1>
+			<span><a href="" onclick="inCameraClose();$('#insideCamera').css('display','none');return false;">X</a></span>
+		</div>
+		<div id="faceLogin" class="body"></div>
+		<div class="foot"><span><a href="#" onclick="inCameraClose();$('#insideCamera').css('display','none');return false;"
+					class="button">닫기</a></span></div>
+	</div>
+</body>
+
+</html>
