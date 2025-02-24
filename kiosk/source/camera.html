@@ -1,0 +1,76 @@
+<!-- /home/pi/www/html/view/camera.html -->
+
+<div id="view_camera">
+	<style>
+		#view_camera.dialog {width:888px;}
+		#view_camera .body {}
+		#view_camera .foot a {width:calc(100%);}
+		#view_camera video {width:848px;height:480px;transform: rotate(180deg);}
+	</style>
+	<script>
+		var webcamStream;
+		var webcamTimer = null;
+
+		// 미디어 설정을 정의합니다. 여기서는 비디오만 요청합니다.
+		var constraints = {
+		  video: {width: {exact: 848}, height: {exact: 480}}
+		};
+
+		$(document).ready(function() {
+			webcamStart();
+			webcamTimer = setTimeout(function() { console.log("webcamStop Timer 20초뒤");webcamStop(); }, 20*1000);
+		});
+
+		async function webcamStart() {
+			try {
+				let videoElement = document.getElementById('webcamera');
+
+				constraints.video.deviceId = {exact: outCamDeviceId};
+				
+				// 웹캠에 접근합니다.
+				webcamStream = await navigator.mediaDevices.getUserMedia(constraints);
+					
+				// 비디오 요소의 소스로 웹캠 스트림을 설정합니다.
+				videoElement.srcObject = webcamStream;	
+			} catch (error) {
+				// 오류 처리를 적절히 합니다.
+				console.error('외부카메라에 접근하는 데 문제가 발생했습니다:', error);
+			}
+
+			$('#view_camera > .foot a').attr('onclick', 'webcamStop();return false;');
+		}
+
+		function webcamStop() {
+			let videoElement = document.getElementById('webcamera');
+			screenOff();
+
+			try {
+				// 스트림의 각 트랙을 정지시킵니다.
+				if (webcamStream != undefined && webcamStream) {
+					webcamStream.getTracks().forEach(track => track.stop());
+					webcamStream = null;
+				}
+
+				// 스트림의 각 트랙을 정지시킵니다.
+				if (videoElement.srcObject != undefined && videoElement.srcObject) {
+					videoElement.srcObject.getTracks().forEach(track => track.stop());
+					videoElement.srcObject = null;
+				}
+
+				console.log("외부카메라 스트림이 정지되었습니다!");
+			} catch(error) {
+				console.log(error);
+			}
+
+			$("#view_camera").remove();
+		}
+	</script>
+	<div class="head">
+		<h1>외부영상</h1>
+	</div>
+	<div class="body">
+		<video id="webcamera" autoplay></video>
+	</div>
+	<div class="foot">
+	</div>
+</div>
