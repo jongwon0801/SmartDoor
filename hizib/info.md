@@ -11,6 +11,10 @@ truenas_admin
 Wikibox
 
 
+아마존 AWS의 계정 ID는 wikibox76417@wikibox.kr로 바꾸었습니다.
+패스워드는 기존과 같습니다.
+
+
 김경신 대표 이메일
 elccom@naver.com
 
