@@ -1,3 +1,10 @@
+#### AWS 계정
+
+id : wikibox11@gmail.com
+
+pw : wiki11admin!
+
+
 #### AWS 계정 정보 수정
 https://us-east-1.console.aws.amazon.com/billing/home?region=us-east-1#/account
 
