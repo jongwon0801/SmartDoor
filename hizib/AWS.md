@@ -1,7 +1,7 @@
 #### AWS 계정
 
 ```
-id : wikibox11@gmail.com
+id : wikibox76417@wikibox.kr
 
 pw : wiki11admin!
 ```
