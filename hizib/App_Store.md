@@ -1,12 +1,14 @@
 ### 앱스토어
 
-#### google app store
+#### google App store
 
 ```
-wikibox11@gmail.com / wiki0800**
+wikibox11@gmail.com
+
+wiki0800**
 ```
 
-#### apple app store
+#### apple App store
 
 ```
 wikibox77@gmail.com
