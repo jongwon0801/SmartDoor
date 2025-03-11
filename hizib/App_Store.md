@@ -19,12 +19,12 @@ wikibox77@gmail.com  (잠김)
 Esbd1012
 
 
-wikibox11@gmail.com
+wikibox11@gmail.com (iMac에 확인 코드 필요)
 
 Esbd1012
 
 
-wikibox@wikibox.kr
+wikibox@wikibox.kr (문자인증 필요)
 
 Wiki0800*  (W는 대문자)
 ```
