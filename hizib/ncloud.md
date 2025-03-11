@@ -5,5 +5,5 @@ https://auth.ncloud.com/login
 ```
 id : wikibox76417@wikibox.kr
 
-pw : wikibox0800**
+pw : wikibox0800@@
 ```
