@@ -5,14 +5,14 @@ https://auth.ncloud.com/login
 ```
 id : wikibox76417@wikibox.kr
 
-pw : wikibox0800@@
+pw : wiki6564@!
 ```
 
 
 #### google Mail
 
 ```
-wikibox11@gmail.com / wiki0800** (2차인증 사용하지 않음)
+wikibox11@gmail.com / wiki6564@ (2차인증 사용하지 않음)
 
 wikibox77@gmail.com / wikibox1012@ (2차인증: 정의신) (안됨)
 ```
