@@ -81,3 +81,6 @@ bash
 편집
 diskutil list
 👉 GUID_partition_scheme이 아닌 경우, 다시 포맷해야 합니다.
+
+<img width="474" alt="image" src="https://github.com/user-attachments/assets/d437f4e8-3e68-4ca6-ae97-72ae448814d4" />
+
