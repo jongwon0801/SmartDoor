@@ -52,6 +52,9 @@ wikibox/wiki0800**
 2. wikibox_lab 192.168.1.1
 wikibox/tmshdnxmfl
 
+wikibox_lab homeassistant
+192.168.1.21
+
 
 Wikibox 와이파이 비번
 10123333
