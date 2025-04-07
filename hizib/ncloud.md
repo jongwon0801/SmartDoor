@@ -6,6 +6,8 @@ https://auth.ncloud.com/login
 id : wikibox76417@wikibox.kr
 
 pw : wiki6564@!
+
+공인 ip : 125.209.200.159
 ```
 
 
