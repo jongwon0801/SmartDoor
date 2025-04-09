@@ -53,7 +53,7 @@ ssh pi@192.168.1.14   # 비밀번호: pi  192.168.1.1 network
 
 Iptime 관리자 계정
 1. wikibox 192.168.0.1
-wikibox/wiki0800**
+wikibox/wiki6564
 
 
 2. wikibox_lab 192.168.1.1
