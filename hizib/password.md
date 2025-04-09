@@ -8,6 +8,12 @@ One drive 계정
 cjw@wikibox.kr
 wikibox/wiki0800*
 
+부산 버젼 문
+192.168.0.161
+elcsoft6564
+
+192.168.0.139
+pi
 
  NAS주소
 http://192.168.0.134/  
