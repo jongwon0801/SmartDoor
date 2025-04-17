@@ -79,11 +79,13 @@ Mac의 부팅 디스크는 **GUID 파티션 테이블(GPT)**을 사용해야 합
 DMG를 다시 생성
 터미널에서 확인하기:
 
-bash
-복사
-편집
 diskutil list
+
 👉 GUID_partition_scheme이 아닌 경우, 다시 포맷해야 합니다.
 
 <img width="474" alt="image" src="https://github.com/user-attachments/assets/d437f4e8-3e68-4ca6-ae97-72ae448814d4" />
+
+
+
+
 
