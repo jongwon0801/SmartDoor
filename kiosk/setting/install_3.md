@@ -227,6 +227,21 @@ Restart=on-failure
 [Install]
 WantedBy=default.target
 #WantedBy=multi-user.target
+
+
+sudo systemctl stop tornado.service
+
+sudo systemctl disable tornado.service
+
+sudo rm /lib/systemd/system/tornado.service
+
+sudo systemctl daemon-reload
+
+sudo nano /etc/systemd/system/tornado.service
+
+sudo systemctl enable tornado.service
+
+sudo systemctl start tornado.service
 ```
 
 
