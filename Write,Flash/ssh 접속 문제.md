@@ -11,6 +11,8 @@
 
 
 1. SSH가 비활성화된 상태
+
+
 라즈비안 OS를 새로 구우면 기본적으로 SSH 비활성화 상태
 ```less
 - SD카드 굽고
@@ -20,14 +22,17 @@
 
 2. SD카드가 마운트된 경로 확인
 
+```less
 mount
-
+```
 /Volumes/boot 또는 /Volumes/bootfs 등 마운트 경로 확인
 
 
 3. ssh 파일 만들기
 
+```less
 touch /Volumes/boot/ssh
+```
 
 boot 파티션 루트에 빈 ssh 파일을 생성
 
