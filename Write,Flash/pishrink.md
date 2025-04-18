@@ -10,15 +10,23 @@ chmod +x pishrink.sh
 
 pishrink.sh가 준비 완료!
 
-✅ 2단계: Mac에서 .img 만들고 라즈베리파이로 전송
+✅ 2단계
 
-sudo dd if=/dev/rdisk5 of=~/Desktop/myimage.img bs=1m status=progress
+```less
+diskutil list
 
-라즈베리파이로 scp 명령으로 전송
+/dev/disk4 (external, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *256.1 GB   disk4
+   1:                        EFI EFI                     209.7 MB   disk4s1
+   2:                  Apple_HFS 외장하드           255.7 GB   disk4s2
 
-scp ~/Desktop/myimage.img pi@<라즈베리파이 IP>:~
+ls /Volumes
 
-라즈베리 홈 디렉토리에 myimage.img 생김
+ls "/Volumes/외장하드"
+
+scp "/Volumes/외장하드/testB.img" pi@192.168.0.164:~/pishrink/
+```
 
 ✅ 3단계: pishrink 실행
 
