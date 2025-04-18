@@ -13,6 +13,11 @@ pishrink.sh가 준비 완료!
 ✅ 2단계
 
 ```less
+
+# 라즈베리 파티션 확장
+sudo raspi-config -> Advanced Options -> Expand Filesystem
+
+
 diskutil list
 
 /dev/disk4 (external, physical):
@@ -25,7 +30,22 @@ ls /Volumes
 
 ls "/Volumes/외장하드"
 
-scp "/Volumes/외장하드/testB.img" pi@192.168.0.164:~/pishrink/
+# 파일 압축
+tar -czvf ~/testB.img.tar.gz -C "/Volumes/외장하드" testB.img
+
+ls ~ | grep testB.img.tar.gz
+testB.img.tar.gz
+
+ls -lh ~/testB.img.tar.gz
+-rw-r--r-- 1 jongwon staff 5.9G  4 18 17:19 /Users/jongwon/testB.img.tar.gz
+
+# 압축 파일 라즈베리로 전송
+scp ~/testB.img.tar.gz pi@192.168.0.164:/home/pi/pishrink/
+
+
+tar -xzvf testB.img.tar.gz
+
+
 ```
 
 ✅ 3단계: pishrink 실행
