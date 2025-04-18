@@ -225,7 +225,8 @@ Group=pi
 Restart=on-failure
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
+#WantedBy=multi-user.target
 ```
 
 
