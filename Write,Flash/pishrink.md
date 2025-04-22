@@ -30,35 +30,9 @@ ls /Volumes
 
 ls "/Volumes/외장하드"
 
-# 파일 압축
-tar -czvf ~/testB.img.tar.gz -C "/Volumes/외장하드" testB.img
-
-ls ~ | grep testB.img.tar.gz
-testB.img.tar.gz
-
-ls -lh ~/testB.img.tar.gz
--rw-r--r-- 1 jongwon staff 5.9G  4 18 17:19 /Users/jongwon/testB.img.tar.gz
-
-# 압축 파일 라즈베리로 전송
-scp ~/testB.img.tar.gz pi@192.168.0.164:/home/pi/pishrink/
-
-
-tar -xzvf testB.img.tar.gz
-
 
 ```
 
-✅ 3단계: pishrink 실행
-
-cd ~/pishrink
-
-sudo ./pishrink.sh ~/myimage.img
-
-완료되면 myimage.img → myimage.img (작아진 상태)로 덮어쓰기됨
-
-원본 보존하고 싶으면
-
-sudo ./pishrink.sh -z ~/myimage.img
 
 
 💡 pishrink의 효과는?
