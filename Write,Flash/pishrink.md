@@ -1,4 +1,4 @@
-✅ 1단계: pishrink 설치 (라즈베리파이 또는 리눅스 환경에서)
+#### pishrink 설치 (라즈베리파이 또는 리눅스 환경에서)
 
 ```less
 sudo apt update
@@ -10,28 +10,60 @@ chmod +x pishrink.sh
 
 pishrink.sh가 준비 완료!
 
-✅ 2단계
-
 ```less
 
 # 라즈베리 파티션 확장
 sudo raspi-config -> Advanced Options -> Expand Filesystem
 
+# 외장하드 라즈베리파이에 꽂기
+```
 
-diskutil list
+#### 라즈베리에서 외장하드 마운트 경로
+```less
+/media/pi/SAMSUNG USB
 
-/dev/disk4 (external, physical):
-   #:                       TYPE NAME                    SIZE       IDENTIFIER
-   0:      GUID_partition_scheme                        *256.1 GB   disk4
-   1:                        EFI EFI                     209.7 MB   disk4s1
-   2:                  Apple_HFS 외장하드           255.7 GB   disk4s2
+lsblk
 
-ls /Volumes
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda           8:0    0 238.5G  0 disk 
+└─sda1        8:1    0 238.5G  0 part 
+mmcblk0     179:0    0 119.4G  0 disk 
+├─mmcblk0p1 179:1    0  41.8M  0 part /boot
+└─mmcblk0p2 179:2    0 119.3G  0 part /
 
-ls "/Volumes/외장하드"
+# 외장 드라이브 마운트
+sudo mount /dev/sda1 /media/pi/SAMSUNG\ USB
+mount: /media/pi/SAMSUNG USB: unknown filesystem type 'exfat'.
+
+# 외장하드가 exFAT 파일 시스템을 사용하고 있어서 마운트가 실패
+# exFAT 파일 시스템을 라즈베리파이에서 사용하려면, 해당 파일 시스템을 지원하는 패키지를 설치
+(외장하드 파일시스템 : MBR, exFAT (읽기전용), sd카드 파일시스템은 에처로 구울때 재생성되므로 상관없음)
+sudo apt update
+sudo apt install exfat-fuse exfat-utils
+
+# 다시 마운트
+sudo mount /dev/sda1 /media/pi/SAMSUNG\ USB
+
+# 드라이브 확인
+ls /media/pi/SAMSUNG\ USB
+정은b.dmg  정은치엘로B.img
+
+# 드라이브 파일 크기 확인
+ls -lh /media/pi/SAMSUNG\ USB
+합계 45G
+-rwxrwxrwx 1 root root 15G  4월 21 23:26 정은b.dmg
+-rwxrwxrwx 1 root root 30G  4월 21 23:51 정은치엘로B.img
+
+# pishrink 경로
+/home/pi/pishrink/pishrink.sh
+
+# usb에 있는 img 파일 줄이기
+sudo ./pishrink.sh /media/pi/SAMSUNG\ USB/정은치엘로B.img
+
 
 
 ```
+
 
 
 
