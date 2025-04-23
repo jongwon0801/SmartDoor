@@ -209,11 +209,59 @@ pip install tornado
 #### tornado.service 
 
 - tornado.sh 를 tornado.service 파일에 넣어서 autostart 할 때 사용
-  
+
+---
+
+#### /home/pi/.config/systemd/user/tornado.service
+
+mkdir -p ~/.config/systemd/user
+
+```less
+# 유저 단위 서비스 ~/.config/systemd/user/ 에 작성
+
+[Unit]
+Description=TornadoWebserver
+
+[Service]
+#User=pi
+#Group=pi
+
+# X11 환경 변수 설정
+Environment=DISPLAY=:0
+Environment="XAUTHORITY=/home/pi/.Xauthority"
+ExecStart=/home/pi/www/shell/tornado.sh
+
+Restart=on-failure
+Restart=on-abort
+
+[Install]
+#WantedBy=multi-user.target
+WantedBy=default.target
+
+```
+
+
+```less
+
+systemctl --user daemon-reload
+
+systemctl --user enable tornado.service
+
+systemctl --user start tornado.service
+
+systemctl --user status tornado.service
+
+# 부팅 후 자동실행
+sudo loginctl enable-linger pi
+
+```
+
 
 #### sudo nano /lib/systemd/system/tornado.service
 
 ```bash
+# 벨누르고 영상통화 후 벨 안되는 서비스
+
 [Unit]
 Description=TornadoWebserver
 
@@ -225,8 +273,8 @@ Group=pi
 Restart=on-failure
 
 [Install]
-WantedBy=default.target
-#WantedBy=multi-user.target
+#WantedBy=default.target
+WantedBy=multi-user.target
 
 
 sudo systemctl stop tornado.service
@@ -242,6 +290,8 @@ sudo nano /etc/systemd/system/tornado.service
 sudo systemctl enable tornado.service
 
 sudo systemctl start tornado.service
+
+sudo systemctl status tornado.service
 ```
 
 
