@@ -208,15 +208,18 @@ pip install tornado
 
 #### tornado.service 
 
-- tornado.sh 를 tornado.service 파일에 넣어서 autostart 할 때 사용
+tornado.sh 를 tornado.service 파일에 넣어서 autostart 할 때 사용
 
 ---
 
 #### /home/pi/.config/systemd/user/tornado.service
 
-mkdir -p ~/.config/systemd/user
+#### 유저 단위 서비스
 
 ```less
+# 폴더 생성
+mkdir -p ~/.config/systemd/user
+
 # 유저 단위 서비스 ~/.config/systemd/user/ 에 작성
 
 [Unit]
