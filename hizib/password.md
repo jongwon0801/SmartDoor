@@ -21,6 +21,15 @@ http://192.168.0.134/
 truenas_admin
 Wikibox
 
+vpn 아파트 관리자 페이지 주소
+<방제실컴퓨터ip>/admin
+
+보관함 admin 주소
+http://smart.apple-box.kr/admin/#/login
+
+보관함 buyer 주소
+http://smart.apple-box.kr/buyer/#/login
+
 
 아마존 AWS의 계정 ID는 wikibox76417@wikibox.kr로 바꾸었습니다.
 패스워드는 기존과 같습니다.
