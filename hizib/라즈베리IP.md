@@ -25,7 +25,7 @@ user : root
 user : pi
 스노우트리
 
-# 라즈베리 4 conky
+# 라즈베리 4 conky(블루)
 192.168.0.58
 user : pi
 pi
