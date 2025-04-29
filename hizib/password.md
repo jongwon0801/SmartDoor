@@ -34,11 +34,14 @@ http://192.168.0.134/
 truenas_admin
 Wikibox
 
+
 vpn 아파트 관리자 페이지 주소
 <방제실컴퓨터ip>/admin
 
+
 보관함 admin 주소
 http://smart.apple-box.kr/admin/#/login
+
 
 보관함 buyer 주소
 http://smart.apple-box.kr/buyer/#/login
@@ -56,6 +59,7 @@ Vnc
 회원가입할 이름 양식
 JongWon CHOI
 
+
 이메일 cjw@wikibox.kr
 Chlwlgh123!
 
@@ -68,6 +72,7 @@ ssh pi@192.168.1.14   # 비밀번호: pi  192.168.1.1 network
 Iptime 관리자 계정
 1. wikibox 192.168.0.1
 wikibox/wiki6564
+
 
 2. wikibox_lab 192.168.1.1
 wikibox/tmshdnxmfl
