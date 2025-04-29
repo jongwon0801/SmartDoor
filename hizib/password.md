@@ -4,28 +4,27 @@
 
 사업자 등록증 주소 : 다산현대프리미어캠퍼스 제비에이 제3층 03-002호
 
-One drive 계정
-
+# One drive 계정
 cjw@wikibox.kr
 wikibox/wiki0800*
 
-스마트도어 클라우드 서버
-
+# 스마트도어 클라우드 서버
 ubuntu@api.hizib.wikibox.kr
 elcsoft6564
 
 hizib@api.hizib.wikibox.kr
 dnlzlqkrtm6564
+(위키박스6564)
 
 부산 버젼 문
 192.168.0.161
 elcsoft6564
 
-테스트 문
+연구실 문
 192.168.0.139
 pi
 
- NAS주소
+NAS주소
 http://192.168.0.134/  
 truenas_admin
 Wikibox
@@ -56,14 +55,6 @@ JongWon CHOI
 Chlwlgh123!
 
 
-하이집 서버 ssh
-ssh ubuntu@api.hizib.wikibox.kr   # 비밀번호: elcsoft
-
-
-키오스크 서버 ssh
-ssh pi@192.168.0.161   # 비밀번호: elcsoft
-
-
 라즈베리4 기기 ssh
 ssh pi@192.168.0.50   # 비밀번호: pi  192.168.0.1 network
 ssh pi@192.168.1.14   # 비밀번호: pi  192.168.1.1 network
@@ -73,9 +64,9 @@ Iptime 관리자 계정
 1. wikibox 192.168.0.1
 wikibox/wiki6564
 
-
 2. wikibox_lab 192.168.1.1
 wikibox/tmshdnxmfl
+
 
 wikibox_lab homeassistant
 192.168.1.21
