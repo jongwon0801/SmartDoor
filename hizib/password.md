@@ -8,21 +8,26 @@
 cjw@wikibox.kr
 wikibox/wiki0800*
 
+
 # 스마트도어 클라우드 서버
 ubuntu@api.hizib.wikibox.kr
 elcsoft6564
+
 
 hizib@api.hizib.wikibox.kr
 dnlzlqkrtm6564
 (위키박스6564)
 
+
 부산 버젼 문
 192.168.0.161
 elcsoft6564
 
+
 연구실 문
 192.168.0.139
 pi
+
 
 NAS주소
 http://192.168.0.134/  
