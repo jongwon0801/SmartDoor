@@ -83,11 +83,21 @@ ls -lh /media/pi/SAMSUNG\ USB
 # usb에 있는 img 파일 줄이기
 sudo ./pishrink.sh /media/pi/SAMSUNG\ USB/정은치엘로B.img
 
-
-
 ```
 
+```less
+# 외장 드라이브 마운트 (RPI4는 알아서 된다)
+sudo mount /dev/sda1 /media/pi/외장
+mount: /media/pi/외장: /dev/sda1 already mounted on /media/pi/외장.
 
+sudo ./pishrink.sh /media/pi/외장/Smartdoor161_Add_IOT_20250501.img
+
+Raspberry Pi 3에서는 exFAT 파일 시스템을 지원하려면 **exfat-fuse** 와 exfat-utils 패키지를 설치해야 했습니다.
+이것은 기본적으로 지원되지 않아서, 수동으로 설치해야 했습니다.
+
+**Raspberry Pi 4 (Bullseye 64-bit)**에서는 exFAT 파일 시스템 지원이 기본적으로 내장되어 있어,
+별도의 패키지 설치 없이 바로 exFAT 드라이브를 사용할 수 있습니다
+```
 
 
 💡 pishrink의 효과는?
