@@ -30,4 +30,8 @@ user : pi
 user : pi
 pi
 
+# 라즈베리 4 모드버스 연습용
+192.168.0.66
+user : pi
+pi
 ```
