@@ -29,7 +29,7 @@ sudo service nginx restart
 
 #### mariadb 설치
 
-```bash
+```less
 sudo apt-get install mariadb-server
 
 sudo mysql -u root
@@ -48,8 +48,10 @@ exit
 
 ```
 
-
-
+#### 데이터 베이스 삭제
+```less
+DROP DATABASE hizib;
+```
 
 
 
