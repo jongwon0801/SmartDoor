@@ -8,6 +8,9 @@
 cjw@wikibox.kr
 wikibox/wiki0800*
 
+# 랜섬웨어 컴퓨터
+wiki0800
+비번 없음
 
 # 스마트도어 클라우드 서버
 ubuntu@api.hizib.wikibox.kr
