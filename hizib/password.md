@@ -8,8 +8,8 @@
 cjw@wikibox.kr
 wikibox/wiki0800*
 
-# 랜섬웨어 컴퓨터
-wiki0800
+# 연구실 window pc
+wikibox
 비번 없음
 
 # 스마트도어 클라우드 서버
@@ -72,22 +72,23 @@ ssh pi@192.168.0.50   # 비밀번호: pi  192.168.0.1 network
 ssh pi@192.168.1.14   # 비밀번호: pi  192.168.1.1 network
 
 
-Iptime 관리자 계정
+iptime 관리자 계정
 1. wikibox 192.168.0.1
 wikibox/wiki6564
 
 
 2. wikibox_lab 192.168.1.1
-wikibox/tmshdnxmfl
+wikibox/wiki6564
 
 
-wikibox_lab homeassistant
-192.168.1.21
-
-
-Wikibox 와이파이 비번
+wikibox 와이파이 비번
 10123333
 
+wikibox_lab 와이파이 비번
+wiki6564
+
+wikibox_lab5G 와이파이 비번
+wiki6564
 
 안드로이드 태블릿 비밀번호
 093100
