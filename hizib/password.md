@@ -49,6 +49,15 @@ http://smart.apple-box.kr/admin/#/login
 보관함 buyer 주소
 http://smart.apple-box.kr/buyer/#/login
 
+# 비즈뿌리오
+스마트 도어 계정
+ID :  hizib
+PW :  wiki0800**
+
+# cany 모듈 계정
+ID :  candy
+PW :  wiki0800!
+
 
 아마존 AWS의 계정 ID는 wikibox76417@wikibox.kr로 바꾸었습니다.
 패스워드는 기존과 같습니다.
