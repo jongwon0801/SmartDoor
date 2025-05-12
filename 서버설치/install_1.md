@@ -153,5 +153,11 @@ max_file_uploads = 20
 date.timezone = Asia/Seoul
 ```
 
+#### PHP 8.4-FPM의 기본 소켓 경로
 
+```less
+# 버젼이 바뀌면 소켓 경로 변경해야함
+/etc/php/8.4/fpm/pool.d/www.conf
 
+listen = /run/php/php8.4-fpm.sock
+```
