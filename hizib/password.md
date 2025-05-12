@@ -61,7 +61,7 @@ PW :  wiki0800!
 
 위키박스 테스트 계정
 ID    :  wikitest
-PW :  wiki4594**
+PW :  wiki0800!
 
 # 스마트도어 클라우드 주소
 api.hizib.wikibox.kr
