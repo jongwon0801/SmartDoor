@@ -101,9 +101,6 @@ php -v
 # Ubuntu 시스템에서 소프트웨어 속성 관리와 관련된 도구들을 설치하는 명령어. 이 도구는 외부 리포지터리(PPA)를 추가하거나 관리할 때 유용
 sudo apt-get install -y software-properties-common
 
-# PHP 8.4가 기본 리포지터리에 포함되어 있다면 리포지터리 추가 단계를 건너뛰고 바로 설치
-sudo add-apt-repository ppa:ondrej/php
-
 sudo apt-get update
 
 sudo apt install php8.4-cli
