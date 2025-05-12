@@ -52,7 +52,7 @@ http://smart.apple-box.kr/buyer/#/login
 # 비즈뿌리오
 스마트 도어 계정
 ID :  hizib
-PW :  wiki0800**
+PW :  wiki0800*
 
 # cany 모듈 계정
 ID :  candy
