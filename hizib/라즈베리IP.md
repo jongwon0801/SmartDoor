@@ -34,4 +34,13 @@ pi
 192.168.0.66
 user : pi
 pi
+
+# 스마트도어 서버
+user : hizib
+pw : wikibox
+
+user : ubuntu
+pw : wikibox
+
+
 ```
