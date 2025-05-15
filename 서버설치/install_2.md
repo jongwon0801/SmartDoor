@@ -50,7 +50,9 @@ sudo chmod 640 /etc/mosquitto/pwfile
 
 # 읽기 권한은 mosquitto 사용자만 갖도록 제한 (보안 강화)
 sudo chown mosquitto:mosquitto /etc/mosquitto/pwfile
+```
 
+```less
 # Mosquitto 설정파일 수정
 sudo nano /etc/mosquitto/mosquitto.conf
 
