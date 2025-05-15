@@ -68,14 +68,20 @@ PW :  wiki0800!
 ID    :  wikitest
 PW :  wiki0800!
 
-# 스마트도어 클라우드 주소
+# 공인 아이피 주소
+
+[스마트도어 클라우드 주소]
 api.hizib.wikibox.kr
 hizib.wikibox.kr
 13.124.155.19
 
-# 보관함 네이버 서버 주소
-175.211.153.28
+[보관함 네이버 서버 주소]
 smart.apple-box.kr
+125.209.200.159
+
+[회사 주소]
+175.211.153.28
+
 
 아마존 AWS의 계정 ID는 wikibox76417@wikibox.kr로 바꾸었습니다.
 패스워드는 기존과 같습니다.
