@@ -67,11 +67,20 @@ allow_anonymous false: 익명 접속 차단 — 사용자/비밀번호 필수
 sudo systemctl restart mosquitto
 ```
 
+#### 비즈뿌리오 설치
 
+```less
+# Mac -> 서버로 압축파일 복사
+비즈클라이언트 DB연동 통합발송모듈 v4.07(UTF8 지원) biz_client_v4007.zip
+scp /Users/jongwon/biz/biz_client_v4007.zip hizib@192.168.0.73:/home/hizib/
 
+mkdir bizppurio
 
+sudo apt install unzip
 
+sudo unzip biz_client_v4007.zip
 
+```
 
 
 
