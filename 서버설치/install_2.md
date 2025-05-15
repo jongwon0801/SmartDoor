@@ -52,6 +52,7 @@ sudo chmod 640 /etc/mosquitto/pwfile
 sudo chown mosquitto:mosquitto /etc/mosquitto/pwfile
 ```
 
+#### Mosquitto 설정파일 수정
 ```less
 # Mosquitto 설정파일 수정
 sudo nano /etc/mosquitto/mosquitto.conf
