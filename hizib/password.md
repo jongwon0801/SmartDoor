@@ -55,6 +55,11 @@ http://smart.apple-box.kr/buyer/#/login
 ID    : hizib
 PW :  wiki0800*** (별세개)
 
+[hizib slave 계정]
+ID    : hizibtest
+PW :  wiki0800*** (별세개)
+
+
 [비즈뿌리오  메인계정] (보관함)
 ID    :  candy
 PW :  wiki0800!
