@@ -73,6 +73,10 @@ api.hizib.wikibox.kr
 hizib.wikibox.kr
 13.124.155.19
 
+# 보관함 네이버 서버 주소
+175.211.153.28
+smart.apple-box.kr
+
 아마존 AWS의 계정 ID는 wikibox76417@wikibox.kr로 바꾸었습니다.
 패스워드는 기존과 같습니다.
 
