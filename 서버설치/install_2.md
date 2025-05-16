@@ -18,6 +18,8 @@ sudo adduser ubuntu
 
 sudo usermod -aG sudo ubuntu
 
+sudo usermod -aG sudo hizib
+
 sudo chmod 755 /home/ubuntu
 
 sudo adduser hizib
