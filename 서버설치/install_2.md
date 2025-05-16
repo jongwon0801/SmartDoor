@@ -40,7 +40,7 @@ sudo systemctl restart mosquitto.service
 ```
 
 
-#### 설정 변경
+#### mqtt 설정 변경
 ```less
 id : hizib
 pw : wikibox
