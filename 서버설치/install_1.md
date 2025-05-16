@@ -153,7 +153,7 @@ date.timezone = Asia/Seoul
 
 ```less
 # 버젼이 바뀌면 소켓 경로 변경해야함
-/etc/php/8.4/fpm/pool.d/www.conf
+sudo nano /etc/php/8.4/fpm/pool.d/www.conf
 
 listen = /run/php/php8.4-fpm.sock
 ```
