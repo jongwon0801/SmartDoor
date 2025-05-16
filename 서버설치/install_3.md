@@ -31,6 +31,7 @@ broker_address = "192.168.0.73"
 ```less
 sudo nano /var/log/nginx/hizib.error.log
 
+sudo nginx -t
 
 location ~ \.php$ {
     root           /home/hizib;
@@ -45,11 +46,7 @@ location ~ \.(html|htm)$ {
     # 정적 파일이라 별도 fastcgi_pass 필요 없음
 }
 
-
-
-
-
-
-
+192.168.0.73/Admin/login
+405 뜸 이거 부터 해결해야함
 
 ```
