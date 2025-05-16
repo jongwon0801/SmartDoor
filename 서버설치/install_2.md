@@ -42,12 +42,18 @@ sudo systemctl restart mosquitto.service
 
 #### 설정 변경
 ```less
-# 사용자 비밀번호 파일 생성
+id : hizib
+pw : wikibox
+```
+```less
+# 사용자(hizib) 와 비밀번호(wikibox) 생성
 sudo mosquitto_passwd -c /etc/mosquitto/pwfile hizib
 
 Password: wikibox
 Reenter password: wikibox
+```
 
+```less
 sudo chmod 640 /etc/mosquitto/pwfile
 
 # 읽기 권한은 mosquitto 사용자만 갖도록 제한 (보안 강화)
