@@ -65,14 +65,19 @@ server {
         root /usr/share/nginx/html;
     }
 
-    location ~ \.(php|html|htm)$ {
-        root           /home/hizib;
-        fastcgi_pass   unix:/var/run/php/php8.4-fpm.sock;
-        fastcgi_index  index.html;
-        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-        include        fastcgi_params;
-        #include snippets/fastcgi-php.conf;
-    }
+    location ~ \.php$ {
+    root           /home/hizib;
+    fastcgi_pass   unix:/var/run/php/php8.4-fpm.sock;
+    fastcgi_index  index.php;
+    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+    include        fastcgi_params;
+}
+
+location ~ \.(html|htm)$ {
+    root /home/hizib;
+    # 정적 파일이라 별도 fastcgi_pass 필요 없음
+}
+
 }
 ```
 
