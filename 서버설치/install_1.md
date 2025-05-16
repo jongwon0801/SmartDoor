@@ -27,11 +27,10 @@ sudo systemctl enable nginx
 sudo nano /etc/nginx/conf.d/hizib.conf
 
 server {
-		listen 80;
-    server_name 192.168.0.73;
+	listen 80;
+	server_name 192.168.0.73;
 
     charset utf-8;
-    #access_log  /var/log/nginx/hizib.access.log  main;
     error_log /var/log/nginx/hizib.error.log;
 
     location /image {
@@ -68,7 +67,7 @@ server {
 
     location ~ \.(php|html|htm)$ {
         root           /home/hizib;
-        fastcgi_pass   unix:/var/run/php/php7.4-fpm.sock;
+        fastcgi_pass   unix:/var/run/php/php8.4-fpm.sock;
         fastcgi_index  index.html;
         fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
         include        fastcgi_params;
