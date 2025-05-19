@@ -145,6 +145,9 @@ office365
 계정ID: cjw@wikibox.kr
 PW: wiki0800*
 
+openai 계정
+계정ID: cjw@wikibox.kr
+wikibox0800*
 
 보관함서버
 https://smart.apple-box.kr/admin
