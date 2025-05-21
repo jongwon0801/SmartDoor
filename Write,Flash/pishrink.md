@@ -92,6 +92,8 @@ mount: /media/pi/외장: /dev/sda1 already mounted on /media/pi/외장.
 
 sudo ./pishrink.sh /media/pi/외장/Smartdoor161_Add_IOT_20250501.img
 
+sudo ./pishrink.sh /media/pi/외장/부산doorwifi수정_20250521.img
+
 Raspberry Pi 3에서는 exFAT 파일 시스템을 지원하려면 **exfat-fuse** 와 exfat-utils 패키지를 설치해야 했습니다.
 이것은 기본적으로 지원되지 않아서, 수동으로 설치해야 했습니다.
 
