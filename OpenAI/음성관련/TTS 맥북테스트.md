@@ -14,11 +14,14 @@ pip install TTS
 2. 여자 목소리 미리 학습된 모델 다운로드 및 테스트
 from TTS.api import TTS
 
-# 모델 리스트 중에서 여성 목소리 고르기 (예: "tts_models/en/ljspeech/tacotron2-DDC")
-tts = TTS(model_name="tts_models/en/ljspeech/tacotron2-DDC")
+# 한국어 지원 모델 로딩
+tts = TTS(model_name="tts_models/ko/kss/tacotron2-DDC")
 
-# 텍스트를 wav 파일로 저장
-tts.tts_to_file(text="Hello, this is a female voice test.", file_path="output.wav")
+# 텍스트를 읽고 wav 파일로 저장
+tts.tts_to_file(
+    text="안녕하세요. 스마트 도어 시스템에 오신 것을 환영합니다.",
+    file_path="korean_output.wav"
+)
 ```
 ```less
 3. wav 파일이 만들어짐
