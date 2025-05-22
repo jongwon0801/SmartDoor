@@ -1,16 +1,13 @@
-
-
-
-
-
-
 #### 1. Coqui TTS (Mozilla TTS)
 
 ```less
 1. 환경 준비
-python3 -m venv tts-env
-source tts-env/bin/activate
+pyenv virtualenv 3.9.13 tts-env39
+
+pyenv activate tts-env39
+
 pip install --upgrade pip
+
 pip install TTS
 ```
 ```less
