@@ -1,4 +1,37 @@
-#### 1. macOS 기본 TTS (say 명령어) (기계음 보통, 여자음성)
+
+
+
+
+
+
+#### 1. Coqui TTS (Mozilla TTS)
+
+```less
+1. 환경 준비
+python3 -m venv tts-env
+source tts-env/bin/activate
+pip install --upgrade pip
+pip install TTS
+```
+```less
+2. 여자 목소리 미리 학습된 모델 다운로드 및 테스트
+from TTS.api import TTS
+
+# 모델 리스트 중에서 여성 목소리 고르기 (예: "tts_models/en/ljspeech/tacotron2-DDC")
+tts = TTS(model_name="tts_models/en/ljspeech/tacotron2-DDC")
+
+# 텍스트를 wav 파일로 저장
+tts.tts_to_file(text="Hello, this is a female voice test.", file_path="output.wav")
+```
+```less
+3. wav 파일이 만들어짐
+
+생성된 output.wav를 맥에서 바로 재생하거나, 스마트도어 프로젝트에 넣어 사용 가능
+```
+
+
+
+#### 2. macOS 기본 TTS (say 명령어) (기계음 보통, 여자음성)
 
 ```less
 설치 필요 없음, macOS에 기본 내장되어 있음.
@@ -21,7 +54,7 @@ AIFF를 WAV로 변환 (macOS 내장 afconvert 사용)
 afconvert output.aiff output.wav
 ```
 
-#### 2. espeak-ng (오픈소스 TTS 엔진) (기계음 심함, 남자음성)
+#### 3. espeak-ng (오픈소스 TTS 엔진) (기계음 심함, 남자음성)
 
 ```less
 Homebrew로 설치 가능
@@ -39,7 +72,7 @@ WAV 파일로 저장
 espeak "Hello world" --stdout > output.wav
 ```
 
-#### 3. Python 라이브러리: pyttsx3 (크로스 플랫폼) (기계음 보통, 여자음성, 한글 잘 안됨)
+#### 4. Python 라이브러리: pyttsx3 (크로스 플랫폼) (기계음 보통, 여자음성, 한글 잘 안됨)
 
 Python에서 로컬 TTS를 쉽게 사용 가능
 
@@ -76,7 +109,7 @@ init() 함수 같은 게 없는 자기 모듈을 참조해서 에러 발생
 pytts_test.py 파일 안에서 절대 import pytts_test 하지 말기!
 ```
 
-#### 4. Google Text-to-Speech (gTTS) (기계음 낮음, 남자음성, 성별 결제해야함)
+#### 5. Google Text-to-Speech (gTTS) (기계음 낮음, 남자음성, 성별 결제해야함)
 ```less
 pip install gTTS
 ```
