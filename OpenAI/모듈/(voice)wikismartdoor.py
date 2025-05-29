@@ -1,3 +1,50 @@
+    # pip install openai 가상환경 키고 설치 해야함
+    # 도어벨 푸시 액션
+    def doorbellPush(self):
+        logger.Logger._LOGGER.info(
+            "--------------------------------- doorbellPush start ---------------------------------"
+        )
+
+        try:
+            threading.Thread(target=self.screenOn()).start()
+            logger.Logger._LOGGER.info("doorbellPush : 스크린 켜기")
+        except Exception as e:
+            logger.Logger._LOGGER.info("스크린 error : %s" % e)
+
+        try:
+            threading.Thread(
+                target=self.sendKiosk, args=("doorbellPushProcess",)
+            ).start()
+            logger.Logger._LOGGER.info("doorbellPush : 키오스크 메세지 발송")
+        except Exception as e:
+            logger.Logger._LOGGER.info("키오스크전송 error : %s" % e)
+
+        try:
+            threading.Thread(target=self.play_doorbell).start()
+            # self.play_doorbell()
+            logger.Logger._LOGGER.info("doorbellPush : 도어벨 플레이")
+        except Exception as e:
+            logger.Logger._LOGGER.info("도어벨 error : %s" % e)
+
+        try:
+            threading.Timer(4, self.voice_process).start()
+            logger.Logger._LOGGER.info("4초 후 음성인식 프로세스 실행 예약 완료")
+        except Exception as e:
+            logger.Logger._LOGGER.error(f"음성인식 프로세스 예약 중 에러: {e}")
+
+        try:
+            threading.Thread(
+                target=elcsoft.controller.smartdoor.doorbellPushProcess
+            ).start()
+            logger.Logger._LOGGER.info("푸시 메세지 발송")
+        except Exception as e:
+            logger.Logger._LOGGER.info("FCM발송 error : %s" % e)
+
+        logger.Logger._LOGGER.info(
+            "--------------------------------- doorbellPush stop ---------------------------------"
+        )
+    
+
 
     ################################################################################################################################
     #####
