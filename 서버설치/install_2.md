@@ -146,7 +146,25 @@ DBPASS = Test1234!
 | `allowPublicKeyRetrieval=true` | 서버에서 공개키로 비밀번호 암호화 허용 (MySQL 8 이상일 때 주로 필요) | 🔶 **MySQL 8 이상이면 필요**, 아니면 생략 가능 |
 
 
+#### 실행권한 부여
 
+```less
+/home/hizib/bizppurio/script
+
+ls -al
+
+sudo chmod 755 *
+
+ls -al
+```
+
+#### 자바 설치
+```less
+sudo apt update
+sudo apt install openjdk-21-jre-headless
+
+java -version
+```
 
 
 
