@@ -87,8 +87,64 @@ mkdir bizppurio
 sudo apt install unzip
 
 sudo unzip biz_client_v4007.zip
+```
+```less
+sudo mysql -u root -p
+
+pw : wikibox
+
+SELECT User, Host FROM mysql.user;
++-------------+-----------+
+| User        | Host      |
++-------------+-----------+
+| test        | %         |
+| mariadb.sys | localhost |
+| mysql       | localhost |
+| root        | localhost |
++-------------+-----------+
 
 ```
+
+```less
+mysql -u test -p
+
+id : test
+pw : Test1234!
+```
+
+```less
+# mysql 버젼 확인
+mysql -u root -p -e "SELECT VERSION();"
+
++------------------+
+| VERSION()        |
++------------------+
+| 11.4.5-MariaDB-1 |
++------------------+
+
+/home/hizib/bizppurio/config/uds.conf
+
+UDS_IP = biz.ppurio.com
+UDS_SEND_PORT = 18300
+UDS_RECV_PORT = 18400
+UDS_ID = hizibtest
+UDS_PW = wiki0800*
+USE_SSL = Y
+
+DBNAME = MYSQL
+
+DBURL = jdbc:mysql://localhost:3306/hizib?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+DBUSER = test
+DBPASS = Test1234!
+```
+#### DBURL 옵션
+| 옵션                             | 설명                                          | 필요 여부                             |
+| ------------------------------ | ------------------------------------------- | --------------------------------- |
+| `useUnicode=true`              | 유니코드 문자 지원 (한글 등)                           | ✅ 거의 항상 필요                        |
+| `characterEncoding=utf-8`      | 문자 인코딩을 UTF-8로 지정                           | ✅ 한글 깨짐 방지                        |
+| `useSSL=false`                 | SSL 없이 접속 (로컬/내부망에서 일반적)                    | ✅ SSL 미사용 시 필요 (경고 방지)            |
+| `allowPublicKeyRetrieval=true` | 서버에서 공개키로 비밀번호 암호화 허용 (MySQL 8 이상일 때 주로 필요) | 🔶 **MySQL 8 이상이면 필요**, 아니면 생략 가능 |
+
 
 
 
