@@ -22,7 +22,7 @@ Step 3: Select Objects to Reverse Engineer
 테이블 등을 선택 (기본값으로 전체 선택됨) 후 Execute
 ```
 ```less
-➤ Step 4: 작업 완료 후
+Step 4: 작업 완료 후
 Close 클릭
 
 .mwb 파일 생성됨
