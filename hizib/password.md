@@ -59,7 +59,7 @@ PW :  wiki0800*** (별세개)
 
 [hizib slave 계정]
 ID    : hizibtest
-PW :  wiki0800*** (별세개)
+PW :  wiki0800* (별한개)
 
 
 [비즈뿌리오  메인계정] (보관함)
