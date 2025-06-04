@@ -1,4 +1,6 @@
-```bash
+#### sudo nano /usr/share/X11/xorg.conf.d/40-libinput.conf 
+
+```less
 # Match on all types of devices but joysticks
 #
 # If you want to configure your devices, do not copy this file.
