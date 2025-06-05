@@ -27,7 +27,7 @@ server {
         index index.html index.htm index.php;
 
         # 중요! PHP가 무시되지 않도록 try_files 사용
-        # try_files에서 직접 lib.php를 호출하도록 수정
+        # try_files에서 직접 lib.php를 호출하도록 수정 (밑줄 한줄 변경)
         try_files $uri $uri/ /php/library/lib.php?$args;
     
     }
@@ -44,7 +44,7 @@ server {
         fastcgi_pass   unix:/var/run/php/php8.4-fpm.sock;
         fastcgi_index  index.php;
         fastcgi_param SCRIPT_FILENAME /home/hizib/php/library/lib.php;
-        #SCRIPT_FILENAME을 lib.php로 고정
+        #SCRIPT_FILENAME을 lib.php로 고정(윗줄 한줄 변경)
 
         include        fastcgi_params;
     }
@@ -89,9 +89,20 @@ echo "<?php phpinfo(); ?>" | sudo tee /home/hizib/test.php
 http://192.168.0.73/test.php
 ```
 
+#### 설정 변경 -> lib.php 연결은 됨 이후 진행해야함
+```less
+try_files 부분만 아래처럼 한 줄만 바꾸시면 됩니다:
+try_files $uri $uri/ /php/library/lib.php?$args;
 
+하지만 중요한 건 이게 제대로 작동하려면
 
+location ~ \.php$ 블록에서
 
+fastcgi_param SCRIPT_FILENAME /home/hizib/php/library/lib.php;
 
+로 SCRIPT_FILENAME을 lib.php로 고정해주셔야 해요.
+
+즉, try_files 한 줄 바꾸는 것 + location ~ \.php$에서 SCRIPT_FILENAME 경로 고정 이렇게 두 곳을 수정해야 문제 없이 작동합니다.
+```
 
 
