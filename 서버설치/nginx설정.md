@@ -27,7 +27,9 @@ server {
         index index.html index.htm index.php;
 
         # 중요! PHP가 무시되지 않도록 try_files 사용
-        try_files $uri $uri/ /index.php?$args;
+        # try_files에서 직접 lib.php를 호출하도록 수정
+        try_files $uri $uri/ /php/library/lib.php?$args;
+    
     }
 
     # 오류 페이지 설정
@@ -41,7 +43,9 @@ server {
         root           /home/hizib;
         fastcgi_pass   unix:/var/run/php/php8.4-fpm.sock;
         fastcgi_index  index.php;
-        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        fastcgi_param SCRIPT_FILENAME /home/hizib/php/library/lib.php;
+        #SCRIPT_FILENAME을 lib.php로 고정
+
         include        fastcgi_params;
     }
 
