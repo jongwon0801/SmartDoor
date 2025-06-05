@@ -58,7 +58,7 @@ mmcblk0     179:0    0 119.4G  0 disk
 sudo mount /dev/sda1 /media/pi/SAMSUNG\ USB
 mount: /media/pi/SAMSUNG USB: unknown filesystem type 'exfat'.
 
-sudo mount /dev/sda1 /media/pi/외장\ USB
+sudo mount /dev/sda1 "/media/pi/외장 USB"
 
 # 외장하드가 exFAT 파일 시스템을 사용하고 있어서 마운트가 실패
 # exFAT 파일 시스템을 라즈베리파이에서 사용하려면, 해당 파일 시스템을 지원하는 패키지를 설치
@@ -84,6 +84,8 @@ ls -lh /media/pi/SAMSUNG\ USB
 
 # usb에 있는 img 파일 줄이기
 sudo ./pishrink.sh /media/pi/SAMSUNG\ USB/정은치엘로B.img
+
+sudo ./pishrink.sh "/media/pi/외장/연구실42Add_Voice_20250605.img"
 
 ```
 
