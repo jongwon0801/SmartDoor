@@ -52,3 +52,42 @@ server {
 }
 
 ```
+
+#### 기존설정 문제
+
+⚠️ 문제 1: rewrite 때문에 PHP 파일 요청이 index.html로 무조건 리다이렉트됨
+```less
+if (!-e $request_filename) {
+    rewrite ^(.*)$ /index.html;
+}
+```
+
+⚠️ 문제 2: try_files를 사용하지 않고 if를 사용
+
+Nginx에서 if (!-e ...) rewrite ... 패턴은 피해야 합니다. 대신 try_files를 사용해야 합니다.
+
+
+#### 적용 방법
+
+```less
+sudo nginx -t              # 문법 검사
+
+sudo systemctl reload nginx  # 설정 적용
+```
+
+#### 테스트 방법
+```less
+echo "<?php phpinfo(); ?>" | sudo tee /home/hizib/test.php
+```
+
+#### 브라우저 또는 Postman에서 접속
+```less
+http://192.168.0.73/test.php
+```
+
+
+
+
+
+
+
