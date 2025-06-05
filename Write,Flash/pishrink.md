@@ -58,6 +58,8 @@ mmcblk0     179:0    0 119.4G  0 disk
 sudo mount /dev/sda1 /media/pi/SAMSUNG\ USB
 mount: /media/pi/SAMSUNG USB: unknown filesystem type 'exfat'.
 
+sudo mount /dev/sda1 /media/pi/외장\ USB
+
 # 외장하드가 exFAT 파일 시스템을 사용하고 있어서 마운트가 실패
 # exFAT 파일 시스템을 라즈베리파이에서 사용하려면, 해당 파일 시스템을 지원하는 패키지를 설치
 (외장하드 파일시스템 : MBR, exFAT (읽기전용), sd카드 파일시스템은 에처로 구울때 재생성되므로 상관없음)
