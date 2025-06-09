@@ -3,7 +3,7 @@
 ```less
 server {
     listen 80;
-    server_name 192.168.0.73;
+    server_name api1.hizib.wikibox.kr;
 
     charset utf-8;
     error_log /var/log/nginx/hizib.error.log;
