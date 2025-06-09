@@ -8,10 +8,13 @@ server {
     charset utf-8;
     error_log /var/log/nginx/hizib.error.log;
 
+    # 정적 이미지 제공
     location /image {
         alias /home/hizib/image;
+        autoindex on;
     }
 
+    # CORS 및 기본 라우팅
     location / {
         if ($request_method = 'OPTIONS') {
             add_header 'Access-Control-Allow-Origin' '*';
@@ -23,37 +26,37 @@ server {
 
         add_header 'Access-Control-Allow-Origin' '*' always;
         add_header 'Content-Type' 'application/json' always;
+
         root /home/hizib;
         index index.html index.htm index.php;
 
-        # 중요! PHP가 무시되지 않도록 try_files 사용
-        # try_files에서 직접 lib.php를 호출하도록 수정 (밑줄 한줄 변경)
+        # 모든 요청을 lib.php로 전달 (SPA 또는 API 엔드포인트 처리)
         try_files $uri $uri/ /php/library/lib.php?$args;
-    
     }
 
-    # 오류 페이지 설정
+    # HTML 정적 파일 처리
+    location ~ \.(html|htm)$ {
+        root /home/hizib;
+    }
+
+    # PHP 처리 설정
+    location ~ \.php$ {
+        root /home/hizib;
+        fastcgi_pass unix:/var/run/php/php8.4-fpm.sock;
+        fastcgi_index index.php;
+
+        # 요청된 PHP 파일 경로를 동적으로 전달 (lib.php 하나만 처리하고 싶으면 이 줄 수정)
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    # 오류 페이지
     error_page 500 502 503 504 /50x.html;
     location = /50x.html {
         root /usr/share/nginx/html;
     }
-
-    # PHP 파일 처리
-    location ~ \.php$ {
-        root           /home/hizib;
-        fastcgi_pass   unix:/var/run/php/php8.4-fpm.sock;
-        fastcgi_index  index.php;
-        fastcgi_param SCRIPT_FILENAME /home/hizib/php/library/lib.php;
-        #SCRIPT_FILENAME을 lib.php로 고정(윗줄 한줄 변경)
-
-        include        fastcgi_params;
-    }
-
-    # HTML 파일은 정적으로 제공
-    location ~ \.(html|htm)$ {
-        root /home/hizib;
-    }
 }
+
 
 ```
 
