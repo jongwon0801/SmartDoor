@@ -30,6 +30,17 @@ sudo chmod 755 /home/hizib
 sudo deluser --remove-home pi
 ```
 
+#### sudoer 권한을 사용자에게 부여
+```less
+sudo visudo
+
+하단에 추가
+hizib ALL=(ALL) NOPASSWD:ALL
+
+사용자 hizib는 모든 사용자 권한으로 모든 명령어를 sudo로 실행 가능.
+비밀번호 없이 실행 가능함
+```
+
 #### Mosquitto 설치
 ```less
 sudo apt install mosquitto mosquitto-clients
