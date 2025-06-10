@@ -168,11 +168,7 @@ java -version
 
 
 ```less
-cp /home/hizib/bizppurio/config/uds.conf /home/hizib/bizppurio/config/uds.confx
-
-sudo chown hizib:hizib /home/hizib/bizppurio/config/uds.confx
-
-ls -l /home/hizib/bizppurio/config/uds.confx
+sudo chown -R hizib:hizib /home/hizib/bizppurio
 
 # 내부적으로 파일 접근 또는 경로 처리에 root 소유권이 문제가 될 수 있습니다.
 -rw-r--r-- 1 root root 12650 Jun  2 01:15 /home/hizib/bizppurio/config/uds.confx
