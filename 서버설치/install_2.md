@@ -8,8 +8,25 @@ sudo apt install certbot python3-certbot-nginx
 # certbot
 Nginx 웹 서버에서 자동으로 SSL 인증서를 설치·갱신할 수 있게 해주는 Certbot의 Nginx 플러그인
 
+
 # 공인 도메인을 사용해야 SSL 인증서를 발급받을 수 있습니다.
-sudo certbot --nginx -d api.hizib.wikibox.kr
+sudo certbot --nginx -d api1.hizib.wikibox.kr
+```
+
+#### 🔐 발급 결과 요약
+```less
+도메인: api1.hizib.wikibox.kr
+
+인증서 위치:
+
+전체 체인: /etc/letsencrypt/live/api1.hizib.wikibox.kr/fullchain.pem
+
+개인 키: /etc/letsencrypt/live/api1.hizib.wikibox.kr/privkey.pem
+
+자동 갱신: 설정됨 (cron 또는 systemd timer에 의해 관리됨)
+
+Nginx 설정 파일 수정됨: /etc/nginx/conf.d/hizib.conf에 HTTPS 적용됨
+
 ```
 
 #### ubuntu, hizib 계정 만들기
