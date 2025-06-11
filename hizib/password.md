@@ -33,6 +33,24 @@ user : pi
 192.168.0.42
 pi
 
+# 호스팅 kr
+https://www.hosting.kr/
+
+id : wikibox76417@wikibox.kr
+pw : Wikibox202503@
+
+# 카페24
+https://www.cafe24.com/
+
+id : wikibox2020
+pw : wikibox202503
+
+# wisemonster 홈페이지 관리자 계정
+https://www.wisemonster.kr/home/adm
+id : admin
+pw : wikibox202503
+
+
 
 NAS주소
 http://192.168.0.134/  
