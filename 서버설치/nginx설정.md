@@ -2,19 +2,17 @@
 
 ```less
 server {
-    listen 80;
+		listen 80;
     server_name api1.hizib.wikibox.kr;
 
     charset utf-8;
+    #access_log  /var/log/nginx/hizib.access.log  main;
     error_log /var/log/nginx/hizib.error.log;
 
-    # 정적 이미지 제공
     location /image {
         alias /home/hizib/image;
-        autoindex on;
     }
 
-    # CORS 및 기본 라우팅
     location / {
         if ($request_method = 'OPTIONS') {
             add_header 'Access-Control-Allow-Origin' '*';
@@ -26,38 +24,32 @@ server {
 
         add_header 'Access-Control-Allow-Origin' '*' always;
         add_header 'Content-Type' 'application/json' always;
-
         root /home/hizib;
         index index.html index.htm index.php;
-
-        # 모든 요청을 lib.php로 전달 (SPA 또는 API 엔드포인트 처리)
-        try_files $uri $uri/ /php/library/lib.php?$args;
+        if (!-e $request_filename) {
+                rewrite ^(.*)$ /index.html;
+        }
     }
 
-    # HTML 정적 파일 처리
-    location ~ \.(html|htm)$ {
-        root /home/hizib;
-    }
+    #error_page 404 /404.html;
 
-    # PHP 처리 설정
-    location ~ \.php$ {
-        root /home/hizib;
-        fastcgi_pass unix:/var/run/php/php8.4-fpm.sock;
-        fastcgi_index index.php;
 
-        # 요청된 PHP 파일 경로를 동적으로 전달 (lib.php 하나만 처리하고 싶으면 이 줄 수정)
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        include fastcgi_params;
-    }
-
-    # 오류 페이지
+    # redirect server error pages to the static page /50x.html
+    #
     error_page 500 502 503 504 /50x.html;
     location = /50x.html {
         root /usr/share/nginx/html;
     }
+
+    location ~ \.(php|html|htm)$ {
+        root           /home/hizib;
+        fastcgi_pass   unix:/var/run/php/php7.4-fpm.sock;
+        fastcgi_index  index.html;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        include        fastcgi_params;
+        #include snippets/fastcgi-php.conf;
+    }
 }
-
-
 ```
 
 #### 기존설정 문제
