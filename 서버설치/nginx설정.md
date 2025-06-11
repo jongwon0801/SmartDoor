@@ -2,7 +2,7 @@
 
 ```less
 server {
-		listen 80;
+    listen 80;
     server_name api1.hizib.wikibox.kr;
 
     charset utf-8;
