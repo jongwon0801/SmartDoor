@@ -86,7 +86,10 @@ curl -I http://api1.hizib.wikibox.kr/
 #include /etc/nginx/sites-enabled/*; 주석처리
 ```
 
-
+#### /etc/php/8.4/fpm/pool.d/www.conf 수정
+```less
+security.limit_extensions = .php .php3 .php4 .php5 .php7 .html
+```
 
 #### mariadb 설치
 
