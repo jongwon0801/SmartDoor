@@ -28,7 +28,7 @@ sudo nano /etc/nginx/conf.d/hizib.conf
 
 server {
 		listen 80;
-    server_name api.hizib.wikibox.kr;
+    server_name api1.hizib.wikibox.kr;
 
     charset utf-8;
     #access_log  /var/log/nginx/hizib.access.log  main;
