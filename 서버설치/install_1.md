@@ -71,6 +71,22 @@ server {
 }
 
 ```
+#### 설정 블록이 어느 파일에 있는지 확인
+```less
+grep -r "server_name api1.hizib.wikibox.kr" /etc/nginx/
+
+/etc/nginx/conf.d/hizib.conf:    server_name api1.hizib.wikibox.kr;
+
+curl -I http://api1.hizib.wikibox.kr/
+```
+
+#### sudo nano /etc/nginx/nginx.conf 수정
+
+```less
+#include /etc/nginx/sites-enabled/*; 주석처리
+```
+
+
 
 #### mariadb 설치
 
