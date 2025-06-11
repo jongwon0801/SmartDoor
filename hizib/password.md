@@ -16,17 +16,14 @@ wikibox
 ubuntu@api.hizib.wikibox.kr
 elcsoft6564
 
-
 hizib@api.hizib.wikibox.kr
 dnlzlqkrtm6564
 (위키박스6564)
-
 
 부산 버젼 문
 user : pi
 192.168.0.3
 elcsoft6564
-
 
 연구실 문
 user : pi
@@ -35,13 +32,16 @@ pi
 
 # 호스팅 kr
 https://www.hosting.kr/
-
 id : wikibox76417@wikibox.kr
 pw : Wikibox202503@
 
+# 후이즈
+https://domain.whois.co.kr/
+id : wiki
+pw : wb0800**
+
 # 카페24
 https://www.cafe24.com/
-
 id : wikibox2020
 pw : wikibox202503
 
@@ -50,7 +50,9 @@ https://www.wisemonster.kr/home/adm
 id : admin
 pw : wikibox202503
 
-
+# ftp db
+id : wikibox2020
+pw : wikiboxftp2323
 
 NAS주소
 http://192.168.0.134/  
