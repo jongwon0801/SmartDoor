@@ -27,26 +27,3 @@ sudo nano mqtt_reply.py
 broker_address = "192.168.0.73"
 ```
 
-#### php 포스트맨 접속 거부
-```less
-sudo nano /var/log/nginx/hizib.error.log
-
-sudo nginx -t
-
-location ~ \.php$ {
-    root           /home/hizib;
-    fastcgi_pass   unix:/var/run/php/php8.4-fpm.sock;
-    fastcgi_index  index.php;
-    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-    include        fastcgi_params;
-}
-
-location ~ \.(html|htm)$ {
-    root /home/hizib;
-    # 정적 파일이라 별도 fastcgi_pass 필요 없음
-}
-
-192.168.0.73/Admin/login
-405 뜸 이거 부터 해결해야함
-
-```
