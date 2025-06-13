@@ -147,12 +147,11 @@ sudo nano /etc/php/8.4/fpm/php.ini
 nano에서는 Ctrl + W 누르고 short_open_tag 입력한 뒤 Enter
 
 //short_open_tag를 검색해서 on으로 설정 변경
-; 있으면 주석처리
+; 있으면 주석처리, 없어야함
 short_open_tag=On
 
 //memory_limit를 검색해서 256M로 변경
 memory_limit = 256M
-
 
 //upload_max_filesize를 검색해서 1024M로 변경
 upload_max_filesize = 1024M
