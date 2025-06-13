@@ -93,10 +93,13 @@ sudo chown mosquitto:mosquitto /etc/mosquitto/pwfile
 # Mosquitto 설정파일 수정
 sudo nano /etc/mosquitto/mosquitto.conf
 
-# 내용에 아래 두 줄 추가
+# 내용에 아래 세 줄 추가
+
+listener 1883
 password_file /etc/mosquitto/pwfile
 allow_anonymous false
 
+listener 1883
 password_file: 사용자 인증을 위한 파일 경로 지정
 allow_anonymous false: 익명 접속 차단 — 사용자/비밀번호 필수
 
