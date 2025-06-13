@@ -79,11 +79,11 @@ listen 80;
 ```
 #### 설정 블록이 어느 파일에 있는지 확인
 ```less
-grep -r "server_name api1.hizib.wikibox.kr" /etc/nginx/
+grep -r "server_name api2.hizib.wikibox.kr" /etc/nginx/
 
-/etc/nginx/conf.d/hizib.conf:    server_name api1.hizib.wikibox.kr;
+/etc/nginx/conf.d/hizib.conf:    server_name api2.hizib.wikibox.kr;
 
-curl -I http://api1.hizib.wikibox.kr/
+curl -I http://api2.hizib.wikibox.kr/
 ```
 
 #### sudo nano /etc/nginx/nginx.conf
