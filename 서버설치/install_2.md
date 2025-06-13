@@ -106,6 +106,10 @@ allow_anonymous false: 익명 접속 차단 — 사용자/비밀번호 필수
 sudo systemctl restart mosquitto
 ```
 
+#### python paho-mqtt설치
+```less
+sudo apt install python3-paho-mqtt
+```
 #### 비즈뿌리오 설치
 
 ```less
@@ -206,4 +210,23 @@ sudo chown -R hizib:hizib /home/hizib/bizppurio
 
 -rw-r--r-- 1 hizib hizib 12650 Jun  2 01:15 uds.confx
 ```
+
+#### 전송 시간 문제 해결 방법
+
+sudo nano /home/hizib/bizppurio/script/biz_start
+
+```less
+#!/bin/sh
+
+proc=`ps -ef | grep biz_client | grep -v vi |grep -v grep | grep -v sh`
+if [ X"$proc" != X"" ]; then
+        echo "Already Invoked"
+        exit
+fi
+
+cd ..
+java -Duser.timezone=GMT+09:00 -jar biz_client.jar config/uds &
+```
+
+
 
