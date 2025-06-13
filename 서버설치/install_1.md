@@ -171,3 +171,10 @@ sudo nano /etc/php/8.4/fpm/pool.d/www.conf
 
 listen = /run/php/php8.4-fpm.sock
 ```
+
+#### 재시작
+```less
+sudo systemctl restart php8.4-fpm.service
+
+```
+
