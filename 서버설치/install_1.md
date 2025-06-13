@@ -161,6 +161,8 @@ max_file_uploads = 20
 
 //date.timezone를 검색해서 Asia/Seoul로 설정
 date.timezone = Asia/Seoul
+
+sudo systemctl restart php8.4-fpm
 ```
 
 #### PHP 8.4-FPM의 기본 소켓 경로
