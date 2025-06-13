@@ -17,7 +17,7 @@ if (G5_IS_MOBILE) {
 <!-- } 콘텐츠 끝 -->
 <div class="ft">
 <iframe
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.8754060659613!2d127.15054584372898!3d37.61257617473416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbbb82dce1f5b%3A0xd6fa50f58e7f8398!2z7J6Y7Jqw7ISc7Iuc7Iqk7KeA!5e0!3m2!1sko!2skr!4v1686588698886!5m2!1sko!2skr"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3160.5572291665935!2d127.14917117531837!3d37.61257842148763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b638f348c3135%3A0xd389562f2812a33f!2zKOyjvCnsnITtgqTrsJXsiqQ!5e0!3m2!1sko!2skr!4v1749788262671!5m2!1sko!2skr"
   width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
 </iframe>
 
@@ -31,4 +31,5 @@ if (G5_IS_MOBILE) {
 <?php
 include_once(G5_PATH."/tail.sub.php");
 ?>
+
 ```
