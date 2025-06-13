@@ -179,6 +179,52 @@ listen = /run/php/php8.4-fpm.sock
 #### 재시작
 ```less
 sudo systemctl restart php8.4-fpm.service
-
 ```
+
+
+#### 태그 수정
+```less
+sudo nano /home/hizib/php/library/class/DBConn.php
+
+<? 이걸 <?php 이거로 변경
+```
+
+#### #[\AllowDynamicProperties] 속성 사용 (PHP 8.2 이상에서만 가능)
+```less
+sudo nano /home/hizib/php/library/class/DBConn.php
+
+#[\AllowDynamicProperties]
+class DBConn {
+
+sudo nano /home/hizib/php/library/class/Component.php
+
+#[\AllowDynamicProperties]
+class Component {
+```
+
+#### composer 설치 (php 설치 되어있을 경우)
+```less
+1. Composer 설치 스크립트 다운로드 및 실행
+
+cd ~
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+
+2. Composer 전역 설치
+
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+3. 설치 스크립트 삭제, 버젼 확인
+rm composer-setup.php
+
+composer --version
+```
+
+#### php-jwt 최신 버전으로 업데이트
+```less
+Deprecated 경고는 **PHP 8.1+ 또는 8.2+**에서 자주 발생하는 현상입니다.
+문제는 firebase/php-jwt 라이브러리가 nullable 타입을 명시하지 않고 파라미터를 선언했기 때문입니다.
+
+composer require firebase/php-jwt:^6.10
+```
+
 
