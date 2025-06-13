@@ -27,20 +27,17 @@ sudo systemctl enable nginx
 sudo nano /etc/nginx/conf.d/hizib.conf
 
 server {
-    listen 80;
-    server_name api1.hizib.wikibox.kr;
+listen 80;
+    server_name api2.hizib.wikibox.kr;
 
     charset utf-8;
+    #access_log  /var/log/nginx/hizib.access.log  main;
     error_log /var/log/nginx/hizib.error.log;
-
-    root /home/hizib;
-    index lib.php;
 
     location /image {
         alias /home/hizib/image;
     }
 
-    # CORS preflight 처리
     location / {
         if ($request_method = 'OPTIONS') {
             add_header 'Access-Control-Allow-Origin' '*';
@@ -52,21 +49,30 @@ server {
 
         add_header 'Access-Control-Allow-Origin' '*' always;
         add_header 'Content-Type' 'application/json' always;
-
-        try_files $uri /lib.php;
+        root /home/hizib;
+        index index.html index.htm index.php;
+        if (!-e $request_filename) {
+                rewrite ^(.*)$ /index.html;
+        }
     }
 
-    # PHP 처리
-    location ~ \.php$ {
-        include fastcgi_params;
-        fastcgi_pass unix:/var/run/php/php8.4-fpm.sock;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-    }
+    #error_page 404 /404.html;
 
-    # 에러 페이지 처리
+
+    # redirect server error pages to the static page /50x.html
+    #
     error_page 500 502 503 504 /50x.html;
     location = /50x.html {
         root /usr/share/nginx/html;
+    }
+
+    location ~ \.(php|html|htm)$ {
+        root           /home/hizib;
+        fastcgi_pass   unix:/var/run/php/php8.4-fpm.sock;
+        fastcgi_index  index.html;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        include        fastcgi_params;
+        #include snippets/fastcgi-php.conf;
     }
 }
 
