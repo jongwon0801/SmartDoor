@@ -75,7 +75,11 @@ ns4.hosting.co.kr
 
 # DNS 레코드
 유형     호스트이름             값          TTL
-A /         @      /    125.209.200.159 / 180
+
+# 인증서 https 때문에 네이버 클라우드 nginx 경유함
+# 125.209.200.159 (smart.apple-box.kr)
+A /         @      /    125.209.200.159 / 180     
+
 A / api.hizib     /     13.124.155.19 / 180
 A / api1.hizib   /      175.211.153.28 / 300
 A / api2.hizib   /      175.211.153.28 / 180
@@ -89,10 +93,44 @@ MX /       @     / 20 alt.aspmx.daum.net / 3600
 TXT /      @     / v=spf1 include:_spf.daum.net ~all / 3600
 ```
 
+#### 카페24 호스팅 도메인
+1. wisemonster.kr
+```less
+# 호스트IP(A 레코드) 관리
+210.114.6.139
 
+nslookup wisemonster.kr
+Name:	wisemonster.kr
+Address: 210.114.6.139
 
+# 메일서버(MX) 관리
+wisemonster.kr	mw-002.cafe24.com	10
 
+# 별칭(CNAME) 관리
+*.wisemonster.kr		wisemonster.kr
 
+# SPF 관리
+wisemonster.kr	"v=spf1 ip4:210.114.6.139 ~all"
+```
+
+2. wikismartdoor.com
+```less
+# 호스트IP(A 레코드) 관리
+210.114.6.139
+
+nslookup wikismartdoor.com
+Name:	wikismartdoor.com
+Address: 210.114.6.139
+
+# 메일서버(MX) 관리
+wisemonster.kr	mw-002.cafe24.com	10
+
+# 별칭(CNAME) 관리
+*.wisemonster.kr		wisemonster.kr
+
+# SPF 관리
+wisemonster.kr	"v=spf1 ip4:210.114.6.139 ~all"
+```
 
 
 
