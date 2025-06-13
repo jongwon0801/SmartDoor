@@ -80,13 +80,13 @@ grep -r "server_name api1.hizib.wikibox.kr" /etc/nginx/
 curl -I http://api1.hizib.wikibox.kr/
 ```
 
-#### sudo nano /etc/nginx/nginx.conf 수정
+#### sudo nano /etc/nginx/nginx.conf
 
 ```less
 #include /etc/nginx/sites-enabled/*; 주석처리
 ```
 
-#### /etc/php/8.4/fpm/pool.d/www.conf 수정
+#### /etc/php/8.4/fpm/pool.d/www.conf
 ```less
 security.limit_extensions = .php .php3 .php4 .php5 .php7 .html .htm
 ```
