@@ -163,6 +163,8 @@ max_file_uploads = 20
 date.timezone = Asia/Seoul
 
 sudo systemctl restart php8.4-fpm
+
+sudo systemctl enable php8.4-fpm
 ```
 
 #### PHP 8.4-FPM의 기본 소켓 경로
