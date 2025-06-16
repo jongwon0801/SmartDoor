@@ -27,3 +27,53 @@ sudo nano mqtt_reply.py
 broker_address = "192.168.0.73"
 ```
 
+#### 로컬 문에서 서버 접속 주소 수정
+```less
+grep -r "api.hizib.wikibox.kr" ./
+
+/www/js/jquery.elc.hizib.garbage.js
+/www/js/jquery.elc.hizib.ws.receive.js
+/www/kiosk/js/jquery.elc.hizib.garbage.js
+/www/kiosk/js/jquery.elc.hizib.ws.receive.js
+/www/kiosk/python/elcsoft/component.py
+/www/kiosk/python/elcsoft/model/code.py
+/www/kiosk/python/elcsoft/model/smartdoor_group.py
+/www/kiosk/python/elcsoft/controller/smartdoor_vod.py
+/www/kiosk/python/elcsoft/controller/smartdoor_guestkey.py
+/www/kiosk/python/elcsoft/controller/smartdoor_schedule.py
+/www/kiosk/python/elcsoft/controller/user.py
+/www/kiosk/python/elcsoft/controller/smartdoor_notice.py
+/www/kiosk/python/elcsoft/controller/smartdoor_log.py
+/www/kiosk/python/elcsoft/controller/smartdoor_message.py
+/www/kiosk/python/elcsoft/controller/smartdoor_item.py
+/www/kiosk/python/elcsoft/controller/smartdoor_group.py
+/www/kiosk/python/elcsoft/controller/smartdoor.py
+/www/kiosk/python/elcsoft/controller/vod.py
+/www/kiosk/python/elcsoft/controller/smartdoor_user.py
+/www/kiosk/python/elcsoft/controller/smartdoor_cmd.py
+/www/kiosk/python/weather.py
+/www/kiosk/html/user/view.html
+/www/python/elcsoft/component.py
+/www/python/elcsoft/model/code.py
+/www/python/elcsoft/model/smartdoor_group.py
+/www/python/elcsoft/controller/smartdoor_vod.py
+/www/python/elcsoft/controller/smartdoor_guestkey.py
+/www/python/elcsoft/controller/smartdoor_schedule.py
+/www/python/elcsoft/controller/user.py
+/www/python/elcsoft/controller/smartdoor_notice.py
+/www/python/elcsoft/controller/smartdoor_log.py
+/www/python/elcsoft/controller/smartdoor_message.py
+/www/python/elcsoft/controller/smartdoor_item.py
+/www/python/elcsoft/controller/smartdoor_group.py
+/www/python/elcsoft/controller/smartdoor.py
+/www/python/elcsoft/controller/vod.py
+/www/python/elcsoft/controller/smartdoor_user.py
+/www/python/elcsoft/controller/smartdoor_cmd.py
+/www/html/user/view.html
+
+
+
+```
+
+
+
