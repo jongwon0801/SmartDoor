@@ -122,8 +122,55 @@ sudo mariadb-secure-installation
 sudo mysql -u root -p
 비밀번호 : wikibox
 ```
+#### php 7.4 설치
+```less
+sudo apt-get install -y software-properties-common
+
+sudo add-apt-repository ppa:ondrej/php
+
+sudo apt-get update
+
+sudo apt-get install -y php7.4
+
+sudo apt-get install -y php7.4-{curl,gd,mbstring,mysql,soap,json,intl,zip,xml,xmlrpc,cli,xsl}
+```
+
+#### php.ini 설정 변경
+```less
+sudo nano /etc/php/7.4/fpm/php.ini
+
+//short_open_tag를 검색해서 on으로 설정 변경
+; short_open_tag=Off
+short_open_tag=On
+
+//memory_limit를 검색해서 256M로 변경
+memory_limit = 256M
 
 
+//upload_max_filesize를 검색해서 1024M로 변경
+upload_max_filesize = 1024M
+
+//max_file_uploads를 검색해서 20으로 변경
+max_file_uploads = 20
+
+//date.timezone를 검색해서 Asia/Seoul로 설정
+date.timezone = Asia/Seoul
+```
+
+#### /etc/php/7.4/fpm/pool.d/www.conf 설정변경
+```less
+sudo nano /etc/php/7.4/fpm/pool.d/www.conf
+
+listen = /var/run/php/php7.4-fpm.sock
+
+security.limit_extensions = .php .html .htm
+
+```
+
+#### php 재가동
+```less
+sudo systemctl restart php7.4-fpm.service
+```
 #### php 설치
 
 ```less
