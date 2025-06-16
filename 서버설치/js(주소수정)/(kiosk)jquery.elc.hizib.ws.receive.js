@@ -1,4 +1,7 @@
 //새로고침
+
+// /home/pi/www/kiosk/js/jquery.elc.hizib.ws.receive.js
+
 function refresh(data) {
 	location.href = "/";
 }
