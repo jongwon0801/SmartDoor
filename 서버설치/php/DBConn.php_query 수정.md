@@ -1,6 +1,8 @@
 #### /home/hizib/php/library/class/DBConn.php
 
 ```less
+# DBConn.php query 함수 수정
+
 function query($query, $isEcho=false) {
 	// 개발용: 쿼리 출력 모드
 	if ($isEcho) {
