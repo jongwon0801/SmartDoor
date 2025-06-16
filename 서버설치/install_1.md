@@ -12,8 +12,20 @@ Distributor ID:	Ubuntu
 Description:	Ubuntu 25.04
 Release:	25.04
 Codename:	plucky
-```
 
+-> 이 버젼으로 설치 결과 fpm 7.4 설치 불가
+-> fpm 8.2 부터 문법 엄격해짐
+-> php 소스 바꿔야할 부분 늘어남
+-> 우분투 lts 24.04.2 로 변경
+```
+#### ubuntu 버젼확인
+```less
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 24.04.2 LTS
+Release:	24.04
+Codename:	noble
+```
 #### nginx 설정
 ```less
 sudo apt-get update
