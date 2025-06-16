@@ -1,0 +1,261 @@
+# ~/www/html/user/view.html
+
+<div id="user_view">
+	<style>
+		#user_view {
+			width: 100vw;
+			height: calc(100vh - 80px);
+			top: 80px !important;
+			border: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		#user_view.dialog {
+			box-shadow: none;
+		}
+
+		#user_view>.body {
+			margin-top: 260px;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			align-content: center;
+			justify-content: flex-start;
+			align-items: center;
+			text-align: center;
+		}
+
+		#profile {
+			text-align: center;
+		}
+
+		#profile div.photo img {
+			width: 160px;
+			height: 160px;
+			border-radius: 50%;
+		}
+
+		#profile div:nth-child(2) {
+			line-height: 160px;
+			margin-top: 30px;
+			font-size: 22px;
+			letter-spacing: -0.44px;
+			line-height: 36px;
+			color: #FFFFFF;
+		}
+
+		#user_view>.body>div h1 {
+			width: 610px;
+			font-size: 14px;
+			letter-spacing: -0.28px;
+			line-height: 30px;
+			color: #FFFF;
+			border-bottom: 1px solid #FFF;
+			text-align: left;
+			margin-top: 50px;
+		}
+
+		#user_view>.body>div ul {
+			width: 610px;
+		}
+
+		#smartdoor_message>ul {
+			height: 400px;
+			overflow: auto;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			align-content: flex-start;
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+
+		#smartdoor_message>ul>li {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			align-content: flex-start;
+			justify-content: space-between;
+			align-items: flex-start;
+			padding: 20px 0;
+		}
+
+		#smartdoor_message>ul>li>label>img {
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+		}
+
+		#smartdoor_message>ul>li>label>div {
+			font-size: 14px;
+			letter-spacing: -0.28px;
+			line-height: 30px;
+			color: #FFFF;
+		}
+
+		#smartdoor_message>ul>li>span {
+			margin-left: 20px;
+			font-size: 14px;
+			letter-spacing: -0.28px;
+			line-height: 30px;
+			color: #FFFF;
+			border: 1px solid #FFFFFF;
+			border-radius: 8px;
+			padding: 9px 19px;
+			position: relative;
+		}
+
+		#smartdoor_message>ul>li>span:after {
+			content: '';
+			position: absolute;
+			top: 10px;
+			/* 말풍선의 삼각형 부분을 상단에 위치시킴 */
+			left: -20px;
+			/* 말풍선의 위치 조정 */
+			border-width: 10px;
+			border-style: solid;
+			border-color: transparent #ffffff transparent transparent;
+			/* 삼각형의 색상 설정 */
+		}
+
+		#smartdoor_item>ul {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-content: space-around;
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+
+		#smartdoor_item>ul>li {
+			padding: 10px;
+		}
+
+		#smartdoor_item>ul>li>label {
+			display: flex;
+			padding: 14px 24px;
+			border: 1px solid #FFF;
+			border-radius: 8px;
+			font-size: 14px;
+			letter-spacing: -0.28px;
+			line-height: 20px;
+		}
+
+		#user_view>.body>div:nth-child(4) {
+			margin-top: 75px;
+		}
+
+		#user_view>.body>div:nth-child(4) a {
+			display: inline-block;
+			width: 238px;
+			border-radius: 30px;
+			border: 1px solid #FFF;
+			font-size: 21px;
+			letter-spacing: -0.42px;
+			line-height: 24px;
+			color: #FFF;
+			padding: 12px 0;
+		}
+
+		#user_view>.body>div:nth-child(4) a:nth-child(1) {
+			background: #5B5B5B;
+		}
+
+		#user_view>.body>div:nth-child(4) a:nth-child(2) {
+			background: #000000;
+		}
+	</style>
+	<script>
+		$(document).ready(function () {
+			console.log(settings);
+			requestGetUser(user_id);
+			requestGetMessage(user_id);
+			requestGetItems(user_id);
+
+			if (settings.isUseTts == undefined) settings.isUseTts = false;
+			if (settings.isUseTts) {
+				screenOn();
+				setTimeout(function () { requestPlaySoundUserView(user_id); }, 3000);
+			}
+			//loginPlaySound();
+			/*
+			notice_dataset.forEach(function (element) {
+				tts(element.title, 0);
+				sleep(1000);
+			});
+
+			tts("소지품", 0);
+			schedule_dataset.forEach(function (element) {
+				console.log(tmp);
+			});
+			*/
+		});
+		/*
+		function playSoundUserView(data) {
+			console.log(data);
+			if (settings.tts == undefined) settings.tts = { "lang": "ko-KR", "volume": 1, "rate": 1, "path": "/home/pi/www/tts" };
+			if (settings.tts.path == undefined) settings.tts.path = "/home/pi/www/tts/";
+
+			const path = settings.tts.path.replace('/home/pi/www', '')
+			const urls = data.map(filename => path + filename);
+			ws.send('{"request":"playSoundUserView"}');
+			//playSound(insideSpeakerDeviceId, urls);
+		}
+		*/
+
+		function displayProfile(data) {
+			console.log(data);
+			var tag = '<div class="photo"><img src="https://api2.hizib.wikibox.kr/' + data.picture.url + '" alt="' + data.name + '" onerror="this.src=\'/image/person/default.png\'"/></div>';
+			tag += '<div>' + (data.nickname != '' ? data.nickname : data.name) + '</div>';
+
+			$('#profile').html(tag);
+
+		}
+
+		function displayMessages(data) {
+			console.log(data);
+
+			var tag = '';
+
+			for (var i = 0; i < data.length; i++) {
+				if (data[i].fromUserObj.picture.url == undefined || data[i].fromUserObj.picture.url == '') data[i].fromUserObj.picture.url = '/image/person/default.png';
+
+				tag += '<li><label><img src="' + data[i].fromUserObj.picture.url + '"/><div></div><div>' + data[i].fromUserObj.name + '</div></label><span>' + data[i].msg + '</span></li>';
+				const text = data[i].fromUserObj.name + "에게 온 메세지가 있습니다. " + data[i].msg;
+				//tts(text, i % 3);
+			}
+
+			$('#smartdoor_message > ul').html(tag);
+		}
+
+		function displayItems(data) {
+			console.log(data);
+
+			var tag = '';
+
+			for (var i = 0; i < data.length; i++) {
+				tag += '<li><label>' + data[i].name + '</label></li>';
+			}
+
+			$('#smartdoor_item > ul').html(tag);
+		}
+	</script>
+	<div class="body">
+		<div id="profile">
+		</div>
+		<div id="smartdoor_message">
+			<h1>메세지</h1>
+			<ul>
+			</ul>
+		</div>
+		<div id="smartdoor_item">
+			<h1>챙기셨나요?</h1>
+			<ul>
+			</ul>
+		</div>
+		<div>
+			<a href="" onclick="requestStopSoundUserView(user_id);$('#user_view').ELCDialogHide();return false;">나가기</a>
+		</div>
+	</div>
+</div>
