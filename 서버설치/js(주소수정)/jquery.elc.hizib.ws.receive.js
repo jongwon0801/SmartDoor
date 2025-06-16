@@ -1,4 +1,6 @@
 //새로고침
+// /www/js/jquery.elc.hizib.ws.receive.js
+
 function refresh(data) {
 	location.href = "/";
 }
