@@ -135,6 +135,22 @@ sudo apt-get install -y php7.4
 sudo apt-get install -y php7.4-{curl,gd,mbstring,mysql,soap,json,intl,zip,xml,xmlrpc,cli,xsl}
 ```
 
+#### 아파치 제거
+```less
+✅ 1. Apache 관련 패키지 확인
+
+dpkg -l | grep apache2
+```
+
+✅ 2. Apache 완전히 제거
+```less
+sudo apt purge apache2 apache2-utils apache2-bin apache2.2-common
+
+sudo apt autoremove
+```
+---
+#### 아파치 제거 까지함
+
 #### php.ini 설정 변경
 ```less
 sudo nano /etc/php/7.4/fpm/php.ini
