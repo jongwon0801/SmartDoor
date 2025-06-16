@@ -304,7 +304,7 @@ function displayUsers(data) {
 	console.log(data);
 	for(var i=0; i<data.lists.length; i++) {
 		var tag = '<li onclick="user_id=' + data.lists[i].user_id + ';dialog(\'/user/view?user_id=' + data.lists[i].user_id + '&ver=' + new Date().getTime() + '\');">';
-		tag += '<div class="photo"><img src="https://api.hizib.wikibox.kr/' + data.lists[i].userObj.picture.url + '" alt="' + data.lists[i].userObj.name + '" onerror="this.src=\'/image/person/default.png\'"/></div>';
+		tag += '<div class="photo"><img src="https://api2.hizib.wikibox.kr/' + data.lists[i].userObj.picture.url + '" alt="' + data.lists[i].userObj.name + '" onerror="this.src=\'/image/person/default.png\'"/></div>';
 		tag += '<div>' + (data.lists[i].userObj.nickname != '' ? data.lists[i].userObj.nickname : data.lists[i].userObj.name) + '</div>';
 		tag += '</li>';
 		
