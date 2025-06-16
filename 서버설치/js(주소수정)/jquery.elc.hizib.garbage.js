@@ -1,4 +1,5 @@
 /** 분개전 소스 명령 **/
+// /www/js/jquery.elc.hizib.garbage.js
 
 //웹소켓 시작
 function startWebsocket(sUrl) {
