@@ -114,8 +114,8 @@ sudo apt install python3-paho-mqtt
 
 ```less
 # Mac -> 서버로 압축파일 복사
-비즈클라이언트 DB연동 통합발송모듈 v4.07(UTF8 지원) biz_client_v4007.zip
-scp /Users/jongwon/biz/biz_client_v4007.zip hizib@192.168.0.73:/home/hizib/
+비즈클라이언트 DB연동 통합발송모듈 v4.07(UTF8 지원) 2025-04-25 biz_client_v4007.zip
+scp /Users/jongwon/Smartdoor/server_Test/biz_client_v4007.zip hizib@192.168.0.73:/home/hizib/bizppurio/
 
 mkdir bizppurio
 
@@ -145,6 +145,10 @@ mysql -u test -p
 
 id : test
 pw : Test1234!
+
+hizib
+wikibox
+
 ```
 
 ```less
