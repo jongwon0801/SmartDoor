@@ -110,6 +110,26 @@ sudo systemctl restart mosquitto
 ```less
 sudo apt install python3-paho-mqtt
 ```
+
+#### DB user(hizib) 생성
+```less
+# 루트 계정으로 로그인했는지 확인
+SELECT USER(), CURRENT_USER();
+
+# 사용자 생성
+CREATE USER 'hizib'@'%' IDENTIFIED BY 'wikibox';
+
+# 권한 부여 (다른 사용자에게 권한 부여 GRANT OPTION은 생략)
+GRANT ALL PRIVILEGES ON *.* TO 'hizib'@'%';
+
+# 반영
+FLUSH PRIVILEGES;
+
+# 모든 사용자 보기
+SELECT user, host FROM mysql.user;
+```
+
+
 #### 비즈뿌리오 설치
 
 ```less
