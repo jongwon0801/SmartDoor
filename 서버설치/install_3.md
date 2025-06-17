@@ -167,7 +167,7 @@ grep -r "api.hizib.wikibox.kr" ./
 ~/www/python/elcsoft/controller/smartdoor_user.py
 ~/www/python/elcsoft/controller/smartdoor_cmd.py
 ~/www/html/user/view.html
-
+~/www/python/weather.py
 
 
 ```
