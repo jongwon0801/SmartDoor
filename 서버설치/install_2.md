@@ -137,15 +137,16 @@ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
 bind-address = 0.0.0.0
 
 sudo systemctl restart mariadb
-
 ```
 
 
 #### 비즈뿌리오 설치
 
 ```less
+https://www.bizppurio.com/help/download?qnaSelect=M
+비즈클라이언트 DB연동 통합발송모듈 v4.07(UTF8 지원) 2025-04-25  /  biz_client_v4007.zip
+
 # Mac -> 서버로 압축파일 복사
-비즈클라이언트 DB연동 통합발송모듈 v4.07(UTF8 지원) 2025-04-25 biz_client_v4007.zip
 scp /Users/jongwon/Smartdoor/server_Test/biz_client_v4007.zip hizib@192.168.0.73:/home/hizib/bizppurio/
 
 mkdir bizppurio
@@ -154,9 +155,10 @@ sudo apt install unzip
 
 sudo unzip biz_client_v4007.zip
 ```
+
+#### root 유저로 DB 로그인
 ```less
 sudo mysql -u root -p
-
 pw : wikibox
 
 SELECT User, Host FROM mysql.user;
@@ -168,18 +170,14 @@ SELECT User, Host FROM mysql.user;
 | mysql       | localhost |
 | root        | localhost |
 +-------------+-----------+
-
 ```
 
+#### hizib 유저로 DB 로그인
 ```less
-mysql -u test -p
+mysql -u hizib -p
 
 id : hizib
 pw : wikibox
-
-hizib
-wikibox
-
 ```
 
 ```less
@@ -246,14 +244,17 @@ sudo apt install openjdk-21-jre-headless
 java -version
 ```
 
-
+#### 파일 소유권 변경
 ```less
 sudo chown -R hizib:hizib /home/hizib/bizppurio
 
 # 내부적으로 파일 접근 또는 경로 처리에 root 소유권이 문제가 될 수 있습니다.
--rw-r--r-- 1 root root 12650 Jun  2 01:15 /home/hizib/bizppurio/config/uds.confx
 
--rw-r--r-- 1 hizib hizib 12650 Jun  2 01:15 uds.confx
+# 변경 이전
+-rw-r--r-- 1 root root 12650 Jun  2 01:15 uds.confx
+
+# 변경 이후
+-rw-rw-r--  1 hizib hizib 12309 Jun 17 02:39 uds.confx
 ```
 
 #### 전송 시간 문제 해결 방법
