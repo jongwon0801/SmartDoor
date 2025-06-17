@@ -21,12 +21,12 @@ tar xzvf hizib_backup.tar.gz
 sudo nano mqtt.py 
 
 # broker 정보
-broker_address = "192.168.0.73"
+broker_address = "175.211.153.28"
 
 sudo nano mqtt_reply.py
 
 # broker 정보
-broker_address = "192.168.0.73"
+broker_address = "175.211.153.28"
 ```
 
 #### 로컬 문에서 서버 접속 주소 수정
