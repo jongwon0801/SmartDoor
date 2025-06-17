@@ -177,10 +177,9 @@ date.timezone = Asia/Seoul
 ```less
 sudo nano /etc/php/7.4/fpm/pool.d/www.conf
 
-listen = /var/run/php/php7.4-fpm.sock
+listen = /run/php/php7.4-fpm.sock
 
 security.limit_extensions = .php .html .htm
-
 ```
 
 #### php 재가동
