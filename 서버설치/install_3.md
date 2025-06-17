@@ -126,6 +126,15 @@ include_once($_lib['directory']['library'].'/lib.php')
 
 #### 로컬 문에서 서버 접속 주소 수정
 ```less
+# 기존서버 주소
+"api.hizib.wikibox.kr"
+
+# 변경서버 주소
+"api2.hizib.wikibox.kr"
+```
+
+#### 서버 주소 사용하는 파일
+```less
 grep -r "api.hizib.wikibox.kr" ./
 
 ~/www/js/jquery.elc.hizib.garbage.js
