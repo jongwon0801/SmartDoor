@@ -129,6 +129,17 @@ FLUSH PRIVILEGES;
 SELECT user, host FROM mysql.user;
 ```
 
+#### 워크밴치 설정
+```less
+# mariaDB 외부 접속 허용
+sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
+
+bind-address = 0.0.0.0
+
+sudo systemctl restart mariadb
+
+```
+
 
 #### 비즈뿌리오 설치
 
@@ -152,7 +163,7 @@ SELECT User, Host FROM mysql.user;
 +-------------+-----------+
 | User        | Host      |
 +-------------+-----------+
-| test        | %         |
+| hizib        | %        |
 | mariadb.sys | localhost |
 | mysql       | localhost |
 | root        | localhost |
@@ -163,8 +174,8 @@ SELECT User, Host FROM mysql.user;
 ```less
 mysql -u test -p
 
-id : test
-pw : Test1234!
+id : hizib
+pw : wikibox
 
 hizib
 wikibox
@@ -175,11 +186,21 @@ wikibox
 # mysql 버젼 확인
 mysql -u root -p -e "SELECT VERSION();"
 
+MariaDB는 우분투 버전에 따라 기본으로 설치되는 버전이 다릅니다.
+우분투의 APT 패키지 저장소에서 제공하는 기본 MariaDB 버전이 다르기 때문입니다.
+
+
 +------------------+
 | VERSION()        |
 +------------------+
 | 11.4.5-MariaDB-1 |
 +------------------+
+
++-----------------------------------+
+| VERSION()                         |
++-----------------------------------+
+| 10.11.13-MariaDB-0ubuntu0.24.04.1 |
++-----------------------------------+
 
 /home/hizib/bizppurio/config/uds.conf
 
@@ -193,8 +214,8 @@ USE_SSL = Y
 DBNAME = MYSQL
 
 DBURL = jdbc:mysql://localhost:3306/hizib?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
-DBUSER = test
-DBPASS = Test1234!
+DBUSER = hizib
+DBPASS = wikibox
 ```
 #### DBURL 옵션
 | 옵션                             | 설명                                          | 필요 여부                             |
