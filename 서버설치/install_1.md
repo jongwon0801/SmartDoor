@@ -89,6 +89,11 @@ listen 80;
 }
 
 ```
+#### nginx 에러 로그
+```less
+sudo tail -n 50 /var/log/nginx/hizib.error.log
+```
+
 #### 설정 블록이 어느 파일에 있는지 확인
 ```less
 grep -r "server_name api2.hizib.wikibox.kr" /etc/nginx/
