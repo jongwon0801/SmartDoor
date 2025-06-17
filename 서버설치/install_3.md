@@ -16,6 +16,11 @@ scp /Users/jongwon/Smartdoor/server_Test/hizib_backup.tar.gz hizib@192.168.0.73:
 tar xzvf hizib_backup.tar.gz
 ```
 
+#### /home/hizib 권한 부여
+```less
+sudo chmod 755 /home/hizib
+```
+
 #### Mqtt 브로커 주소 수정
 ```less
 sudo nano mqtt.py 
