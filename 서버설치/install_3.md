@@ -5,11 +5,13 @@ cd /home/hizib
 sudo tar czvf hizib_backup.tar.gz --exclude='.*' *
 ```
 
-#### Mac에서 받기
+#### Mac에서 명령어 실행
 ```less
-scp ubuntu@13.124.155.19:/home/hizib/hizib_backup.tar.gz /Users/jongwon/biz/
+#  Mac에서 명령어 쳐서 클라우드 파일 받기
+scp ubuntu@13.124.155.19:/home/hizib/hizib_backup.tar.gz /Users/jongwon/Smartdoor/server_Test
 
-scp /Users/jongwon/biz/hizib_backup.tar.gz hizib@192.168.0.73:/home/hizib/
+# 맥에서 테스트 서버로 복사
+scp /Users/jongwon/Smartdoor/server_Test/hizib_backup.tar.gz hizib@192.168.0.73:/home/hizib/
 
 tar xzvf hizib_backup.tar.gz
 ```
