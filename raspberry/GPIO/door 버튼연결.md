@@ -1,3 +1,23 @@
+#### wikismartdoor.py tornado 이벤트 루프에 등록
+```less
+# 백그라운드로 계속 실행할 것들
+    def run(self):
+        # 네트워크 연결이 안되면 웹소켓으로 네트워크 연결 요청
+        if not network.isInternet():
+            msg = {"request": "setupWifi", "data": network.getWifies()}
+            self.sendWebsocket(msg)
+        else:
+            self.syncDataAll()
+        # threading.Thread(target=self.syncDataAll, daemon=True).start()
+        threading.Thread(target=self.mqtt.run, daemon=True).start()
+        threading.Thread(target=self.polling, daemon=True).start()
+        threading.Thread(target=self.pir_inside.run, daemon=True).start()
+        threading.Thread(target=self.pir_outside.run, daemon=True).start()
+
+        # 버튼 초기화
+        self.initialize_button()
+```
+
 #### wikismartdoor.py
 ```less
 import time
