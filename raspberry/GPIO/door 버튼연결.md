@@ -1,6 +1,5 @@
 #### wikismartdoor.py
 ```less
-# wikismartdoor.py
 import time
 import os
 import button
@@ -44,7 +43,6 @@ finally:
 
 #### button.py
 ```less
-# button.py
 import RPi.GPIO as GPIO
 
 BUTTON_PIN = 24  # 또는 23 (BCM 기준)
