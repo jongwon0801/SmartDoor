@@ -24,20 +24,14 @@ def on_button_pressed(channel):
         logger.Logger._LOGGER.info("🟡 시스템 재부팅 요청됨 (짧게 버튼 누름)")
         os.system("sudo reboot")
 
-try:
+def initialize_button():
     button.setup_button(on_button_pressed)
     logger.Logger._LOGGER.info("✅ 버튼 이벤트 기반 초기화 완료")
 
-    # 루프는 아무 일도 안 하지만 계속 살아 있어야 인터럽트 유지됨
-    while True:
-        time.sleep(1)
-
-except KeyboardInterrupt:
-    logger.Logger._LOGGER.info("⛔ 프로그램 종료됨 (KeyboardInterrupt)")
-
-finally:
+def cleanup_button():
     button.cleanup()
     logger.Logger._LOGGER.info("🧹 GPIO 정리 완료 및 프로그램 종료")
+
 ```
 
 
