@@ -5,7 +5,7 @@ https://fishpoint.tistory.com/7687
 
 <img src="https://github.com/user-attachments/assets/344cb615-6496-4323-bb1d-123ddd6c8798" width="400" style="margin-bottom:50px;" />
 
-#### 핀 번호
+### 핀 번호
 
 <p float="left">
   <img src="https://github.com/user-attachments/assets/a9f02c43-dc55-465b-9e40-8cf96da47c85" width="388" height="550" style="margin-right:30px;" />
