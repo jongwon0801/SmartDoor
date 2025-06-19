@@ -1,4 +1,4 @@
-#### # wikismartdoor.py
+#### wikismartdoor.py
 ```less
 # wikismartdoor.py
 import time
