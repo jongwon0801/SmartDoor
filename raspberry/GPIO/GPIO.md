@@ -4,7 +4,7 @@ https://fishpoint.tistory.com/7687
 <img width="609" alt="image" src="https://github.com/user-attachments/assets/22c0fe48-37e3-481e-a236-2c762ff18770" />
 
 
-![image](https://github.com/user-attachments/assets/344cb615-6496-4323-bb1d-123ddd6c8798)
+<img src="https://github.com/user-attachments/assets/344cb615-6496-4323-bb1d-123ddd6c8798" width="400" />
 
 
 
