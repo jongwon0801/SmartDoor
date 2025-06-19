@@ -3,8 +3,11 @@ https://fishpoint.tistory.com/7687
 
 <img width="609" alt="image" src="https://github.com/user-attachments/assets/22c0fe48-37e3-481e-a236-2c762ff18770" />
 
-
 <img src="https://github.com/user-attachments/assets/344cb615-6496-4323-bb1d-123ddd6c8798" width="400" />
+
+<img width="367" alt="image" src="https://github.com/user-attachments/assets/a9f02c43-dc55-465b-9e40-8cf96da47c85" />
+
+<img width="388" alt="image" src="https://github.com/user-attachments/assets/feedc055-5004-41a6-8460-db5514742a67" />
 
 
 
@@ -32,13 +35,16 @@ PWM은 신호의 주기를 제어하여 아날로그 신호처럼 동작하게 �
 ```
 #### GPIO 핀의 수
 ```less
-- 라즈베리 파이에는 다양한 모델이 있으며, 각 모델마다 GPIO 핀의 수가 다를 수 있습니다. 일반적으로 라즈베리 파이에는 40개 핀이 있으며, 그 중 일부는 전원, GND(접지) 및 특수 기능을 제공합니다.
+- 라즈베리 파이에는 다양한 모델이 있으며, 각 모델마다 GPIO 핀의 수가 다를 수 있습니다.
+일반적으로 라즈베리 파이에는 40개 핀이 있으며, 그 중 일부는 전원, GND(접지) 및 특수 기능을 제공합니다.
+
 - 나머지 핀들은 입력/출력 용도로 사용됩니다.
 ```
 
 #### 결론
 ```less
-라즈베리 파이의 GPIO 핀은 외부 장치와 라즈베리 파이 사이에서 데이터를 주고받거나 제어하는 데 중요한 역할을 하며, 전자 회로를 만들고 다양한 프로젝트를 할 수 있는 기반이 됩니다.
+라즈베리 파이의 GPIO 핀은 외부 장치와 라즈베리 파이 사이에서 데이터를 주고받거나 제어하는 데 중요한 역할을 하며,
+전자 회로를 만들고 다양한 프로젝트를 할 수 있는 기반이 됩니다.
 ```
 
 
