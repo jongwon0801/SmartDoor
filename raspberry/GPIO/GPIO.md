@@ -6,8 +6,11 @@ https://fishpoint.tistory.com/7687
 <img src="https://github.com/user-attachments/assets/344cb615-6496-4323-bb1d-123ddd6c8798" width="400" />
 
 
-<img width="388" alt="image" src="https://github.com/user-attachments/assets/feedc055-5004-41a6-8460-db5514742a67" />
-<img width="388" alt="image" src="https://github.com/user-attachments/assets/a9f02c43-dc55-465b-9e40-8cf96da47c85" />
+<p float="left">
+  <img src="https://github.com/user-attachments/assets/feedc055-5004-41a6-8460-db5514742a67" width="388" style="margin-right:10px;" />
+  <img src="https://github.com/user-attachments/assets/a9f02c43-dc55-465b-9e40-8cf96da47c85" width="388" />
+</p>
+
 
 
 #### GPIO(General Purpose Input/Output)
