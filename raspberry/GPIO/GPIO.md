@@ -3,7 +3,7 @@ https://fishpoint.tistory.com/7687
 
 ### RPI 4 GPIO
 
-<img src="https://github.com/user-attachments/assets/344cb615-6496-4323-bb1d-123ddd6c8798" width="400" style="margin-bottom:20px;" />
+<img src="https://github.com/user-attachments/assets/344cb615-6496-4323-bb1d-123ddd6c8798" width="400" style="margin-bottom:50px;" />
 
 
 <p float="left">
