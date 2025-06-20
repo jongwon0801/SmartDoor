@@ -1,4 +1,4 @@
-#### Single test
+#### RPI4 (블루)에서 단일 테스트
 ```less
 import RPi.GPIO as GPIO
 import time
@@ -46,6 +46,26 @@ except KeyboardInterrupt:
 finally:
     GPIO.cleanup()
 
+```
+#### 192.168.0.42 단일 테스트
+```less
+# test_button.py
+
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+try:
+    while True:
+        val = GPIO.input(24)
+        print("버튼 상태:", "눌림 (LOW)" if val == GPIO.LOW else "안눌림 (HIGH)")
+        time.sleep(0.5)
+except KeyboardInterrupt:
+    pass
+finally:
+    GPIO.cleanup()
 ```
 
 #### ⚙️ 배선 가이드
