@@ -18,6 +18,22 @@
         self.initialize_button()
 ```
 
+#### __init__ 제일 하단에 추가
+```less
+
+def __init__(self, *args, **kwargs):
+
+
+# 버튼 초기화
+            self.initialize_button()
+            logger.Logger._LOGGER.info("버튼 초기화 시작1")
+            logger.Logger._LOGGER.info(
+                f"------------------------- 버튼 초기화 시작2 -------------------------"
+            )
+```
+
+
+
 #### wikismartdoor.py
 ```less
 import time
