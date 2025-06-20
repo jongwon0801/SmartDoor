@@ -111,8 +111,17 @@ src="/home/img/box02_icon01.png" 경로변경
 ```
 
 
+#### head.sup.php 수정
+```less
+<meta name="description" content="wisemonster">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<?php echo $g5_head_title?>">
+<meta property="og:description" content="wisemonnster">
+<meta property="og:url" content="<?php echo G5_URL.$_SERVER['REQUEST_URI']?>">
+<title><?php echo $g5_head_title; ?></title>
 
-
+<title>위키스마트도어</title> 변경하면 tab 이름 바뀜
+```
 
 
 
