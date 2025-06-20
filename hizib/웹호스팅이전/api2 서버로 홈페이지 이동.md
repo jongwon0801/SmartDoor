@@ -102,11 +102,13 @@ mysql -u root -p wikibox2020 < /home/hizib/homepage/www/home/adm/sql_write.sql
 mysql -u root -p wikibox2020 < /home/hizib/homepage/www/home/adm/sms_admin/sms5.sql
 ```
 
+#### 이미지 경로 수정
+```less
+vscode 에서 cmd f home -> replace 공백
 
-
-
-
-
+src="/home/img/box02_icon01.png" 경로변경
+-> src="/img/box02_icon01.png"
+```
 
 
 
