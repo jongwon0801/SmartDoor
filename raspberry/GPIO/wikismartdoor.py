@@ -102,10 +102,7 @@ class WikiSmartdoor:
 
             # 버튼 초기화
             self.initialize_button()
-            logger.Logger._LOGGER.info("버튼 초기화 시작1")
-            logger.Logger._LOGGER.info(
-                f"------------------------- 버튼 초기화 시작2 -------------------------"
-            )
+            logger.Logger._LOGGER.info("버튼 초기화 완료")
             
             # 도어시스템
             # self.doorsystem = doorsystem.DoorSystem(device=self.config['doorlock'], dooropened_callback=self.doorOpend, doorclosed_callback=self.doorClosed)
@@ -729,11 +726,10 @@ class WikiSmartdoor:
     #####
     ################################################################################################################################
 
-    def on_button_pressed(channel):
+    def on_button_pressed(self, channel):
         logger.Logger._LOGGER.info("🟢 버튼 눌림 감지됨")
         start_time = time.time()
 
-        # 버튼이 눌린 상태 유지되는 동안 대기
         while GPIO.input(channel) == GPIO.LOW:
             time.sleep(0.1)
 
@@ -747,16 +743,19 @@ class WikiSmartdoor:
             logger.Logger._LOGGER.info("🟡 시스템 재부팅 요청됨 (짧게 버튼 누름)")
             os.system("sudo /sbin/reboot")
 
-    def initialize_button():
+
+    def initialize_button(self):
         try:
-            button.setup_button(on_button_pressed)
+            button.setup_button(self.on_button_pressed)  # ✅ 수정된 부분
             logger.Logger._LOGGER.info("✅ 버튼 이벤트 기반 초기화 완료")
         except Exception as e:
             logger.Logger._LOGGER.error(f"❌ 버튼 초기화 실패: {e}")
 
-    def cleanup_button():
+
+    def cleanup_button(self):
         try:
             button.cleanup()
             logger.Logger._LOGGER.info("🧹 GPIO 정리 완료 및 프로그램 종료")
         except Exception as e:
             logger.Logger._LOGGER.error(f"❌ GPIO 정리 중 오류 발생: {e}")
+
