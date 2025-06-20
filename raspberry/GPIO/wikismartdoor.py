@@ -23,6 +23,7 @@ import msgbox
 import hione
 import time
 import network
+import os
 import button
 import RPi.GPIO as GPIO  # 버튼 핀 상태 직접 확인용
 
@@ -99,6 +100,13 @@ class WikiSmartdoor:
             # 도어락
             self.doorlock = hione.Hione(port=self.config["doorlock"])
 
+            # 버튼 초기화
+            self.initialize_button()
+            logger.Logger._LOGGER.info("버튼 초기화 시작1")
+            logger.Logger._LOGGER.info(
+                f"------------------------- 버튼 초기화 시작2 -------------------------"
+            )
+            
             # 도어시스템
             # self.doorsystem = doorsystem.DoorSystem(device=self.config['doorlock'], dooropened_callback=self.doorOpend, doorclosed_callback=self.doorClosed)
 
@@ -116,8 +124,6 @@ class WikiSmartdoor:
         threading.Thread(target=self.pir_inside.run, daemon=True).start()
         threading.Thread(target=self.pir_outside.run, daemon=True).start()
 
-        # 버튼 초기화
-        self.initialize_button()
 
     def setStatus(self, results):
         lib.log(f"Status changed: {results}")
@@ -723,10 +729,6 @@ class WikiSmartdoor:
     #####
     ################################################################################################################################
 
-    import os
-    import button
-    import RPi.GPIO as GPIO  # 버튼 핀 상태 직접 확인용
-
     def on_button_pressed(channel):
         logger.Logger._LOGGER.info("🟢 버튼 눌림 감지됨")
         start_time = time.time()
@@ -740,16 +742,21 @@ class WikiSmartdoor:
 
         if press_duration >= 3:
             logger.Logger._LOGGER.info("🔴 시스템 종료 요청됨 (3초 이상 버튼 누름)")
-            os.system("sudo shutdown now")
+            os.system("sudo /sbin/shutdown now")
         else:
             logger.Logger._LOGGER.info("🟡 시스템 재부팅 요청됨 (짧게 버튼 누름)")
-            os.system("sudo reboot")
+            os.system("sudo /sbin/reboot")
 
     def initialize_button():
-        button.setup_button(on_button_pressed)
-        logger.Logger._LOGGER.info("✅ 버튼 이벤트 기반 초기화 완료")
+        try:
+            button.setup_button(on_button_pressed)
+            logger.Logger._LOGGER.info("✅ 버튼 이벤트 기반 초기화 완료")
+        except Exception as e:
+            logger.Logger._LOGGER.error(f"❌ 버튼 초기화 실패: {e}")
 
     def cleanup_button():
-        button.cleanup()
-        logger.Logger._LOGGER.info("🧹 GPIO 정리 완료 및 프로그램 종료")
-
+        try:
+            button.cleanup()
+            logger.Logger._LOGGER.info("🧹 GPIO 정리 완료 및 프로그램 종료")
+        except Exception as e:
+            logger.Logger._LOGGER.error(f"❌ GPIO 정리 중 오류 발생: {e}")
