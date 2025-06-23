@@ -50,8 +50,8 @@ sudo iptables -L -n
 sudo ss -tuln
 0.0.0.0이면 외부에서 접속 가능, 127.0.0.1이면 로컬 전용이라 외부에서 접근 불가
 
-# TCP 포트 18300번을 사용 중인 프로세스를 확인하기 위해 사용하는 명령어
-ss -tnp | grep 18300
+# TCP 포트 번호 사용 중인 프로세스를 확인하기 위해 사용하는 명령어
+ss -tnp | grep <포트번호>
 
 UFW를 사용하는 경우:
 sudo ufw allow 51820/udp
