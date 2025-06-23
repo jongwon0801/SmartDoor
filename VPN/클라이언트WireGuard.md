@@ -71,6 +71,9 @@ sudo wg-quick up wg0
 sudo systemctl enable wg-quick@wg0
 ```
 
+<img width="539" alt="image" src="https://github.com/user-attachments/assets/1766b01b-a9aa-481e-81bc-ff5c5e4d425f" />
+
+
 ✅ 7단계 테스트
 ```less
 클라이언트에서 핑 테스트:
