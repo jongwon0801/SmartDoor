@@ -23,9 +23,10 @@ server_public.key: 서버 공개키 (클라이언트와 공유할 것)
 
 ✅ 3단계: 설정 파일 만들기 (wg0.conf)
 ```less
-sudo nano /etc/wireguard/wg0.conf
-
+# 개인 키 복사
 sudo cat /etc/wireguard/server_private.key
+
+sudo nano /etc/wireguard/wg0.conf
 
 [Interface]
 Address = 10.0.0.1/24         # 서버 VPN 내부 IP
