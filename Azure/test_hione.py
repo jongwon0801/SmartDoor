@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# /home/pi/www/python/test_hione.py
 import argparse
 import hione
 import lib
