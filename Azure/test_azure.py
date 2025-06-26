@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# /home/pi/www/python/test_hione.py
+# /home/pi/www/python/test_azure.py
 
 import time
 from azure.iot.device import IoTHubDeviceClient
