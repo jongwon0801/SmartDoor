@@ -1,9 +1,17 @@
-#### AWS 계정
+#### AWS Root 계정
 
 #### 가끔 이메일 인증, 처음 로그인 시 이메일 인증 필요
 
 ```
 id : wikibox76417@wikibox.kr
+
+pw : wiki6564@!
+```
+
+#### AWS IAM 계정
+
+```
+id : wikibox_IAM
 
 pw : wiki6564@!
 ```
