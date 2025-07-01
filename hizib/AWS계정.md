@@ -5,7 +5,7 @@
 ```
 id : wikibox76417@wikibox.kr
 
-pw : wiki11admin!
+pw : wiki6564@!
 ```
 
 #### AWS 계정 정보 수정
