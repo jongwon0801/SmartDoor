@@ -34,7 +34,7 @@ print("Connected!")
 
 # 테스트 메시지 전송
 topic = "wikibox/door/control"
-message = "open"
+message = "{"status": "open"}"
 mqtt_client.publish(topic, message, 1)
 print(f"Message '{message}' published to topic '{topic}'")
 
