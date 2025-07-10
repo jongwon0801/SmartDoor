@@ -111,4 +111,36 @@ Raspberry Pi 3에서는 exFAT 파일 시스템을 지원하려면 **exfat-fuse**
 
 빈 공간 제외하고 실제 사용중인 파티션만 남기니까 효율 굿
 
+#### 마운트 안될때
+```less
+# 읽기 전용 마운트인지 확인
+mount | grep /media/pi/usbdrive
+
+/dev/sdb2 on /media/pi/usbdrive type hfsplus (ro,nosuid,nodev,relatime,umask=22,uid=1000,gid=1000,nls=utf8,uhelper=udisks2)
+
+# 만약 ro(read-only)로 마운트되어 있다면, rw(read-write)로 다시 마운트해야 합니다.
+sudo umount /media/pi/usbdrive
+
+# 마운트 포인트 존재 여부 확인
+ls -ld /media/pi/usbdrive
+
+# 폴더가 없다면 아래 명령어로 생성
+sudo mkdir -p /media/pi/usbdrive
+
+# 연결된 블록 장치 목록과 파티션이 출력
+lsblk
+
+# 재마운트 명령 (읽기/쓰기 가능하도록)
+sudo mount -t hfsplus -o rw,force /dev/sdb2 /media/pi/usbdrive
+
+# 현재 마운트 옵션(읽기 전용인지, 읽기/쓰기인지 등)도 같이 확인
+mount | grep /media/pi/usbdrive
+/dev/sdb2 on /media/pi/usbdrive type hfsplus (rw,relatime,umask=22,uid=0,gid=0,nls=utf8)
+
+sudo mount -t hfsplus -o rw,force /dev/sdb2 /media/pi/usbdrive
+```
+
+
+
+
 
