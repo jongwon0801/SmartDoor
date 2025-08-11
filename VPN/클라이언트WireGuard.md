@@ -44,7 +44,7 @@ PersistentKeepalive = 25
 
 ```
 
-✅ 4단계 서버에 클라이언트 정보 추가
+✅ 4단계 서버에 클라이언트 공개키 정보 추가
 ```less
 [Peer]
 PublicKey = DoKpwfJvT3IcXZhyLDYGY3p/59IUKU8L9n9DjuipGBE=
