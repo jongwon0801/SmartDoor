@@ -20,6 +20,10 @@ pw : elcsoft6564
 user : pi
 스노우트리
 
+# 로컬 hizib 스마트도어 서버
+ssh hizib@192.168.0.73
+wikibox
+
 # 홈어시스턴트
 192.168.0.174
 user : root
