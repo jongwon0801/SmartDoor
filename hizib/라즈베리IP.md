@@ -15,7 +15,6 @@ pw : pi
 user : pi
 pw : elcsoft6564
 
-
 # 춘의동 세탁소 (11013)
 192.168.0.20
 user : pi
