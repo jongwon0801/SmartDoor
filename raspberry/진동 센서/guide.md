@@ -25,6 +25,16 @@ pip install RPi.GPIO
 진동 발생: 회로 열림 → DO 핀 HIGH
 ```
 
+#### GPIO.IN
+```less
+GPIO.IN은 Raspberry Pi에서 GPIO 핀을 입력(input)으로 사용하겠다는 의미입니다.
+
+Raspberry Pi의 GPIO 핀은 크게 두 가지 용도로 사용할 수 있어요:
+
+입력 (Input) – 센서, 버튼 등 외부 신호를 읽을 때
+
+출력 (Output) – LED, 모터 등 외부 장치를 제어할 때
+```
 
 #### 1. 풀업/풀다운이 필요한 이유
 ```less
