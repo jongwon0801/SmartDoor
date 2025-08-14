@@ -25,30 +25,50 @@ except KeyboardInterrupt:
 ```
 
 
-#### 출력논리 확인방법()
+#### 1. 출력논리 코드로 확인하는 방법
 ```less
 import RPi.GPIO as GPIO
 import time
 
 GPIO.setmode(GPIO.BCM)
 FLAME_PIN = 17
-GPIO.setup(FLAME_PIN, GPIO.IN)
+GPIO.setup(FLAME_PIN, GPIO.IN)  # 풀업/풀다운 설정 없이
 
 try:
     while True:
-        print("FLAME_PIN 상태:", GPIO.input(FLAME_PIN))
-        time.sleep(0.2)
+        print(GPIO.input(FLAME_PIN))
+        time.sleep(0.5)
 except KeyboardInterrupt:
     GPIO.cleanup()
+
 ```
+
+#### 요약
 ```less
-평상시: HIGH (1)
+평상시 값이 1(HIGH) 이면 → 센서가 기본적으로 풀업(상시 HIGH)
+-> 감지 조건을 GPIO.LOW
 
-불꽃 감지 시: LOW (0)
-
-이 경우 PUD_UP을 써도 되고, 감지 조건을 GPIO.LOW로 쓰면 됩니다.
+평상시 값이 0(LOW) 이면 → 센서가 기본적으로 풀다운(상시 LOW)
+-> 감지 조건을 GPIO.HIGH
 ```
 
+#### 2. 센서 모듈 구조로 확인하는 방법
+```less
+불꽃센서 모듈에 보통 3핀(VCC, GND, DO) 또는 4핀(아날로그 + 디지털) 출력이 있습니다.
+
+내부에 풀업 저항이 있으면 기본 출력이 HIGH로 유지됩니다.
+
+내부에 풀다운 저항이 있으면 기본 출력이 LOW로 유지됩니다.
+```
+
+#### 3. 멀티미터
+```less
+멀티미터로 DO 핀과 GND 사이 전압을 재보면 더 확실합니다.
+
+평상시 3.3V나 5V → 풀업 방식
+
+평상시 0V → 풀다운 방식
+```
 
 
 
