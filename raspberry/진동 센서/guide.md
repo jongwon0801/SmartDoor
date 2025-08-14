@@ -36,6 +36,31 @@ Raspberry Pi의 GPIO 핀은 크게 두 가지 용도로 사용할 수 있어요:
 출력 (Output) – LED, 모터 등 외부 장치를 제어할 때
 ```
 
+#### GPIO.IN 예제
+```less
+import RPi.GPIO as GPIO
+
+GPIO.setmode(GPIO.BCM)      # 핀 번호를 BCM 기준으로 사용
+GPIO.setup(17, GPIO.IN)     # GPIO 17번 핀을 입력으로 설정
+
+if GPIO.input(17) == GPIO.HIGH:
+    print("핀 17에 신호가 들어왔어요!")
+
+```
+
+#### 정리
+```less
+GPIO.setup(17, GPIO.IN) → 17번 핀을 입력용으로 설정
+
+GPIO.input(17) → 핀의 전압 상태를 읽음
+
+GPIO.HIGH → 전압이 높음 (3.3V)
+
+GPIO.LOW → 전압이 낮음 (0V)
+
+즉, GPIO.IN은 **“이 핀에서 신호를 받아서 읽겠다”**라는 의미입니다.
+```
+
 #### 1. 풀업/풀다운이 필요한 이유
 ```less
 GPIO 입력핀은 전기적으로 부동(floating) 상태가 될 수 있음
