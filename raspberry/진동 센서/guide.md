@@ -13,6 +13,9 @@ sudo apt install python3-rpi.gpio
 
 # 설치 확인
 python3 -c "import RPi.GPIO as GPIO; print(GPIO.VERSION)"
+
+# pip 가상환경 안에 설치
+pip install RPi.GPIO
 ```
 
 #### 상시 폐쇄형 센서 특성
