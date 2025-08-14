@@ -30,6 +30,34 @@ raspi-gpio get 17
 raspi-gpio get
 ```
 
+
+#### 출력논리 코드로 확인하는 방법
+```less
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+FLAME_PIN = 17
+GPIO.setup(FLAME_PIN, GPIO.IN)  # 풀업/풀다운 설정 없이
+
+try:
+    while True:
+        print(GPIO.input(FLAME_PIN))
+        time.sleep(0.5)
+except KeyboardInterrupt:
+    GPIO.cleanup()
+
+```
+
+#### 요약
+```less
+평상시 값이 1(HIGH) 이면 → 센서가 기본적으로 풀업(상시 HIGH)
+-> 감지 조건을 GPIO.LOW
+
+평상시 값이 0(LOW) 이면 → 센서가 기본적으로 풀다운(상시 LOW)
+-> 감지 조건을 GPIO.HIGH
+```
+
 #### GPIO의 역할
 ```less
 - 1 입력(Input): GPIO 핀을 입력으로 설정하여 외부 장치(예: 버튼, 센서 등)에서 신호를 받아올 수 있습니다.
