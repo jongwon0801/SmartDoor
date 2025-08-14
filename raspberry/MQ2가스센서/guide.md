@@ -74,7 +74,32 @@ AO 전압 < 임계값 → DO LOW
 즉, DO는 AO를 센서 내부 회로가 스스로 판단해서 디지털로 변환한 신호
 ```
 
-#### 모듈 테스트 코드
+
+#### 테스트 코드 (DO로 임계값넘어가면 메세지)
+```less
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+
+FLAME_PIN = 17  # 가스 센서 GPIO 번호
+
+# 입력 설정, 풀업으로 안정화 (가스 감지 시 LOW)
+GPIO.setup(FLAME_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+try:
+    while True:
+        if GPIO.input(FLAME_PIN) == GPIO.LOW:  # 가스 감지 시 LOW 출력
+            print("🔥 가스 감지!")
+        # else 제거 → 감지 안될 때는 출력 없음
+        time.sleep(0.1)
+
+except KeyboardInterrupt:
+    GPIO.cleanup()
+```
+
+
+#### 변환기 필요함 (아직 안쓰는거)
 ```less
 from gpiozero import MCP3008, DigitalInputDevice
 import time
@@ -100,33 +125,4 @@ try:
 except KeyboardInterrupt:
     print("종료합니다.")
 ```
-
-
-#### 테스트 코드
-```less
-import RPi.GPIO as GPIO
-import time
-
-GPIO.setmode(GPIO.BCM)
-
-FLAME_PIN = 17  # 가스 센서 GPIO 번호
-
-# 입력 설정, 풀업으로 안정화 (불꽃 감지 시 LOW)
-GPIO.setup(FLAME_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-
-try:
-    while True:
-        if GPIO.input(FLAME_PIN) == GPIO.LOW:  # 가스 감지 시 LOW 출력
-            print("🔥 가스 감지!")
-        else:
-            print("안전")
-        time.sleep(0.1)
-
-except KeyboardInterrupt:
-    GPIO.cleanup()
-```
-
-
-
-
 
