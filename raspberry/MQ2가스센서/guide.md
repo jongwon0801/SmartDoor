@@ -102,7 +102,29 @@ except KeyboardInterrupt:
 ```
 
 
+#### 테스트 코드
+```less
+import RPi.GPIO as GPIO
+import time
 
+GPIO.setmode(GPIO.BCM)
+
+FLAME_PIN = 17  # 가스 센서 GPIO 번호
+
+# 입력 설정, 풀업으로 안정화 (불꽃 감지 시 LOW)
+GPIO.setup(FLAME_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+try:
+    while True:
+        if GPIO.input(FLAME_PIN) == GPIO.LOW:  # 가스 감지 시 LOW 출력
+            print("🔥 가스 감지!")
+        else:
+            print("안전")
+        time.sleep(0.1)
+
+except KeyboardInterrupt:
+    GPIO.cleanup()
+```
 
 
 
