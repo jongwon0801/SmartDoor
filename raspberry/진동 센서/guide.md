@@ -48,8 +48,8 @@ GPIO 입력핀은 전기적으로 부동(floating) 상태가 될 수 있음
 ```less
 | 센서 타입  | 평상시 상태 | 이벤트 상태 | 권장 설정     |
 | ------ | ------ | ------ | --------- |
-| 상시 폐쇄형 | LOW    | HIGH   | PUD\_UP   |
 | 상시 개방형 | HIGH   | LOW    | PUD\_DOWN |
+| 상시 폐쇄형 | LOW    | HIGH   | PUD\_UP   |
 ```
 
 #### 3. 꼭 써야 하나?
@@ -67,8 +67,8 @@ GPIO.setmode(GPIO.BCM)
 
 VIB_PIN = 17  # 진동 센서
 
-# 입력 설정, 풀업으로 안정화
-GPIO.setup(VIB_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+# 입력 설정, 풀다운으로 안정화
+GPIO.setup(VIB_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 try:
     while True:
