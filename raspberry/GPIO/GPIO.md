@@ -20,6 +20,16 @@ https://fishpoint.tistory.com/7687
 - GPIO(General Purpose Input/Output)는 라즈베리 파이에서 외부 장치와 연결하고 제어하는 데 사용되는 핀들입니다.
 - GPIO 핀은 다양한 입출력 작업을 처리할 수 있어, 라즈베리 파이를 다양한 전자기기와 연결하여 제어할 수 있습니다.
 ```
+
+#### 핀 정보확인
+```less
+(1) 특정 핀 확인
+raspi-gpio get 17
+
+(2) 모든 GPIO 핀 상태 출력
+raspi-gpio get
+```
+
 #### GPIO의 역할
 ```less
 - 1 입력(Input): GPIO 핀을 입력으로 설정하여 외부 장치(예: 버튼, 센서 등)에서 신호를 받아올 수 있습니다.
