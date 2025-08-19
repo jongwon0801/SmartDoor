@@ -33,44 +33,7 @@ def mermaid_to_png(graph, filename="diagram.png"):
 
 # Mermaid 다이어그램 코드
 diagram = """
-graph LR;
 
-%% 스마트도어 컨테이너
-subgraph SD[Smart Door Container]
-    PIR_OUT[PIR Sensor (Outside)]
-    PIR_IN[PIR Sensor (Inside)]
-    CAM[Camera]
-    BELL[Bell]
-    SPEAKER[Speaker]
-    MIC[Microphone]
-    GPIO[GPIO Devices]
-    
-    PIR_OUT --> SD
-    PIR_IN --> SD
-    CAM --> SD
-    BELL --> SD
-    SPEAKER --> SD
-    MIC --> SD
-    GPIO --> SD
-end
-
-%% 홈어시스턴트 컨테이너
-subgraph HA[Home Assistant Container]
-    LIGHT[Light]
-    CURTAIN[Curtain]
-    SWITCH[Switch]
-    PLUG[Smart Plug]
-    SENSOR[Various Sensors]
-    
-    LIGHT --> HA
-    CURTAIN --> HA
-    SWITCH --> HA
-    PLUG --> HA
-    SENSOR --> HA
-end
-
-%% 컨테이너 간 연결
-SD --> MQTT[MQTT Broker] <-- HA
 """
 
 # PNG로 변환 및 표시
