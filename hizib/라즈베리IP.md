@@ -10,6 +10,11 @@ pw : elcsoft6564
 user : pi
 pw : pi
 
+# 벡스코 문
+192.168.0.42
+user : pi
+pw : wiki6564
+
 # testceo 사장실 문
 192.168.0.47
 user : pi
@@ -44,11 +49,11 @@ pw : pi
 user : pi
 pw : pi
 
-# 스마트도어 서버
+# 스마트도어 로컬 서버
+192.168.0.73
 user : hizib
-pw : wikibox
+pw : wiki6564
 
 user : ubuntu
 pw : wikibox
-
 ```
