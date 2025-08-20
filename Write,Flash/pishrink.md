@@ -87,6 +87,7 @@ sudo ./pishrink.sh /media/pi/SAMSUNG\ USB/정은치엘로B.img
 
 sudo ./pishrink.sh "/media/pi/외장/연구실42Add_Voice_20250605.img"
 
+sudo ./pishrink.sh "/media/pi/usbdrive1/전시회이후_20250820.img"
 ```
 
 ```less
