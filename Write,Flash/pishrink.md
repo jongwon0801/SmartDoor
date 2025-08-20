@@ -90,6 +90,13 @@ sudo ./pishrink.sh "/media/pi/외장/연구실42Add_Voice_20250605.img"
 sudo ./pishrink.sh "/media/pi/usbdrive1/전시회이후_20250820.img"
 ```
 
+#### 라즈베리파이에서 읽기 쓰기 마운트 다시 해도 안될 경우
+```less
+# USB 자체를 읽기/쓰기 가능하게 만들기 (Mac 필요)
+diskutil disableJournal /Volumes/usbdrive
+```
+
+
 ```less
 # 외장 드라이브 마운트 (RPI4는 알아서 된다)
 sudo mount /dev/sda1 /media/pi/외장
