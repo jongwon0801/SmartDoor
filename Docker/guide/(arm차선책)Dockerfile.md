@@ -1,5 +1,5 @@
+#### ARM 아키텍처에 최적화된 Python 3.9 slim 이미지 사용
 ```less
-# ARM 아키텍처에 최적화된 Python 3.9 slim 이미지 사용
 FROM arm64v8/python:3.9-slim
 
 WORKDIR /app/www
