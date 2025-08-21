@@ -4,24 +4,43 @@ FROM --platform=linux/arm64 python:3.9-slim
 
 WORKDIR /app/www
 
-# 시스템 의존성 패키지 설치
+# 필수 기본 패키지 설치
 RUN apt-get update && apt-get install -y \
     build-essential \
+    python3-dev \
+    libffi-dev \
+    --no-install-recommends && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# 컴파일러 및 빌드 도구 설치
+RUN apt-get update && apt-get install -y \
     cmake \
+    gcc \
+    gfortran \
+    pkg-config \
+    --no-install-recommends && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# 과학 계산 라이브러리 설치 (NumPy 문제 해결을 위한 핵심 부분)
+RUN apt-get update && apt-get install -y \
+    libblas-dev \
+    liblapack-dev \
+    python3-numpy \
+    python3-scipy \
+    --no-install-recommends && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# GUI 관련 라이브러리 설치 (필요시)
+RUN apt-get update && apt-get install -y \
     libsm6 \
     libxext6 \
     libxrender-dev \
     libgtk-3-dev \
-    python3-dev \
-    libblas-dev \
-    liblapack-dev \
-    gcc \
-    gfortran \
-    pkg-config \
-    python3-numpy \
-    python3-scipy \
-    libffi-dev \
     --no-install-recommends && \
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # requirements.txt 복사
