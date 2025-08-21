@@ -132,11 +132,10 @@ pydub==0.25.1
 pytesseract==0.3.10
 pyzbar==0.1.9
 opencv-python==4.9.0.80
-```
 
 # 얼굴 인식 관련
 dlib==20.0.0
 face-recognition-models==0.3.0
 face-recognition==1.3.0
-
+```
 
