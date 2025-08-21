@@ -124,7 +124,8 @@ uritemplate==4.1.1
 wifi==0.3.8
 
 # 미디어 처리
-numpy==1.26.4
+# 에러나서 버젼 다운 numpy==1.26.4
+numpy==1.24.3
 pillow==10.2.0
 gTTS==2.5.2
 python-vlc==3.0.20123
