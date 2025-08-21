@@ -27,7 +27,7 @@ user : pi
 
 # 로컬 hizib 스마트도어 서버
 ssh hizib@192.168.0.73
-wikibox
+pw : wiki6564
 
 # 홈어시스턴트
 192.168.0.174
