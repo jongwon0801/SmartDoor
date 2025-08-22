@@ -186,7 +186,7 @@ FROM python:3.9-slim
 WORKDIR /app/www
 
 # 1. 시스템 레벨 기본 의존성 설치:
-#    build-essential, python3-dev, libffi-dev, libssl-dev 등
+#    빌드 필수 도구, 파이썬 개발 헤더, 암호화 관련 lib 등
 RUN apt-get update && apt-get install -y \
     build-essential \
     python3-dev \
@@ -197,7 +197,7 @@ RUN apt-get update && apt-get install -y \
     rm -rf /var/lib/apt/lists/*
 
 # 2. 컴파일러 및 복잡한 라이브러리 빌드 도구:
-#    cmake, gcc, gfortran, boost (dlib), rust (cryptography) 등
+#    cmake, gcc, gfortran, boost (dlib 의존성), rust (cryptography 의존성) 등
 RUN apt-get update && apt-get install -y \
     cmake \
     gcc \
@@ -215,14 +215,10 @@ RUN apt-get update && apt-get install -y \
     rm -rf /var/lib/apt/lists/*
 
 # 3. 과학 계산 및 이미지/QR 코드 관련 시스템 라이브러리:
-#    python3-numpy, python3-scipy, python3-opencv는 시스템 기본 라이브러리
-#    libzbar0t64, libzbar-dev, zbar-tools는 pyzbar 의존성
+#    선형대수 라이브러리 (NumPy/SciPy 의존성), ZBar 라이브러리 (pyzbar 의존성)
 RUN apt-get update && apt-get install -y \
     libblas-dev \
     liblapack-dev \
-    python3-numpy \
-    python3-scipy \
-    python3-opencv \
     libzbar0t64 \
     libzbar-dev \
     zbar-tools \
@@ -235,28 +231,33 @@ COPY requirements.txt /app/requirements.txt
 
 # pip 자체 및 빌드 관련 도구 업그레이드 및 설치
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir setuptools wheel setuptools_rust
+RUN pip install --no-cache-dir --no-deps setuptools wheel setuptools_rust
 
-# NumPy (pip로도 설치하여 파이썬 레벨에서 확실하게 인식시키고, OpenCV 등 의존성 만족)
-RUN pip install --no-cache-dir numpy==1.26.4 --prefer-binary
+# !!!!! 중요: 오래 걸리거나 까다로운 Python 패키지들을 먼저 명시적으로 설치 !!!!!
+
+# NumPy (파이썬 레벨에서 확실하게 인식시키고, 다른 패키지 의존성 만족)
+RUN pip install --no-cache-dir --no-deps numpy==1.26.4 --prefer-binary
 
 # Cryptography (Rust 컴파일러 문제 해결 후 명시적 설치)
-RUN pip install --no-cache-dir cryptography==41.0.7 --prefer-binary
+RUN pip install --no-cache-dir --no-deps cryptography==41.0.7 --prefer-binary
 
 # OpenCV Python Bindings (cv2 모듈 로딩 문제 해결 및 헤드리스 버전 설치)
-# requirements.txt에 명시되었던 opencv-python 버전과 동일하게 지정하는 것이 좋습니다.
-RUN pip install --no-cache-dir opencv-python-headless==4.9.0.80 --prefer-binary
+RUN pip install --no-cache-dir --no-deps opencv-python-headless==4.9.0.80 --prefer-binary
 
-# dlib (가장 오래 걸리는 컴파일)
-RUN pip install --no-cache-dir dlib==20.0.0 --prefer-binary
+# dlib (가장 오래 걸리는 컴파일. Face-recognition 등의 의존성)
+RUN pip install --no-cache-dir --no-deps dlib==20.0.0 --prefer-binary
 
 # Face-recognition 관련 (dlib에 의존)
-RUN pip install --no-cache-dir face-recognition-models==0.3.0 face-recognition==1.3.0 --prefer-binary
+RUN pip install --no-cache-dir --no-deps face-recognition-models==0.3.0 face-recognition==1.3.0 --prefer-binary
+
+# pyzbar (zbar 시스템 라이브러리에 의존, QR 코드 스캔)
+RUN pip install --no-cache-dir --no-deps pyzbar==0.1.9 --prefer-binary
 
 # 나머지 requirements.txt에 있는 패키지들 설치
-# (앞서 명시적으로 설치된 패키지들은 requirements.txt에서 제거하거나 주석 처리하세요.)
+# 중요: 위에 명시적으로 설치된 패키지들은 requirements.txt에서 제거하거나 주석 처리하세요.
 RUN pip install --no-cache-dir \
     -r /app/requirements.txt \
+    --no-deps \
     --prefer-binary
 
 # 애플리케이션 파일 복사 (주로 개발 중 자주 변경되므로 가장 아래에 배치)
