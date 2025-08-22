@@ -179,3 +179,70 @@ services:
     # network_mode: "host" 
 ```
 
+#### 정리본
+```less
+FROM python:3.9-slim
+
+WORKDIR /app/www
+
+# 시스템 레벨 의존성 설치
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    python3-dev \
+    libffi-dev \
+    libssl-dev \
+    --no-install-recommends && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && apt-get install -y \
+    cmake \
+    gcc \
+    gfortran \
+    pkg-config \
+    libsm-dev \
+    libxext-dev \
+    libgtk-3-dev \
+    libboost-python-dev \
+    libboost-thread-dev \
+    rustc \
+    cargo \
+    --no-install-recommends && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && apt-get install -y \
+    libblas-dev \
+    liblapack-dev \
+    python3-numpy \
+    python3-scipy \
+    python3-opencv \
+    libzbar0 \
+    libzbar-dev \
+    zbar-tools \
+    --no-install-recommends && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt /app/requirements.txt
+
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir setuptools wheel setuptools_rust
+
+RUN pip install --no-cache-dir --prefer-binary dlib==20.0.0
+RUN pip install --no-cache-dir --prefer-binary cryptography==41.0.7
+
+RUN pip install --no-cache-dir \
+    -r /app/requirements.txt \
+    --no-deps \
+    --prefer-binary
+
+RUN pip install --no-cache-dir --no-deps --prefer-binary face-recognition-models==0.3.0 face-recognition==1.3.0
+RUN pip install --no-cache-dir --prefer-binary opencv-python-headless
+
+COPY ./www/ .
+
+CMD ["python", "python/webserver.py"]
+```
+
+
