@@ -81,6 +81,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     python3-dev \
     libffi-dev \
+    libssl-dev \
     --no-install-recommends && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
