@@ -135,6 +135,7 @@ RUN pip install --no-cache-dir \
 
 # dlib과 face-recognition 관련 패키지 별도 설치 (버전 지정 및 의존성 설치 없이)
 RUN pip install --no-cache-dir --no-deps face-recognition-models==0.3.0 face-recognition==1.3.0
+RUN pip install --no-cache-dir opencv-python-headless
 
 COPY ./www/ .
 
