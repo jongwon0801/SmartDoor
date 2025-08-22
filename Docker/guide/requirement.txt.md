@@ -1,34 +1,4 @@
-#### pip list에 나온 버전을 기준으로 requirements.txt 파일
-
-```less
-oauthlib==3.2.2
-requests==2.31.0
-requests-oauthlib==2.0.0
-PyJWT==2.8.0
-paho-mqtt==1.6.1
-numpy==1.26.4
-pycryptodome==3.23.0
-pyserial==3.5
-pyOpenSSL==20.0.1
-pylint==2.7.2
-firebase-admin==6.3.0
-pillow==10.2.0
-qrcode==7.4.2
-pyzbar==0.1.9
-PyMySQL==1.1.0
-DBUtils==3.1.0
-websockets==12.0
-gTTS==2.5.2
-pydub==0.25.1
-nmcli==1.3.0
-RPi.GPIO==0.7.1
-gpiozero==2.0.1
-python-vlc==3.0.20123
-lgpio==0.0.0.2
-opencv-python==4.9.0.80
-face-recognition==1.3.0
-dlib==20.0.0
-```
+#### 패키지 버젼
 
 ```less
 # 기본 도구
@@ -125,7 +95,7 @@ uritemplate==4.1.1
 wifi==0.3.8
 
 # 미디어 처리
-# 에러나서 전역으로 설치 numpy==1.26.4
+numpy==1.26.4
 pillow==10.2.0
 gTTS==2.5.2
 python-vlc==3.0.20123
