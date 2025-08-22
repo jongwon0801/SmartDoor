@@ -2,7 +2,7 @@
 
 ```less
 # 이 파일은 Dockerfile의 빌드 시간 최적화를 위해
-# 별도로 설치되는 패키지(numpy, scipy, opencv-python, dlib, face-recognition*, cryptography)를
+# 별도로 설치되는 패키지(numpy, scipy, opencv-python, dlib, face-recognition*, cryptography(libssl-dev))를
 # 제외한 파이썬 의존성 목록입니다.
 
 # 기본 도구
