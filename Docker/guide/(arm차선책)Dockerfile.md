@@ -144,5 +144,38 @@ CMD ["python", "python/webserver.py"]
 
 
 
+#### docker-compose.yml (디바이스 경로추가)
+```less
+version: '3'
+services:
+  tornado:
+    build: .
+    container_name: smartdoor_app
+    privileged: true  # 하드웨어 접근 권한 부여 (거의 필수적입니다)
+    ports:
+      - "8080:8080"  
+    restart: unless-stopped
+    volumes:
+      # 애플리케이션 코드 마운트
+      - ./www:/app/www
 
+      # 설정 파일 마운트 (읽기 전용: :ro)
+      - "/boot/config.txt:/boot/config.txt:ro"
+      - "/etc/udev/rules.d/99-com.rules:/etc/udev/rules.d/99-com.rules:ro"
+      - "/usr/share/X11/xorg.conf.d/40-libinput.conf:/usr/share/X11/xorg.conf.d/40-libinput.conf:ro"
+      
+    # udev 규칙에 따라 생성되는 심볼릭 링크 디바이스들을 컨테이너에 마운트
+    # /dev/input/event* 에 대한 접근을 위해서 /dev/input도 필요할 수 있습니다.
+    # KERNELS=="fe201a00.serial" -> /dev/hione (UART5)
+    # X11 libinput에서 필요할 수 있는 입력 디바이스들
+    devices:
+      - "/dev/ttyUSB_PIR:/dev/ttyUSB_PIR"
+      - "/dev/hione:/dev/hione" 
+      - "/dev/cam_inside:/dev/cam_inside"
+      - "/dev/cam_outside:/dev/cam_outside"
+      - "/dev/input:/dev/input"
+
+    # (필요한 경우) 호스트 네트워크 모드 사용 (일부 디바이스 통신에 유용할 수 있음)
+    # network_mode: "host" 
+```
 
