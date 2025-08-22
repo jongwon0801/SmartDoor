@@ -120,20 +120,20 @@ COPY requirements.txt /app/
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir setuptools wheel setuptools_rust
 
-# cryptography 패키지 설치 - 이전에는 || true로 실패를 무시했지만 이제 제대로 설치
+# cryptography 패키지 설치 (버전 지정)
 RUN pip install --no-cache-dir cryptography==41.0.7
 
-# 필터에서 dlib, face-recognition 관련 패키지를 제외하지 않도록 수정
-# 시스템 패키지로 이미 설치된 numpy, scipy, opencv-python만 제외
-RUN grep -v -E "numpy|scipy|opencv-python" /app/requirements.txt > /app/requirements_filtered.txt
+# 필터링: numpy, scipy, opencv-python, dlib, face-recognition, face-recognition-models, cryptography 제외
+RUN grep -v -E "numpy|scipy|opencv-python|dlib|face-recognition|face-recognition-models|cryptography" /app/requirements.txt > /app/requirements_filtered.txt
 
-# 필터링된 requirements 설치
+# 필터링된 requirements 설치 (의존성 설치 없이)
 RUN pip install --no-cache-dir \
     -r /app/requirements_filtered.txt \
+    --no-deps \
     --prefer-binary
 
-# dlib과 face-recognition 관련 패키지를 명시적으로 설치
-RUN pip install --no-cache-dir dlib face-recognition face-recognition-models
+# dlib과 face-recognition 관련 패키지 별도 설치 (버전 지정 및 의존성 설치 없이)
+RUN pip install --no-cache-dir --no-deps dlib==20.0.0 face-recognition-models==0.3.0 face-recognition==1.3.0
 
 COPY ./www/ .
 
