@@ -69,7 +69,10 @@ CMD ["python", "python/webserver.py"]
 
 #### 상단 패키지 설치 완료 이후 누락된 패키지 설치
 ```less
-dlib, face-recognition, face-recognition-models, cryptography
+dlib, face-recognition, face-recognition-models,
+cryptography 설치위해서 (libssl-dev 추가)
+
+RUN에 패키지 추가하면 이후 패키지들도 캐싱안하고 처음부터 빌드한다
 ```
 
 ```less
