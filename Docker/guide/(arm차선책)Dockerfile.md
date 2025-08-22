@@ -33,16 +33,6 @@ RUN apt-get update && apt-get install -y \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# GUI 관련 라이브러리 설치 (필요시)
-RUN apt-get update && apt-get install -y \
-    libsm6 \
-    libxext6 \
-    libxrender-dev \
-    libgtk-3-dev \
-    --no-install-recommends && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
-
 # requirements.txt 복사
 COPY requirements.txt /app/
 
