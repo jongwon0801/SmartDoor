@@ -219,6 +219,7 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get update && apt-get install -y \
     libblas-dev \
     liblapack-dev \
+    python3-numpy \
     libzbar0t64 \
     libzbar-dev \
     zbar-tools \
@@ -232,11 +233,6 @@ COPY requirements.txt /app/requirements.txt
 # pip 자체 및 빌드 관련 도구 업그레이드 및 설치
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir --no-deps setuptools wheel setuptools_rust
-
-# !!!!! 중요: 오래 걸리거나 까다로운 Python 패키지들을 먼저 명시적으로 설치 !!!!!
-
-# NumPy (파이썬 레벨에서 확실하게 인식시키고, 다른 패키지 의존성 만족)
-RUN pip install --no-cache-dir --no-deps numpy==1.26.4 --prefer-binary
 
 # Cryptography (Rust 컴파일러 문제 해결 후 명시적 설치)
 RUN pip install --no-cache-dir --no-deps cryptography==41.0.7 --prefer-binary
