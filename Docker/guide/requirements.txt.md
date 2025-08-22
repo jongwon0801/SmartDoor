@@ -26,7 +26,8 @@ pyasn1==0.5.1
 pyasn1-modules==0.3.0
 rsa==4.9
 pycparser==2.21
-cffi==1.16.0
+# 버젼 변경 cffi==1.16.0
+cffi==1.15.1
 cryptography==41.0.7
 pycryptodome==3.23.0
 pbkdf2==1.3
@@ -94,7 +95,7 @@ uritemplate==4.1.1
 wifi==0.3.8
 
 # 미디어 처리
-numpy==1.26.4
+# 에러나서 전역으로 설치 numpy==1.26.4
 pillow==10.2.0
 gTTS==2.5.2
 python-vlc==3.0.20123
