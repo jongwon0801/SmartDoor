@@ -36,18 +36,16 @@ RUN apt-get update && apt-get install -y \
 # requirements.txt 복사
 COPY requirements.txt /app/
 
-# pip 업그레이드 및 빌드 도구 설치
+# pip 업그레이드 및 빌드 도구 설치 (setuptools_rust 추가)
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir setuptools wheel
+RUN pip install --no-cache-dir setuptools wheel setuptools_rust
 
 # requirements.txt에서 NumPy와 SciPy를 제외하고 새 파일 생성
 RUN grep -v "numpy\|scipy" /app/requirements.txt > /app/requirements_filtered.txt
 
-# 필터링된 패키지 설치
+# 필터링된 패키지 설치 (빌드 플래그 수정)
 RUN pip install --no-cache-dir \
     -r /app/requirements_filtered.txt \
-    --no-deps \
-    --no-build-isolation \
     --prefer-binary
 
 # 애플리케이션 파일 복사
