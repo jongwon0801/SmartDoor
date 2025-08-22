@@ -111,7 +111,6 @@ RUN apt-get update && apt-get install -y \
     python3-numpy \
     python3-scipy \
     python3-opencv \
-    python3-dlib \ 
     --no-install-recommends && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -123,6 +122,7 @@ RUN pip install --no-cache-dir setuptools wheel setuptools_rust
 
 # cryptography 패키지 설치 (버전 지정)
 RUN pip install --no-cache-dir cryptography==41.0.7
+RUN pip install dlib==20.0.0
 
 # 필터링: numpy, scipy, opencv-python, dlib, face-recognition, face-recognition-models, cryptography 제외
 RUN grep -v -E "numpy|scipy|opencv-python|dlib|face-recognition|face-recognition-models|cryptography" /app/requirements.txt > /app/requirements_filtered.txt
