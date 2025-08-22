@@ -242,7 +242,7 @@ RUN pip install --no-cache-dir --no-deps numpy==1.26.4 --prefer-binary
 RUN pip install --no-cache-dir --no-deps cryptography==41.0.7 --prefer-binary
 
 # OpenCV Python Bindings (cv2 모듈 로딩 문제 해결 및 헤드리스 버전 설치)
-RUN pip install --no-cache-dir --no-deps opencv-python-headless==4.9.0.80 --prefer-binary
+RUN pip install --no-cache-dir opencv-python-headless==4.9.0.80 --prefer-binary
 
 # dlib (가장 오래 걸리는 컴파일. Face-recognition 등의 의존성)
 RUN pip install --no-cache-dir --no-deps dlib==20.0.0 --prefer-binary
