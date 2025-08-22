@@ -26,8 +26,7 @@ pyasn1==0.5.1
 pyasn1-modules==0.3.0
 rsa==4.9
 pycparser==2.21
-# 버젼 변경 cffi==1.16.0
-cffi==1.15.1
+cffi==1.16.0
 cryptography==41.0.7
 pycryptodome==3.23.0
 pbkdf2==1.3
