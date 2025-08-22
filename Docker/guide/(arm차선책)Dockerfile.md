@@ -36,7 +36,7 @@ RUN apt-get update && apt-get install -y \
     liblapack-dev \
     python3-numpy \
     python3-scipy \
-    python3-opencv \ # 이 줄을 추가합니다.
+    python3-opencv \ 
     --no-install-recommends && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
