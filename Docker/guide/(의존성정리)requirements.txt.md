@@ -1,6 +1,13 @@
 #### 패키지 버젼
 ```less
-# 버젼 변경 cffi==1.16.0 -> 1.15.1
+# 버젼 변경
+cffi==1.16.0 -> 1.15.1
+
+# apt 설치
+numpy, scipy, opencv-python
+
+# 별도 설치
+cryptography, dlib, face-recognition, face-recognition-models
 ```
 
 ```less
