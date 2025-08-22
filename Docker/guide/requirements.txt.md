@@ -1,6 +1,10 @@
 #### 패키지 버젼
 
 ```less
+# 이 파일은 Dockerfile의 빌드 시간 최적화를 위해
+# 별도로 설치되는 패키지(numpy, scipy, opencv-python, dlib, face-recognition*, cryptography)를
+# 제외한 파이썬 의존성 목록입니다.
+
 # 기본 도구
 setuptools
 wheel
@@ -28,7 +32,6 @@ rsa==4.9
 pycparser==2.21
 # 버젼 변경 cffi==1.16.0
 cffi==1.15.1
-cryptography==41.0.7
 pycryptodome==3.23.0
 pbkdf2==1.3
 PyJWT==2.8.0
@@ -95,18 +98,11 @@ uritemplate==4.1.1
 wifi==0.3.8
 
 # 미디어 처리
-# 에러나서 전역으로 설치 numpy==1.26.4
 pillow==10.2.0
 gTTS==2.5.2
 python-vlc==3.0.20123
 pydub==0.25.1
 pytesseract==0.3.10
 pyzbar==0.1.9
-opencv-python==4.9.0.80
-
-# 얼굴 인식 관련
-dlib==20.0.0
-face-recognition-models==0.3.0
-face-recognition==1.3.0
 ```
 
