@@ -217,7 +217,7 @@ RUN apt-get update && apt-get install -y \
     python3-numpy \
     python3-scipy \
     python3-opencv \
-    libzbar0 \
+    libzbar0t64 \
     libzbar-dev \
     zbar-tools \
     --no-install-recommends && \
