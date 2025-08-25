@@ -265,4 +265,46 @@ COPY ./www/ .
 CMD ["python", "python/webserver.py"]
 ```
 
+#### 홈어시스턴트 추가한 yml
+```less
+version: '3.8'
+
+services:
+  tornado:
+    build: .
+    container_name: smartdoor_app
+    privileged: true
+    restart: unless-stopped
+    volumes:
+      - ./www:/app/www
+      - "/boot/config.txt:/boot/config.txt:ro"
+      - "/etc/udev/rules.d/99-com.rules:/etc/udev/rules.d/99-com.rules:ro"
+      - "/usr/share/X11/xorg.conf.d/40-libinput.conf:/usr/share/X11/xorg.conf.d/40-libinput.conf:ro"
+    devices:
+      - "/dev/ttyUSB_PIR:/dev/ttyUSB_PIR"
+      - "/dev/hione:/dev/hione"
+      - "/dev/cam_inside:/dev/cam_inside"
+      - "/dev/cam_outside:/dev/cam_outside"
+      - "/dev/input:/dev/input"
+    network_mode: "host"
+
+  homeassistant:
+    container_name: homeassistant
+    image: ghcr.io/home-assistant/home-assistant:stable
+    privileged: true
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Seoul
+    volumes:
+      - ./homeassistant:/config
+      - /run/dbus:/run/dbus:ro
+    network_mode: "host"
+```
+
+
+
+
+
+
+
 
