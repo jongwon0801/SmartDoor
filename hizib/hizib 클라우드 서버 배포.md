@@ -1,3 +1,8 @@
+#### 화면 키오스크 모드로 변경
+```less
+sudo systemctl restart lightdm
+```
+
 #### ssh 접속 기록 삭제
 
 ```bash
