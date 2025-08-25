@@ -132,6 +132,8 @@ sudo ./pishrink.sh /media/pi/SAMSUNG\ USB/정은치엘로B.img
 sudo ./pishrink.sh "/media/pi/외장/연구실42Add_Voice_20250605.img"
 
 sudo ./pishrink.sh "/media/pi/usbdrive1/exhibition_after_20250820.img"
+
+sudo ./pishrink.sh "/media/pi/usbdrive1/Add_docker_20250825.img"
 ```
 
 #### 라즈베리파이에서 읽기 쓰기 마운트 다시 해도 안될 경우
