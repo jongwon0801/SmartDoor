@@ -1,4 +1,4 @@
-#### 원래 config
+#### 주소 추가
 ```less
 # Loads default set of integrations. Do not remove.
 default_config:
@@ -6,10 +6,13 @@ default_config:
 # Load frontend themes from the themes folder
 frontend:
   themes: !include_dir_merge_named themes
-  trusted_proxies:
-    - 127.0.0.1
-    - localhost
-    - 192.168.0.42
+
+# HTTP 및 CORS 설정
+http:
+  cors_allowed_origins:
+    - "http://127.0.0.1"
+    - "http://localhost"
+    - "http://192.168.0.42"
 
 automation: !include automations.yaml
 script: !include scripts.yaml
