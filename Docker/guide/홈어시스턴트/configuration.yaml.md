@@ -18,9 +18,9 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 ```
-#### 접속주소
+#### 도커 재시작
 ```less
-# 도커 컴포즈 재시작 (인증키 방식)
+# 도커 컴포즈 재시작 (플러그인 방식)
 docker compose restart homeassistant
 ```
 
