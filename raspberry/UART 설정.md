@@ -7,8 +7,8 @@ sudo nano /boot/config.txt
 파일 맨 아래에 다음 내용 추가하기
 
 [all]
-# UART5 활성화를 위한 설정
-dtoverlay=uart5
+enable_uart=1
+dtoverlay=uart1
 
 sudo reboot
 ```
