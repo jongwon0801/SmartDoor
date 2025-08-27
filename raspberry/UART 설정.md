@@ -1,4 +1,4 @@
-#### Uart 1 활성화
+#### Uart 5 활성화
 ```less
 라즈베리파이 4에서는 기본적으로 UART0만 활성화되어 있고, UART1은 비활성화 상태
 
@@ -7,9 +7,8 @@ sudo nano /boot/config.txt
 파일 맨 아래에 다음 내용 추가하기
 
 [all]
-# UART1 활성화를 위한 설정
-enable_uart=1
-dtoverlay=uart1
+# UART5 활성화를 위한 설정
+dtoverlay=uart5
 
 sudo reboot
 ```
@@ -34,7 +33,7 @@ ls -l /dev/ttyAMA*
 sudo usermod -a -G dialout $USER
 ```
 
-#### uart 1 추가 안될 경우
+#### uart 추가 안될 경우
 ```less
 sudo nano /boot/cmdline.txt
 ```
