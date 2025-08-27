@@ -1,6 +1,6 @@
 #### Uart 5 활성화
 ```less
-라즈베리파이 4에서는 기본적으로 UART0만 활성화되어 있고, UART1은 비활성화 상태
+라즈베리파이 4에서는 기본적으로 UART0만 활성화되어 있음
 
 sudo nano /boot/config.txt
 
