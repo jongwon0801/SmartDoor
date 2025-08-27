@@ -31,12 +31,11 @@ ls -l /dev/ttyAMA*
 
 # 권한 설정
 sudo usermod -a -G dialout $USER
-```
 
-#### uart 추가 안될 경우
-```less
+# uart 추가 안될 경우
 sudo nano /boot/cmdline.txt
 ```
+
 
 
 
