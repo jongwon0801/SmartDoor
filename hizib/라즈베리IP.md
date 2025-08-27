@@ -56,4 +56,15 @@ pw : wiki6564
 
 user : ubuntu
 pw : wikibox
+
+# 가스, 진동, 불꽃, 온도 추가 라즈베리
+ssh pi@192.168.0.108
+user : pi
+pw : pi
+
+
+
+
+
+
 ```
