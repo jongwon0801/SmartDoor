@@ -115,6 +115,9 @@ ls -l /dev/serial*
 
 # 8250.nr_uarts=0을 추가
 console=tty1 root=PARTUUID=2ee1ad41-02 rootfstype=ext4 fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles 8250.nr_uarts=0
+
+console=tty1 root=PARTUUID=2ee1ad41-02 rootfstype=ext4 fsck.repair=yes rootwait quiet splash plymouth.ignore-serial-consoles 8250.nr_uarts=3
+
 ```
 
 #### 현재 인식된 시리얼 장치의 커널 이름 확인
