@@ -1,4 +1,4 @@
-#### Uart 5 활성화
+#### Uart 1 활성화
 ```less
 라즈베리파이 4에서는 기본적으로 UART0만 활성화되어 있음
 
@@ -9,6 +9,8 @@ sudo nano /boot/config.txt
 [all]
 enable_uart=1
 dtoverlay=uart1
+
+sudo usermod -a -G dialout $USER
 
 sudo reboot
 ```
@@ -36,8 +38,14 @@ sudo usermod -a -G dialout $USER
 sudo nano /boot/cmdline.txt
 ```
 
+#### ttyACM0
+```less
+ACM은 "Abstract Control Model"의 약자로, USB를 통해 연결된 시리얼 장치를 의미합니다.
+USB 시리얼 변환기나 아두이노와 같은 USB 장치가 연결될 때 생성됩니다.
 
-
+드라이버를 통해 소프트웨어적으로 구현되는 가상 시리얼 포트입니다.
+연결/분리될 때마다 이름이 변경될 수 있습니다.
+```
 
 
 
