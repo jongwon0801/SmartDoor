@@ -18,7 +18,10 @@ sudo nano /boot/config.txt
 [all]
 enable_uart=1
 dtoverlay=uart1
+```
 
+#### grops 설정
+```less
 # ttyAMA0는 root와 dialout 그룹만 접근 가능합니다.
 # 사용자를 dialout 그룹에 추가
 sudo usermod -a -G dialout $USER
@@ -92,6 +95,10 @@ sudo dtoverlay -a | grep uart
 
 # config.txt 설정 확인
 sudo nano /boot/config.txt
+
+sudo dmesg | grep uart
+
+ls -l /dev/serial*
 ```
 
 #### 미니 UART 비활성화
