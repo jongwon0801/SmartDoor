@@ -136,12 +136,22 @@ sudo udevadm trigger
 
 # 심볼릭 링크 확인:
 ls -l /dev/hione
+```
 
+#### GPIO BCM 번호 UART3 확인
+```less
+sudo raspi-gpio get 5
 
+GPIO 5: level=0 fsel=3 alt=4 func=RXD3 pull=UP
 
+GPIO 5: RXD3 기능 (수신)으로 설정되어 있고, 레벨은 0이며 풀업 저항이 활성화되어 있습니다
 
+sudo raspi-gpio get 4
 
+GPIO 4: level=1 fsel=3 alt=4 func=TXD3 pull=NONE
 
+GPIO 4: TXD3 기능 (송신)으로 설정되어 있고, 레벨은 1입니다
+```
 
 
 
