@@ -138,6 +138,12 @@ sudo udevadm trigger
 ls -l /dev/hione
 ```
 
+#### TX/RX 교차로 꽂아야함 !!
+```less
+도어락에서 나온 TX/RX 선을
+보드에 꽂을 때 RX/TX 로 꽂아야함
+```
+
 #### GPIO BCM 번호 UART3 확인
 ```less
 sudo raspi-gpio get 5
@@ -152,6 +158,15 @@ GPIO 4: level=1 fsel=3 alt=4 func=TXD3 pull=NONE
 
 GPIO 4: TXD3 기능 (송신)으로 설정되어 있고, 레벨은 1입니다
 ```
+
+#### # 간단한 UART 통신 테스트
+```less
+sudo python -c "import serial; ser = serial.Serial('/dev/ttyAMA1', 9600, timeout=5); print('포트 열림'); print(ser.read(10)); ser.close()"
+```
+
+
+
+
 
 
 
