@@ -3,7 +3,7 @@ import time
 
 # USB 시리얼 포트 설정 (포트 이름은 시스템에 따라 다를 수 있습니다)
 # Linux에서는 일반적으로 /dev/ttyUSB0 또는 /dev/ttyACM0 형태입니다
-PORT = "/dev/ttyUSB0"  # 실제 포트 이름으로 변경하세요
+PORT = "/dev/ttyACM1"  # 실제 포트 이름으로 변경하세요
 BAUD_RATE = 9600       # 센서의 통신 속도에 맞게 설정하세요
 
 def test_pir_sensor():
