@@ -26,7 +26,7 @@ def test_pir_sensor():
             # 출력
             print(f"{current_time}\t{status}\t\t{sensor_value}")
             
-            time.sleep(0.5)  # 딜레이 약간 늘림 (출력 빈도 조절)
+            time.sleep(1)  # 딜레이 약간 늘림 (출력 빈도 조절)
             
     except KeyboardInterrupt:
         print("\n프로그램 종료")
