@@ -16,7 +16,7 @@ http:
     - "http://192.168.0.42"
     - "http://192.168.1.3"
 
-# 모드버스 설정
+# 모드버스 허브 설정 (센서 정의 제외)
 modbus:
   - name: "modbus_hub"
     type: serial
@@ -26,45 +26,6 @@ modbus:
     stopbits: 1
     bytesize: 8
     parity: N
-    sensors:
-      - name: "Living Room Temperature"
-        unit_of_measurement: "°C"
-        slave: 1
-        address: 100
-        input_type: holding
-        count: 1
-        data_type: int16
-
-# 디지털 입력 센서 설정 (IN1~IN8)
-binary_sensor:
-  - platform: modbus
-    scan_interval: 1
-    hub: modbus_hub
-    registers:
-      - name: "Input 1"
-        address: 0
-        input_type: discrete_input
-      - name: "Input 2"
-        address: 1
-        input_type: discrete_input
-      - name: "Input 3"
-        address: 2
-        input_type: discrete_input
-      - name: "Input 4"
-        address: 3
-        input_type: discrete_input
-      - name: "Input 5"
-        address: 4
-        input_type: discrete_input
-      - name: "Input 6"
-        address: 5
-        input_type: discrete_input
-      - name: "Input 7"
-        address: 6
-        input_type: discrete_input
-      - name: "Input 8"
-        address: 7
-        input_type: discrete_input
 
 # 자동화, 스크립트, 씬 설정
 automation: !include automations.yaml
