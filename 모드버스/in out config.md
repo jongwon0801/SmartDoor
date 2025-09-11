@@ -53,7 +53,7 @@ modbus:
 # 자동화 설정
 automation:
   # IN 1 센서가 켜지면 OUT 1 켜기
-  - alias: "IN 1 센서가 켜지면 OUT 1 켜기"
+  - alias: "IN 1 센서가 켜지면 OUT 8 켜기"
     trigger:
       - platform: numeric_state
         entity_id: sensor.in_1
@@ -61,10 +61,10 @@ automation:
     action:
       - service: switch.turn_on
         target:
-          entity_id: switch.out_1
+          entity_id: switch.out_8
 
   # IN 1 센서가 꺼지면 OUT 1 끄기
-  - alias: "IN 1 센서가 꺼지면 OUT 1 끄기"
+  - alias: "IN 1 센서가 꺼지면 OUT 8 끄기"
     trigger:
       - platform: numeric_state
         entity_id: sensor.in_1
@@ -72,7 +72,7 @@ automation:
     action:
       - service: switch.turn_off
         target:
-          entity_id: switch.out_1
+          entity_id: switch.out_8
 
 # 스크립트, 씬 설정
 script: !include scripts.yaml
