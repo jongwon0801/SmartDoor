@@ -1,12 +1,13 @@
 #### in out config
 ```less
-# 기본 설정 (기존 설정이 있다면 유지)
+# 기본 설정
 default_config:
 
 # 프론트엔드 테마 설정
 frontend:
   themes: !include_dir_merge_named themes
 
+# 모드버스 설정 (하나로 통합)
 modbus:
   - name: modbus_hub
     type: serial
@@ -17,6 +18,7 @@ modbus:
     parity: N
     stopbits: 1
     
+    # 출력 스위치 설정
     switches:
       - name: "OUT 1"
         slave: 1
@@ -39,16 +41,16 @@ modbus:
         command_on: 0x0100
         command_off: 0x0200
     
-    binary_sensors:
+    # 입력 센서 설정 (비트 상태 읽기)
+    sensors:
       - name: "IN 1"
         slave: 1
         address: 192
         input_type: holding
-        bit_number: 0
-        scan_interval: 10
-        device_class: signal
+        data_type: uint16
+        scan_interval: 1
 
-# 자동화, 스크립트, 씬 설정 (나머지는 그대로 유지)
+# 자동화, 스크립트, 씬 설정
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
