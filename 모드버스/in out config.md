@@ -40,11 +40,12 @@ modbus:
         command_off: 0x0200
     
     binary_sensors:
-      - name: "IN 1"
-        slave: 1
-        address: 192
-        register_type: holding
-        bitmask: 0x0001
+  - name: "IN 1"
+    slave: 1
+    address: 192
+    input_type: holding
+    scan_interval: 10
+    device_class: signal
 
 # 자동화, 스크립트, 씬 설정 (나머지는 그대로 유지)
 automation: !include automations.yaml
